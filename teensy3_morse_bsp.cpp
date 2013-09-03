@@ -1,7 +1,14 @@
+/// Implementation of Teensy 3.0 board support package
+
+///\file teensy3_morse_bsp.cpp
+
 #include <climits>
 #include "teensy3_morse_bsp.h"
-#include "MK20DZ10.h"
-
+//#include "MK20DZ10.h"
+#include "mk20dx128.h"
+#include "cpu.h"
+#include "libmorse.h"
+#include "voltage_monitor.h"
 //---- Teensy 3.0 board support ----
 
 char cpuid[] = "012345678911234567892123456789";
@@ -19,7 +26,7 @@ char* identifyProcessor() {
   cpuid[i++] = '-';
 
   uint8_t pkg(((SIM_SDID & SIM_SDID_PINID(0xF)) >> SIM_SDID_PINID_SHIFT) - 2);
-  uint8_t pinTable[] = {32, 0, 48, 64, 80, 81, 100, 104, 0, 144, 196, 0, 256 };
+  uint8_t pinTable[] = {32U, 0, 48U, 64U, 80U, 81U, 100U, 104U, 0, 144U, 196U, 0, uint8_t(256U) };
   pkg = (pkg < sizeof pinTable) ? pkg : 1;
   uint8_t pinCount(pinTable[pkg]);
   if (99 < pinCount) {
@@ -45,8 +52,8 @@ char* identifyProcessor() {
 
   // P-flash size
   uint8_t pf(((SIM_FCFG1 & SIM_FCFG1_PFSIZE(0xF)) >> SIM_FCFG1_PFSIZE_SHIFT)
-       - 7);
-  uint8_t pfTable[] = { 128, 0, 256, 0, 512, 0, 0, 0, 512 };
+	     - 7);
+  uint16_t pfTable[] = { 128U, 0, 256U, 0, 512U, 0, 0, 0, 512U };
   if (pf < sizeof pfTable) {
     cpuid[i++] = '0' + pfTable[pf] / 100;
     cpuid[i++] = '0' + pfTable[pf] / 10 % 10;
@@ -69,6 +76,7 @@ char* identifyProcessor() {
     cpuid[i++] = '0' + fnvmSize % 10;
   }
 
+#if 0
     /* Determine the RAM size */
     switch((SIM_SOPT1 & SIM_SOPT1_RAMSIZE(0xF))>>SIM_SOPT1_RAMSIZE_SHIFT)
     {
@@ -110,42 +118,45 @@ char* identifyProcessor() {
 		Serial.println("Low-voltage Detect Reset\n");
 	if (MC_SRSL & MC_SRSL_WAKEUP_MASK)
 		Serial.println("LLWU Reset\n");	
-	Serial.println(MC_SRSL); //XXX is zero on my T3
-
+	Serial.println(MC_SRSL); //!\todo is zero on my T3
+#endif
   cpuid[i] = 0;
   return cpuid;  
 }
 
-// PWM pins 3, 4, 5, 6, 9, 10, 20, 21, 22, 23
+/// PWM pins 3, 4, 5, 6, 9, 10, 20, 21, 22, 23
 
-// touchRead pins 0, 1, 15, 16, 17, 18, 19, 22, 23
+/// touchRead pins 0, 1, 15, 16, 17, 18, 19, 22, 23
 static uint16_t touchBase[24];
 uint16_t touchMargin(60);
 
-// Measure the noise floor for the given touch pin. A threshold is set
-// 600pF above the maximum measured value.
+/// Measure the noise floor for the given touch pin. A threshold is set
+/// 600pF above the maximum measured value.
 void calibrateTouch(uint8_t pin) {
+  analogReadRes(8);
   touchBase[pin] = 0;
   for (int i(0); i < 10; ++i) {
     uint16_t pF20(touchRead(pin));
-    analogWrite(beepPin, pF20);
+    pwmWrite(pF20);
     touchBase[pin] = touchBase[pin] < pF20 ? pF20 : touchBase[pin];
     delay(100);
   }
-  Serial.print("Touch pin ");
-  Serial.print(pin);
-  Serial.print(" threshold: ");
-  Serial.println(touchBase[pin]);
 }
 
-// Poll the given capacitive sensor pin. Return true if the value
-// is greater than the callibration threshold for the pin.
+/// Return the pin capacitance in pF.
+uint16_t getPinThreshold(uint8_t pin) {
+  return 50 * (touchBase[pin] + touchMargin);
+}
+
+/// Poll the given capacitive sensor pin. Return true if the value
+/// is greater than the calibration threshold for the pin.
 bool touchPoll(uint8_t pin) {
+  analogReadRes(16);
   uint16_t pF20(touchRead(pin));
   return touchBase[pin] + touchMargin < pF20;
 }
 
-size_t duty(duty50);
+size_t duty = duty50;
 
 size_t getDuty() {
   return duty;
@@ -155,11 +166,167 @@ void setDuty(uint8_t dutyCycle) {
   duty = dutyCycle;
 }
 
-// Output a square wave on pin 10 at the given frequency for the given duration.
+/// Output a square wave on pin 10 at the given frequency for the given duration.
 void beep(uint32_t frequency, uint32_t durationMicros) {
-  analogWriteFrequency(beepPin, frequency);
-  analogWrite(beepPin, duty);
+  pwmFrequency(frequency);
+  pwmWrite(duty);
+  redLED(1);
   delayMicroseconds(durationMicros);
-  analogWrite(beepPin, 0);
+  pwmWrite(0);
+  redLED(0);
+}
+
+/// Report the CPU temperature in Celsius units. Calibration was
+/// performed with some cold packs, and a multimeter with a 
+/// thermocouple.
+float getInternalTemperatureC() {
+   analogReadRes(16);
+   const double offset(398.3);
+   const double gain(-0.00951);
+   double reading(analogRead(temperatureSensor));
+   return offset + gain * reading;
+}
+
+VoltageMonitor voltageMonitor;
+
+long readMillivolts() {
+   return voltageMonitor.getValue();
+}
+
+void sampleVoltage() {
+   voltageMonitor.getSample();
+}
+
+/// Turns out by the time user code runs, it's too late to change any
+/// of these clock registers.
+///
+/// From
+/// http://forum.pjrc.com/threads/724-32-768-KHz-crystal-and-battery-for-Teensy-3-0-RTC-questions?highlight=RTC_TPR
+/// The bit to use is RTC_SR_TIF, but you can't easily do this because
+/// the startup code checks that bit and tries to initialize the
+/// RTC. By the time your program is running, it's too late to
+/// discover what that bit was before the startup code ran.
+///
+/// There is a startup_early_hook() function you could implement to
+/// run your own code very early in the startup. Pretty much nothing
+/// is initialized at that point. The most viable solution would be to
+/// grab the value of RTC_SR and put it into a static variable. But
+/// this code runs before variables are initialized, so you'll have to
+/// use an attribute to put that variable into the .noinit section to
+/// prevent the later startup code from overwriting it. Then you could
+/// check that variable's RTC_SR_TIF bit once your program is
+/// running. Or if you don't need to do much, you could perhaps do
+/// everything you need in that extremely early startup code.... but
+/// that's quite difficult because so much stuff ordinary programming
+/// depends upon hasn't been initialized yet.
+void describeRTC() {
+  printLabelValueUnits("RTC_TSR ", RTC_TSR, " time in seconds");
+  printLabelValueUnits("RTC_CR & RTC_CR_CLKO ",
+		       !!(RTC_CR & RTC_CR_CLKO), " 1=gated");
+  printLabelValueUnits("RTC_CR & RTC_CR_OSCE ",
+		       !!(RTC_CR & RTC_CR_OSCE), " 1=enabled");
+  printLabelValueUnits("RTC_SR & RTC_SR_TCE ",
+		       !!(RTC_SR & RTC_SR_TCE), " 1=enabled");
+  printLabelValueUnits("RTC_SR & RTC_SR_TIF ",
+		       !!(RTC_SR & RTC_SR_TIF), " 1=invalid");
+  printLabelValueUnits("RTC_SR & RTC_SR_TCE ",
+		       !!(RTC_SR & RTC_SR_TCE), " 1=prescale enabled");
+  printLabelValueUnits("RTC_TPR ", RTC_TPR, " prescaler");
+}
+
+/// Alas, all the flags I can find give no indication whether the RTC
+/// external clock crystal is or is not present. The RTC prescaler
+/// should increment approximately once every 31 microseconds, so we
+/// sample the prescaler, wait 33 microseconds, and sample again. If
+/// the value is unchanged, there is no RTC external crystal, but if
+/// the prescaler value has changed, then there is.
+///
+/// The flags I looked at were the following:
+///    !!(RTC_CR & RTC_CR_CLKO)
+///    !!(RTC_CR & RTC_CR_OSCE)
+///    !!(RTC_SR & RTC_SR_TCE)
+///    !!(RTC_SR & RTC_SR_TIF)
+///    !!(RTC_SR & RTC_SR_TCE)
+bool hasRTC() {
+  uint32_t prescaler(RTC_TPR);
+  delayMicroseconds(33);
+  return prescaler != RTC_TPR;
+}
+
+void initPorts() {
+   // Pins connected to the mini54. Do this for low power.
+   pinMode(18, INPUT_PULLUP);
+   pinMode(19, INPUT_PULLUP);
+
+  analogReference(INTERNAL);
+  analogReadAveraging(32);
+  analogReadRes(16);    // Full resolution
+
+  ADC0_CFG1 =  ADC_CFG1_ADIV(3) // ADC Clock = 24MHz / 8
+    | ADC_CFG1_MODE(3*0)        // 16 bit mode
+    | ADC_CFG1_ADICLK(0);       // Use bus clock
+
+  analogRead(ditPin);   // Allow calibration to complete
+
+  // Linux:
+  //    sudo cu -l /dev/tty.usbserial-* -s 9600
+  // OS X (nee Mac OS X) circa 10.8.4
+  //    sudo cu -l /dev/tty.usbmodem* -s 9600 --nostop --parity=none
+  Serial.begin(9600);		// Does not block.
+
+  pinMode(ledPin, OUTPUT);
+  pinMode(beepPin, OUTPUT);
+
+  pinMode(piezoTxP, OUTPUT);
+  pinMode(piezoTxN, OUTPUT);
+
+  pinMode(ledGreenN, OUTPUT);
+  pinMode(ledGreenP, OUTPUT);
+  pinMode(ledRedP, OUTPUT);
+  pinMode(ledRedN, OUTPUT);
+  digitalWrite(ledRedN, 0);
+  digitalWrite(ledGreenN, 0);
+  greenLED(1);
+  
+  calibrateTouch(ditPin);
+  calibrateTouch(dahPin);
+}
+
+void pwmFrequency(int Hz) {
+  analogWriteFrequency(piezoTxP, Hz);
+  analogWriteFrequency(txPin, Hz);
+  analogWriteFrequency(earphoneRightPin, Hz);
+}
+
+void pwmWrite(int duty) {
+  analogWrite(piezoTxP, duty);
+  analogWrite(txPin, duty);
+  analogWrite(earphoneRightPin, duty);
+}
+
+void dWrite(int value) {
+  digitalWrite(piezoTxP, value);
+  digitalWrite(txPin, value);
+  digitalWrite(earphoneRightPin, value);
+}
+
+void redLED(int value) {
+  digitalWrite(ledRedP, value);
+}
+
+void greenLED(int value) {
+  digitalWrite(ledGreenP, value);
+}
+
+uint16_t activityLight(0);
+
+void toggleGreenLED() {
+   ++activityLight;
+   greenLED(!(activityLight % 6));
+}
+
+void toggleRedLED() {
+   ++activityLight;
+   redLED(!(activityLight % 6));
 }
 

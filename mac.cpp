@@ -1,9 +1,11 @@
-#include "WProgram.h"
+/**\file mac.cpp
+\brief Read the mac address.
+ */
+#include "Arduino.h"
 #include "mac.h"
-
 uint8_t mac[6];
 
-// http://forum.pjrc.com/threads/91-teensy-3-MAC-address
+/// See http://forum.pjrc.com/threads/91-teensy-3-MAC-address
 void read(uint8_t word, uint8_t *mac, uint8_t offset) {
   FTFL_FCCOB0 = 0x41;             // Selects the READONCE command
   FTFL_FCCOB1 = word;             // read the given word of read once area

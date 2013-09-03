@@ -1,9 +1,12 @@
 // -*- mode: C++; -*-
+///\file notes.h
+///\brief Frequency values for equal-tempered musical notes.
 #pragma once
-// Frequency values for equal-tempered musical notes copied from
-// http://www.phy.mtu.edu/~suits/notefreqs.html
+
+/// Array of musical note frequencies copied from
+/// http://www.phy.mtu.edu/~suits/notefreqs.html
 const float noteHz[] = {
-  16.35,  		// 0   C0
+  16.35,			// 0   C0
   17.32,			// 1   C#0/Db0
   18.35,			// 2   D0
   19.45,			// 3   D#0/Eb0
