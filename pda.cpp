@@ -33,7 +33,7 @@
 //   assignAction(a2m('Y'), getPressure);
 //   assignAction(a2m('Z'), playSoundEffect);
 
-//    //!\todo needs to be longer! Dangerous.
+//    // needs to be longer! Dangerous.
 //    assignAction(a2m('N'), setVolume);
 //    //  assignAction(a2m('X'), exchangeStack);
 

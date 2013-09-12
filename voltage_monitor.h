@@ -1,23 +1,29 @@
 // -*- mode: C++; -*-
+/**\file voltage_monitor.h
+\brief Trivial co-routine to gather and filter ADC samples
+ */
 #pragma once
 #include <cstdlib>
 #include <limits>
 #include "Time.h"
 
-/// Trivial co-routine to gather and filter ADC samples
+/// Size of ring buffer for samples
+const static size_t N = 2000;
 
-/// Computes the median of 2000 samples with the work spread over many small
-/// steps to maintain a responsive user interface.
+/// Number of histogram bins
+const static size_t K = 100;
 
-///\file voltage_monitor.h
-
-const static size_t N = 2000; // samples
-const static size_t K = 100; // bins
-
-// Calibrated using a digital multimeter and samples for 2 to 6 C
-// batteries with linear regression.
-const static float gain = 0.1732;
-const static float offset = 560.6;
+/// Calibration data:
+///    39930 19600
+///    33957 16700
+///    10190 5330
+///    8816 5000
+///    7984 3330
+///
+/// Regression equation:
+///    0.4874166181 * x + 0.1581747627
+const static float gain = 0.4874;
+const static float offset = 0.1582;
 
 ///\class VoltageMonitor
 ///\brief Computes the median of 2000 samples with the work spread over
@@ -40,9 +46,9 @@ public:
       float raw(analogRead(analogInput));
 
       // Raw reading at 2.7V. Can't really run under this voltage.
-      const float rawMin(12352.2);
+      const float rawMin(0*12352.2);
       // Raw reading at 20V. Risking damage over this voltage.
-      const float rawMax(112237.0);
+      const float rawMax(10*112237.0);
       if (rawMin < raw && raw < rawMax) {
          sample[ring_index] = raw;
          ++ring_index;
@@ -59,6 +65,9 @@ public:
          // Unreasonable ADC reading
          ;
       }
+   }
+   uint32_t getRaw() {
+      return analogRead(analogInput);
    }
 
    /// Filter and scale raw ADC values to millivolts.
@@ -116,6 +125,8 @@ public:
       }
 
       if (0.0 < mid_count) {
+         Serial.print("Filtered: ");
+         Serial.println(mid_sum/mid_count);
          mv_hold = gain * mid_sum / mid_count + offset;
       } else {
          mv_hold = gain * sample_sum / sample_count + offset;

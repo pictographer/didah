@@ -182,7 +182,7 @@ void txUnsigned(uint16_t n) {
     // Proceed to the next digit.
     n /= 10;
   } while (n);
-  while (digitCount) {
+  while (digitCount && !touchPoll(ditPin) && !touchPoll(dahPin)) {
     txLetter(digitBuffer[--digitCount]);
     Serial.print(digitBuffer[digitCount]);
   }
@@ -209,7 +209,7 @@ void txString(const char* s) {
    bool gotPercentSign(false);
    if (*s) {
       for (char* p(const_cast<char*>(s));
-           *p && !touchPoll(ditPin);
+           *p && !touchPoll(ditPin) && !touchPoll(dahPin);
            ++p)
          {
             if (*p == ' ') {

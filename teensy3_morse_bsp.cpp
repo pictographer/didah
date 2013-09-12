@@ -133,7 +133,6 @@ uint16_t touchMargin(60);
 /// Measure the noise floor for the given touch pin. A threshold is set
 /// 600pF above the maximum measured value.
 void calibrateTouch(uint8_t pin) {
-  analogReadRes(8);
   touchBase[pin] = 0;
   for (int i(0); i < 10; ++i) {
     uint16_t pF20(touchRead(pin));
@@ -151,7 +150,6 @@ uint16_t getPinThreshold(uint8_t pin) {
 /// Poll the given capacitive sensor pin. Return true if the value
 /// is greater than the calibration threshold for the pin.
 bool touchPoll(uint8_t pin) {
-  analogReadRes(16);
   uint16_t pF20(touchRead(pin));
   return touchBase[pin] + touchMargin < pF20;
 }
@@ -166,23 +164,35 @@ void setDuty(uint8_t dutyCycle) {
   duty = dutyCycle;
 }
 
+bool earphonePresent(false);
+
+bool isEarphonePresent() {
+   return earphonePresent;
+}
+
+void pollEarphonePresent() {
+   digitalWrite(earphoneRightPin, 0);
+   earphonePresent = digitalRead(earphoneRightDetectPin);
+}
+
 /// Output a square wave on pin 10 at the given frequency for the given duration.
 void beep(uint32_t frequency, uint32_t durationMicros) {
-  pwmFrequency(frequency);
-  pwmWrite(duty);
-  redLED(1);
-  delayMicroseconds(durationMicros);
-  pwmWrite(0);
-  redLED(0);
+   pollEarphonePresent();
+   pwmFrequency(frequency);
+   pwmWrite(duty);
+   redLED(1);
+   delayMicroseconds(durationMicros);
+   pwmWrite(0);
+   redLED(0);
 }
 
 /// Report the CPU temperature in Celsius units. Calibration was
-/// performed with some cold packs, and a multimeter with a 
+/// performed with a refrigerator, a heat gun, and a multimeter with a
 /// thermocouple.
+///
 float getInternalTemperatureC() {
-   analogReadRes(16);
-   const double offset(398.3);
-   const double gain(-0.00951);
+   const double offset(343.8);
+   const double gain(-0.02258);
    double reading(analogRead(temperatureSensor));
    return offset + gain * reading;
 }
@@ -254,60 +264,74 @@ bool hasRTC() {
 }
 
 void initPorts() {
+   pinMode(earphoneRightDetectPin, INPUT_PULLUP);
+
    // Pins connected to the mini54. Do this for low power.
    pinMode(18, INPUT_PULLUP);
    pinMode(19, INPUT_PULLUP);
 
-  analogReference(INTERNAL);
-  analogReadAveraging(32);
-  analogReadRes(16);    // Full resolution
+//   analogReference(INTERNAL);
+   analogReference(EXTERNAL);
+//xxx  analogReadAveraging(32);
+   analogReadAveraging(1);
+   analogReadRes(16);    // Full resolution
 
-  ADC0_CFG1 =  ADC_CFG1_ADIV(3) // ADC Clock = 24MHz / 8
-    | ADC_CFG1_MODE(3*0)        // 16 bit mode
-    | ADC_CFG1_ADICLK(0);       // Use bus clock
+   ADC0_CFG1 =  ADC_CFG1_ADIV(3) // ADC Clock = 24MHz / 8
+      | ADC_CFG1_MODE(3)          // 16 bit mode
+      | ADC_CFG1_ADICLK(0)        // Use bus clock
+      | ADC_CFG1_ADLSMP;
 
-  analogRead(ditPin);   // Allow calibration to complete
+   ADC0_SC3 = ADC_SC3_AVGE | ADC_SC3_AVGS(3);
+   ADC0_SC3 |= ADC_SC3_CAL;
 
-  // Linux:
-  //    sudo cu -l /dev/tty.usbserial-* -s 9600
-  // OS X (nee Mac OS X) circa 10.8.4
-  //    sudo cu -l /dev/tty.usbmodem* -s 9600 --nostop --parity=none
-  Serial.begin(9600);		// Does not block.
+   analogRead(ditPin);   // Allow calibration to complete
 
-  pinMode(ledPin, OUTPUT);
-  pinMode(beepPin, OUTPUT);
+   // Linux:
+   //    sudo cu -l /dev/tty.usbserial-* -s 9600
+   // OS X (nee Mac OS X) circa 10.8.4
+   //    sudo cu -l /dev/tty.usbmodem* -s 9600 --nostop --parity=none
+   Serial.begin(9600);		// Does not block.
 
-  pinMode(piezoTxP, OUTPUT);
-  pinMode(piezoTxN, OUTPUT);
+   pinMode(ledPin, OUTPUT);
+   pinMode(beepPin, OUTPUT);
+   pinMode(earphoneRightPin, OUTPUT);
+   pinMode(piezoTxP, OUTPUT);
+   pinMode(piezoTxN, OUTPUT);
 
-  pinMode(ledGreenN, OUTPUT);
-  pinMode(ledGreenP, OUTPUT);
-  pinMode(ledRedP, OUTPUT);
-  pinMode(ledRedN, OUTPUT);
-  digitalWrite(ledRedN, 0);
-  digitalWrite(ledGreenN, 0);
-  greenLED(1);
+   pinMode(ledGreenN, OUTPUT);
+   pinMode(ledGreenP, OUTPUT);
+   pinMode(ledRedP, OUTPUT);
+   pinMode(ledRedN, OUTPUT);
+   digitalWrite(ledRedN, 0);
+   digitalWrite(ledGreenN, 0);
+   greenLED(1);
   
-  calibrateTouch(ditPin);
-  calibrateTouch(dahPin);
+   calibrateTouch(ditPin);
+   calibrateTouch(dahPin);
 }
 
 void pwmFrequency(int Hz) {
-  analogWriteFrequency(piezoTxP, Hz);
   analogWriteFrequency(txPin, Hz);
+  analogWriteFrequency(piezoTxP, Hz);
   analogWriteFrequency(earphoneRightPin, Hz);
 }
 
 void pwmWrite(int duty) {
-  analogWrite(piezoTxP, duty);
-  analogWrite(txPin, duty);
-  analogWrite(earphoneRightPin, duty);
+   analogWrite(txPin, duty);
+   if (isEarphonePresent()) {
+      analogWrite(earphoneRightPin, duty);
+   } else {
+      analogWrite(piezoTxP, duty);
+   }
 }
 
 void dWrite(int value) {
-  digitalWrite(piezoTxP, value);
-  digitalWrite(txPin, value);
-  digitalWrite(earphoneRightPin, value);
+   digitalWrite(txPin, value);
+   if (isEarphonePresent()) {
+      digitalWrite(earphoneRightPin, value);
+   } else {
+      digitalWrite(piezoTxP, value);
+   }
 }
 
 void redLED(int value) {
@@ -330,3 +354,6 @@ void toggleRedLED() {
    redLED(!(activityLight % 6));
 }
 
+uint32_t getRaw() {
+   return voltageMonitor.getRaw();
+}

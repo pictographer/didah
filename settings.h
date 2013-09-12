@@ -6,6 +6,9 @@
 /// The default low-voltage threshold is the minimum voltage.
 const int32_t getLowVoltageThresholdDefault();
 
+/// The default high-voltage threshold is the minimum voltage.
+const int32_t getHighVoltageThresholdDefault();
+
 /// Get the maximum voltage the appliance is designed to accept. Returns
 /// 12000 mV.
 const int32_t getMaximumVoltage();
@@ -13,7 +16,7 @@ const int32_t getMaximumVoltage();
 /// Returns the message format template
 ///    `BAT %V MV ? %V MV`
 /// See txString() for a description of the format parameters such as %V.
-const char* getDefaultAnnouncementFormat();
+const char* getAnnouncementFormatDefault();
 
 /// Returns a pointer to the announcement buffer template. Used to update
 /// the format.
@@ -24,10 +27,17 @@ size_t getAnnouncementBufferSize();
 
 /// Returns a pointer to the alarm buffer template. Used to update
 /// the format.
-char* getAlarmBuffer();
+char* getAlarmLowBuffer();
 
 /// Returns the buffer size so updates can be done safely.
-size_t getAlarmBufferSize();
+size_t getAlarmLowBufferSize();
+
+/// Returns a pointer to the alarm buffer template. Used to update
+/// the format.
+char* getAlarmHighBuffer();
+
+/// Returns the buffer size so updates can be done safely.
+size_t getAlarmHighBufferSize();
 
 /// Load the settings from non-volatile memory.
 void initSettings();
@@ -53,6 +63,12 @@ void setLowVoltageThreshold(int32_t v);
 /// Get the low-voltage alarm threshold.
 int32_t getLowVoltageThreshold();
 
+/// Set the high-voltage alarm threshold.
+void setHighVoltageThreshold(int32_t v);
+
+/// Get the high-voltage alarm threshold.
+int32_t getHighVoltageThreshold();
+
 /// Get the default dit duration in microseconds.
 uint32_t getDitMicrosDefault();
 
@@ -75,10 +91,16 @@ void setAnnouncementInterval(uint32_t seconds);
 uint32_t getAnnouncementInterval();
 
 /// Set the format of periodic low-voltage alarm messages.
-void setAlarmFormat(const char* format);
+void setAlarmLowFormat(const char* format);
+
+/// Set the format of periodic high-voltage alarm messages.
+void setAlarmHighFormat(const char* format);
 
 /// Get the format of periodic low-voltage alarm messages.
-const char* getAlarmFormat();
+const char* getAlarmLowFormat();
+
+/// Get the format of periodic high-voltage alarm messages.
+const char* getAlarmHighFormat();
 
 /// Get the repetition inteval in seconds of when in the alarm state.
 void setAlarmInterval(uint32_t seconds);

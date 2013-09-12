@@ -226,12 +226,13 @@ bool readNumber(uint32_t& v, uint32_t timeout=60000000);
 //@}
 
 ///\brief Get the low-voltage alarm state. This determines the message
-/// format and repetition interval.
-bool getAlarmState();
+/// format and repetition interval.  Returns 'V' for low, '^' for
+/// high, and '-' for nominal.
+char getAlarmState();
 
 ///\brief Set the low-voltage alarm state. This determines the message
 /// format and repetition interval.
-void setAlarmState(bool newState);
+void setAlarmState(char state);
 
 ///\brief A sample ADC reading is taken each time through the main
 /// loop, and written to a ring buffer. The samples are only filtered
@@ -244,3 +245,5 @@ uint32_t getIntervalForState();
 ///\brief Get the alarm format for the current alarm state.
 const char* getFormatForState();
 
+///\brief Get the raw analog input.
+void txRaw(MorseToken);

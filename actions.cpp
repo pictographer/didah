@@ -110,6 +110,18 @@ void dispatchOnStack(MorseToken code) {
          txError();
          txString("RANGE");
       }
+   } else if (matchScore("nB") == 255) {
+      // Set the high voltage threshold.
+      popN(1);
+      uint32_t n(stackDigitsToUnsigned());
+      const uint32_t hi(getMaximumVoltage() - getHighVoltageThresholdDefault());
+      if (n - getHighVoltageThresholdDefault() < hi) {
+         setHighVoltageThreshold(n);
+         txString("K");
+      } else {
+         txError();
+         txString("RANGE");
+      }
    } else if (matchScore("nD") == 255) {
       // Set the dit duration.
       popN(1);
@@ -130,14 +142,22 @@ void dispatchOnStack(MorseToken code) {
       txString("K");
       setAnnouncementFormat(buffer);
    } else if (matchScore("G") == 255) {
-      // Get the alarm format.
+      // Copy the alarm format.
       popN(1);
       txString("TX MSG END WITH ^AR^  K");
       char buffer[128];
       rxString(buffer, sizeof buffer);
       txString("K");
-      setAlarmFormat(buffer);
-   } else if (matchScore("cH") == 255) {
+      setAlarmLowFormat(buffer);
+   } else if (matchScore("H") == 255) {
+      // Copy the alarm format.
+      popN(1);
+      txString("TX MSG END WITH ^AR^  K");
+      char buffer[128];
+      rxString(buffer, sizeof buffer);
+      txString("K");
+      setAlarmHighFormat(buffer);
+   } else if (matchScore("c^SS^") == 255) {
       // Erase the top of the stack.
       popN(2);
       txString("K");
@@ -423,7 +443,13 @@ void printLog() {
       "Low-voltage alarm threshold: ", getLowVoltageThreshold(), " mV");
 
    printLabelValueUnits(
-      "Low-voltage alarm announcement format: ", getAlarmFormat(), "");
+      "Low-voltage alarm announcement format: ", getAlarmLowFormat(), "");
+  
+   printLabelValueUnits(
+      "High-voltage alarm threshold: ", getHighVoltageThreshold(), " mV");
+
+   printLabelValueUnits(
+      "High-voltage alarm announcement format: ", getAlarmHighFormat(), "");
   
    printLabelValueUnits(
       "Alarm interval: ", getAlarmInterval(), " seconds");
@@ -611,9 +637,9 @@ bool readMessageFormat(char* buffer, size_t bufferSize, const char* prompt) {
             }
          } else {
             Serial.print("\r\nFormat set to default '");
-            Serial.print(getDefaultAnnouncementFormat());
+            Serial.print(getAnnouncementFormatDefault());
             Serial.println("'.");
-            strcat(buffer, getDefaultAnnouncementFormat());
+            strcat(buffer, getAnnouncementFormatDefault());
          }
          result = true;
       } else {
@@ -659,9 +685,16 @@ void readEvalPrint() {
                                "[BAT %V MV ? %V MV]: ");
       Serial.print("> ");
    } else if (cmd == 'G') {
-      const size_t bufferSize(getAlarmBufferSize());
-      (void) readMessageFormat(getAlarmBuffer(), bufferSize,
-                               "Enter alarm format [BAT %V MV ? %V MV]: ");
+      const size_t bufferSize(getAlarmLowBufferSize());
+      (void) readMessageFormat(getAlarmLowBuffer(), bufferSize,
+                               "Enter low-voltage alarm format "
+                               "[BAT %V MV ? %V MV]: ");
+      Serial.print("> ");
+   } else if (cmd == 'H') {
+      const size_t bufferSize(getAlarmHighBufferSize());
+      (void) readMessageFormat(getAlarmHighBuffer(), bufferSize,
+                               "Enter high-voltage alarm format "
+                               "[BAT %V MV ? %V MV]: ");
       Serial.print("> ");
    } else if (cmd == 'I') {
       uint32_t v;
@@ -698,6 +731,8 @@ void readEvalPrint() {
          setTxHz(v);
       } 
       Serial.print("> ");
+   } else if (cmd == 'R') {
+      txRaw(MorseToken());
    } else if (cmd == 'S') {
       saveSettings();
       Serial.println("Settings saved.\r\n");
@@ -791,9 +826,22 @@ void txSettings(MorseToken) {
             "ALARM MSG RPT SKED IS ");
    txUnsigned(getAlarmInterval());
    txString(" SECONDS. "
-            "ALARM MSG FORMAT IS  ");
+            "ALARM LOW MSG FORMAT IS  ");
    {
-      const char* a(getAlarmFormat());
+      const char* a(getAlarmLowFormat());
+      strcpy(buf, a);
+      char* p(buf);
+      while (*p) {
+         if (*p == '%') {
+            *p = '?';
+         }
+         ++p;
+      }
+   }
+   txString(buf);
+   txString("ALARM HIGH MSG FORMAT IS  ");
+   {
+      const char* a(getAlarmLowFormat());
       strcpy(buf, a);
       char* p(buf);
       while (*p) {
@@ -811,20 +859,26 @@ uint32_t getVoltagePollInterval() {
    return 30UL;
 }
 
-/// True when the voltage is below the alarm threshold.
-bool alarmState = false;
+/// Voltage state: Low, Nominal, or High.  Just for fun, the Hamming
+/// distance between these ASCII codes is selected to be greater than
+/// 1.
+enum alarmStateEnum {
+   voltageLow = 'v',            // 111 0110
+   voltageNominal = '-',        // 010 1101
+   voltageHigh = '^'            // 101 1110
+} alarmState;
 
-void setAlarmState(bool newState) {
-   alarmState = newState;
+void setAlarmState(char newState) {
+   alarmState = static_cast<alarmStateEnum>(newState);
 }
 
-bool getAlarmState() {
+char getAlarmState() {
    return alarmState;
 }
 
 uint32_t getIntervalForState() {
    uint32_t result;
-   if (getAlarmState()) {
+   if (alarmState != voltageNominal) {
       result = getAlarmInterval();
    } else {
       result = getAnnouncementInterval();
@@ -833,9 +887,17 @@ uint32_t getIntervalForState() {
 }
 
 const char* getFormatForState() {
-   if (getAlarmState()) {
-      return getAlarmFormat();
-   } else {
-      return getAnnouncementFormat();
+   switch (alarmState) {
+   case voltageLow:     return getAlarmLowFormat();
+   case voltageNominal: return getAnnouncementFormat();
+   case voltageHigh:    return getAlarmHighFormat();
+   default:
+      txError(MorseToken());
+      Serial.println("INTERNAL ERROR: Undefined state in getFormatForState().");
+      return 0;
    }
+}
+
+void txRaw(MorseToken) {
+   Serial.println(getRaw());
 }

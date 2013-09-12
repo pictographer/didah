@@ -1,8 +1,7 @@
-/// Teensy 3.0 board support package
-
-///\file teensy3_morse_bsp.h
-
 // -*- mode: C++; -*-
+/**\file teensy3_morse_bsp.h
+\brief Teensy 3.0 board support package
+ */
 #pragma once
 #include "Arduino.h"
 
@@ -27,16 +26,20 @@ size_t getDuty();
 
 void setDuty(uint8_t);
 
+bool isEarphonePresent();
+
 /// Generate a tone using PWM.
 void beep(uint32_t frequency, uint32_t durationMicros);
 
 /// Teensy 3.0 LED
-const int ledPin = 13;
+const int ledPin = 13;          // Not used in the appliance.
 
 /// Pin attached to a small speaker.
 const int beepPin = 10;
 
+const int earphoneRightDetectPin = 3;
 const int earphoneRightPin = 4;
+
 /// Note: earphoneLeftPin isn't actually wired up in the appliance.
 
 const int piezoTxP = 22;
@@ -118,3 +121,6 @@ void toggleGreenLED();
 
 ///\brief Change the state of the red LED.
 void toggleRedLED();
+
+///\brief Get the raw analog input.
+uint32_t getRaw();

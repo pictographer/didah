@@ -1,5 +1,5 @@
 // -*- mode: C++; -*-
-///\file Morse.ino
+///\file didah.ino
 ///\brief Top-level entry points for the Morse code PDA/Application
 
 ///\mainpage
@@ -147,12 +147,14 @@ saved to persistent storage.
 Command | Description
 --------|------------
       ? | Help
-      A | Set low-voltage alarm threshold in millivolts [2700-12000]
+      A | Set low-voltage alarm threshold in millivolts [2700-16000]
+      B | Set high-voltage alarm threshold in millivolts [2700-16000]
       D | Set dit duration in milliseconds [20-200]
       F | Set normal announcement format
       G | Set low-voltage announcement format
+      H | Set high-voltage announcement format
       I | Set normal announcement interval in seconds [20-86400]
-      J | Set low-voltage announcement interval in seconds [20-86400]
+      J | Set alarm announcement interval in seconds [20-86400]
       L | Print settings and log
       O | Load settings from EEPROM
       P | Set output frequency (pitch) in Hz [55-1670]
@@ -166,7 +168,7 @@ The Help command (`?`) prints a banner, settings, and a brief list of commands.
 ### Setting the Low-voltage Alarm Threshold
 
 The Low-voltage Alarm Threshold command (`A`) prompts for a value in
-millivolts, ranging from 2700 to 12000 millivolts. When the input voltage 
+millivolts, ranging from 2700 to 16000 millivolts. When the input voltage 
 falls below this threshold, alternate values are used for the announcement
 repetition format and interval. The red LED is lit continuously at a dim level.
 The default threshold is 2700 millivolts.
@@ -178,6 +180,14 @@ Low-voltage threshold: 4000 mV</br>
 &gt;
 </code></p>
 \endhtmlonly
+
+### Setting the Low-voltage Alarm Threshold
+
+The High-voltage Alarm Threshold command (`B`) prompts for a value in
+millivolts, ranging from 2700 to 16000 millivolts. When the input voltage 
+rises above this threshold, alternate values are used for the announcement
+repetition format and interval. The red LED is lit continuously at a dim level.
+The default threshold is 15000 millivolts.
 
 ### Setting the Dit Duration
 
@@ -258,6 +268,8 @@ Nominal announcement format: BAT %V MV ? %V MV
 Nominal announcement interval: 600 seconds
 Low-voltage alarm threshold: 2700 mV
 Low-voltage alarm announcement format: BAT %V MV ? %V MV
+High-voltage alarm threshold: 15000 mV
+High-voltage alarm announcement format: BAT %V MV ? %V MV
 Alarm interval: 30 seconds
 Dit duration: 40 ms
 Output frequency: 750 Hz ~~~~
@@ -310,11 +322,12 @@ timeout.
 The Menu Command (`--`) transmits an abbreviated list of commands:
 ~~~~
 A  LOW V IN MV,
+B  HIGH V IN MV,
 C  CLEAR, 
 D  DIT MS, 
 F  MSG FMT, 
-G  ALARM FMT, 
-H  ERASE ONE, 
+G  ALARM LOW FMT, 
+H  ALARM HIGH FMT,
 I  RPT SECS, 
 J  RPT ALARM SECS, 
 L  LIST, 
@@ -332,6 +345,20 @@ accordingly.
 For example, to set the low-voltage alarm threshold to 5V, 
 
 User: `...../-----/-----/-----/.-` \n
+System: `-.-` \n
+
+If the number is out of range, the system will transmit 8 dits 
+followed by the word "RANGE".
+
+### Setting the High-voltage Alarm Threshold
+
+The `-...` (B) command expects a number ranging from 2700 to 16000 to
+have been entered and sets the high-voltage alarm threshold
+accordingly.
+
+For example, to set the high-voltage alarm threshold to 14V, 
+
+User: `.----/....-/-----/-----/-----/-...` \n
 System: `-.-` \n
 
 If the number is out of range, the system will transmit 8 dits 
@@ -379,9 +406,14 @@ The format template is used for generating periodic messages when the
 voltage level is nominal just prior to message generation. The default 
 format is `BAT 4801 MV ? 4801 MV`.
 
-### Setting the Alarm Announcement Format
+### Setting the Alarm Low-Voltage Announcement Format
 
 The `--.` (G) command causes the system to prompt for a format string. 
+Refer to the F command above for details.
+
+### Setting the Alarm High-Voltage Announcement Format
+
+The `....` (H) command causes the system to prompt for a format string. 
 Refer to the F command above for details.
 
 ### Setting the Normal Announcement Interval
@@ -419,13 +451,24 @@ The `---` (O) command loads settings from EEPROM.
 
 ### Saving Settings
 
-The `...` (S) command saves settings to EEPROM. Settings are retained when there is no power. Settings are not automatically loaded when power is restored, thus providing a fail-safe mechanism for recovering from mis-configuration.
+The `...` (S) command saves settings to EEPROM. Settings are retained
+when there is no power. Settings are not automatically loaded when
+power is restored, thus providing a fail-safe mechanism for recovering
+from mis-configuration.
 
 ### Setting the Time
 
 The `-` (T) command expects the 24-hour time to have been entered as
 four digits HHMM (leading zeros may be omitted) and sets the time
 accordingly. The seconds are implicitly set to zero.
+
+### Stack Manipulation Commands
+
+The `-.-.` (C) command clears the stack.
+
+The `......` (<span class="prosign">SS</span>) command pops the stack.
+
+The `-..-` (X) command exchanges the top two entries of the stack.
 
 */
 
@@ -489,21 +532,29 @@ void loop() {
    // Gather Morse code symbols from touch input and invoke an
    // evaluation function on them.
    MorseToken token(getMorse());
-   if (now() % getVoltagePollInterval() == 0) {
-      setAlarmState(readMillivolts() <= getLowVoltageThreshold());
+   time_t currentSeconds(now());
+   if (currentSeconds % getVoltagePollInterval() == 0) {
+      long vin(readMillivolts());
+      if (vin <= getLowVoltageThreshold()) {
+         setAlarmState('V');
+      } else if (getHighVoltageThreshold() <= vin) {
+         setAlarmState('^');
+      } else {
+         setAlarmState('-');
+      }
    }
    if (token.valid()) {
       Serial.println(token.toChar());
 
       doAction(token);
 
-   } else if (now() % getIntervalForState() == 0) {
+   } else if (currentSeconds % getIntervalForState() == 0) {
       txString(getFormatForState());
    } else if (Serial.available()) {
       readEvalPrint();
    } else {
       toggleGreenLED();
-      if (getAlarmState()) {
+      if (getAlarmState() != '-') {
          toggleRedLED();
       }
    }

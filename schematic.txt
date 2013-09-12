@@ -1,0 +1,167 @@
+Teensy3
+/// Pin attached to a small speaker.
+beepPin = 10
+
+const int earphoneRightPin = 4;
+/// Note: earphoneLeftPin isn't actually wired up in the appliance.
+
+const int piezoTxP = 22;
+const int piezoTxN = 20;
+const int txPin = 23;
+
+const int ledRedP = 27;
+const int ledRedN = 30;
+const int ledGreenP = 29;
+const int ledGreenN = 28;
+
+/// A touchRead() pin. Auto-repeats a dit.
+const int ditPin = 19;
+
+/// A touchRead() pin. Auto-repeats a dah.
+const int dahPin = 17;
+
+/// Voltage measurement 0 - 3.3V
+const int analogInput = 21;
+
+const int temperatureSensor = 38;
+
+
+Voltage Regulation
+    Voltage Regulator
+    High-Side Capacitor
+    Low-Side Capacitor 102.5K Ohm
+Voltage Divider
+    Big Resistor 0.993 MOhm brown black green gold (nominally 1 Mohm 5%)
+    Small Resistor 107.5 kOhm brown red yellow gold (nominally 120 Kohm 5%)
+    VIN Capacitor
+        2200 pF Ceramic "222M"
+    G Capacitor
+        2200 pF Ceramic "222M"
+Built-in Speaker
+    Teensy3
+        pin 10 (beepPin)
+    Current-Limiting Resistor
+        SMT 330 Ohm 1206 Pkg 1/8W 5%
+    Speaker
+        pin +
+        pin -
+    Teensy3
+        pin GND
+Stereo Minijack
+    Stereo Minijack
+        Left Channel
+            Female Header 2
+            Teensy3 pin 3 (txPin?)
+        Right Channel
+            Female Header ?
+            Teensy3 pin 4 (earphoneRightPin)
+        Left Detect
+        Right Detect
+        Ground
+            Female Header pin 1
+            Terminal Block Power pin "-"
+            Teeny3 pin GND
+    Current-Limiting Resistor
+        SMT 330 Ohm 1206 Pkg 1/8W 5%
+Terminal Block Power
+    +12V (+2.7V to +15V) Input
+        Female Header pin 6
+    Ground Output
+        Female Header pin 1
+Terminal Block Output
+    TX Output
+        Female Header pin 8
+        Teensy3 pin 23 (txPin)
+    Current-Limiting Resistor 
+        SMT 330 Ohm 1206 Pkg 1/8W 5%
+LED Green
+    SMT LED
+    Current-Limiting Resistor
+        SMT 330 Ohm 1206 Pkg 1/8W 5%
+LED Red
+    SMT LED
+    Current-Limiting Resistor
+        SMT 330 Ohm 1206 Pkg 1/8W 5% "331"
+Protection Diode
+    In series with +12V input
+Female Header 8x1 0.1"
+    Pin 1 -- Terminal Block Power pin "-"
+    Pin 2 -- Stereo Minijack Left Channel
+    Pin 3 -- Detect Stereo Minijack Right Channel 
+        Plug present: N.C.
+        Plug absent: 330 ohm to Pin 4
+    Pin 4 -- Stereo Minijack Right Channel
+    Pin 5 -- Detect Stereo Minijack Left Channel
+        Plug present: N.C.
+        Plug absent: 330 ohm to Pin 2
+    Pin 6 -- Terminal Block Power +12 -- Analog Board Vin
+    Pin 7 -- Terminal Block Output Unused
+    Pin 8 -- Terminal Block Output TX -- Teensy3 pin 23 (txPin)
+    
+
+Could it be that the T3 is using an ADC voltage ref of 1.5V
+
+As I recall, the ADC maxes out at 11.7V.
+
+My voltage divider theoretically gives 1.254V for this. R1 = 1MOhm, R2 = 120KOhm
+I could see this happening if the reference voltage was 1.5V. With the measured values the output voltage should be more like 1.14V.
+
+39930 19.60
+33957 16.70
+10190 5.33
+8816 5.00
+7984 3.33
+
+0.4874166181 * x + 0.1581747627
+
+Raw temperature readings | Thermocouple | Voltage
+15527 -7
+15386 -5
+15314.00 -3
+15251.00 -1
+15202.00 0
+15157.00 0
+15119.00 0
+15081.00 1 4884
+15019.00 3 4885
+14972.00 5 4888
+14929.00 6 4889
+14882.00 7 4891
+14851.00 8 4892
+14809.00 9 4894
+14776.00 10 4896
+14750.00 11 4897
+14722.00 11 4898
+14703.00 12 4898
+14674.00 13 4899
+14300.00 24 4915
+14280.00 24 4915
+14609.00 15 4920
+14571.00 16 4923
+14539.00 16 4925
+14513.00 17 4924
+14497.00 17 4925
+14467.00 18 4926
+14453.00 18 4927
+14444.00 18 4927
+14431.00 19 4928
+14402.00 20 4929
+14381.00 20 4931
+14368.00 21 4932
+14360.00 21 4933
+14343.00 22 4934
+14339.00 22 4935
+14295.00 23 4936
+14217.00 25 4934
+14105.00 26 4940
+14042.00 27 4948
+13914.00 29 4953
+13842.00 30 4956
+13825.00 31 4955
+13828.00 31 4960
+13848.00 32 4960
+13674.00 34 4963
+13569.00 34 4967
+13540.00 35 4972
+13543.00 35 4973
+13606.00 35 4972

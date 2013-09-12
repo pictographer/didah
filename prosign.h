@@ -1,7 +1,6 @@
 // -*- mode: C++; -*-
 ///\file prosign.h
 ///\brief Prosign constants
-///\todo Convert preprocessor defines to constant Morse tokens.
 #pragma once
 #include "binconst.h"
 #include <climits>

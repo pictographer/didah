@@ -15,13 +15,19 @@ const int32_t getLowVoltageThresholdDefault() {
    return lowVoltageThresholdDefault;
 }
 
-const int32_t maximumVoltage = 12000;
+const int32_t highVoltageThresholdDefault = 15000;
+
+const int32_t getHighVoltageThresholdDefault() {
+   return highVoltageThresholdDefault;
+}
+
+const int32_t maximumVoltage = 16000;
 
 const int32_t getMaximumVoltage() {
    return maximumVoltage;
 }
 
-const char* getDefaultAnnouncementFormat() {
+const char* getAnnouncementFormatDefault() {
    return defaultAnnouncementFormat;
 }
 
@@ -44,6 +50,16 @@ struct {
    /// alarm will not be transmitted.
    int32_t lowVoltageThreshold = lowVoltageThresholdDefault;
 
+   /// High-voltage alert threshold in millivolts.  Note: the hardware
+   /// has been tested briefly at 19.6V, but the design target is a
+   /// 12V battery. The theoretical maximum input voltage is
+   /// approximately 34V based on the voltage divider, the ADC
+   /// maximum input voltage of 3.3V, and the reverse voltage
+   /// protection diode, but that doesn't account for thermal stress.
+   ///
+   /// The voltage divider values are 993 KOhm and 107.5 KOhm.
+   int32_t highVoltageThreshold = highVoltageThresholdDefault;
+
    /// Duration of a 'dit' in microseconds
    uint32_t ditMicros = ditMicrosDefault;
 
@@ -51,7 +67,10 @@ struct {
    char announcementFormat[128] = defaultAnnouncementFormat;
 
    /// Format for periodic announcements when voltage is low
-   char alarmFormat[128] = defaultAnnouncementFormat;
+   char alarmLowFormat[128] = defaultAnnouncementFormat;
+
+   /// Format for periodic announcements when voltage is low
+   char alarmHighFormat[128] = defaultAnnouncementFormat;
 
    /// Repeat the announcement when the time in seconds is a multiple
    /// of this number.
@@ -73,12 +92,20 @@ char* getAnnouncementBuffer() {
    return settings.announcementFormat;
 }
 
-size_t getAlarmBufferSize() {
-   return sizeof settings.alarmFormat;
+size_t getAlarmLowBufferSize() {
+   return sizeof settings.alarmLowFormat;
 }
 
-char* getAlarmBuffer() {
-   return settings.alarmFormat;
+char* getAlarmLowBuffer() {
+   return settings.alarmLowFormat;
+}
+
+size_t getAlarmHighBufferSize() {
+   return sizeof settings.alarmHighFormat;
+}
+
+char* getAlarmHighBuffer() {
+   return settings.alarmHighFormat;
 }
 
 uint32_t getTxHz() {
@@ -123,6 +150,14 @@ int32_t getLowVoltageThreshold() {
    return settings.lowVoltageThreshold;
 }
 
+void setHighVoltageThreshold(int32_t v) {
+   settings.highVoltageThreshold = v;
+}
+
+int32_t getHighVoltageThreshold() {
+   return settings.highVoltageThreshold;
+}
+
 //---- Morse Code ----
 
 uint32_t getDitMicrosDefault() {
@@ -143,18 +178,28 @@ void setAnnouncementFormat(const char* format) {
    settings.announcementFormat[n - 1] = 0;
 }
 
-void setAlarmFormat(const char* format) {
-   const size_t n(sizeof settings.alarmFormat);
-   strncpy(settings.alarmFormat, format, n);
-   settings.alarmFormat[n - 1] = 0;
+void setAlarmLowFormat(const char* format) {
+   const size_t n(sizeof settings.alarmLowFormat);
+   strncpy(settings.alarmLowFormat, format, n);
+   settings.alarmLowFormat[n - 1] = 0;
+}
+
+void setAlarmHighFormat(const char* format) {
+   const size_t n(sizeof settings.alarmHighFormat);
+   strncpy(settings.alarmHighFormat, format, n);
+   settings.alarmHighFormat[n - 1] = 0;
 }
 
 const char* getAnnouncementFormat() {
   return settings.announcementFormat;
 }
 
-const char* getAlarmFormat() {
-  return settings.alarmFormat;
+const char* getAlarmLowFormat() {
+  return settings.alarmLowFormat;
+}
+
+const char* getAlarmHighFormat() {
+  return settings.alarmHighFormat;
 }
 
 void setAlarmInterval(uint32_t seconds) {
