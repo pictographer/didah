@@ -90,7 +90,7 @@
 //       // Report alarm time or N for no alarm.
 //    } else if (matchScore("dQSM") == 255) {
 //       // Repeat telegram d
-//       //!\todo an M wouldn't get here because it isn't assigned this action.
+//       // an M wouldn't get here because it isn't assigned this action.
 //    } else if (matchScore("dQTA") == 255) {
 //       // Cancel telegram d
 //    } else if (matchScore("dQTC") == 255) {

@@ -214,7 +214,12 @@ void txString(const char* s) {
          {
             if (*p == ' ') {
                Serial.print('/');
-               delayMicroseconds(wordGapFactor * getDitMicros());
+               for (int i(0); i < wordGapFactor; ++i) {
+                  delayMicroseconds(getDitMicros());
+                  if (touchPoll(ditPin) || touchPoll(dahPin)) {
+                     return;
+                  }
+               }
             } else if (*p == '^') {
                // Accumulate the following prosign and transmit it.
                char pbuffer[5] = { '1', '2', '3', '4', '\0' };
@@ -342,7 +347,6 @@ uint8_t matchScore(const char* pattern) {
    return score;
 }
 
-//!\todo seems application-specific
 void keyboardMode(MorseToken) {
    txString("KB");
    bool didSpace(true);

@@ -51,6 +51,8 @@ uint32_t getTxHz();
 /// Set the transmission frequency (side tone).
 void setTxHz(uint32_t Hz);
 
+/// Write to flash so that next time we start, so we can report
+/// how long the previous run was.
 void updateUptime();
 
 void setUptime(uint32_t u);

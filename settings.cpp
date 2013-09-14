@@ -41,9 +41,6 @@ const uint32_t defaultAlarmInterval = 30;
 const uint32_t defaultFrequency = 750;
 
 struct {
-   //!\todo Number of 15-minute intervals since something
-   uint32_t uptime;
-
    /// Low-voltage alert threshold in millivolts.  Note: if the
    /// low-voltage threshold is lower than the transmitter's minimum
    /// voltage, or lower than the microprcessor's minimum voltage, the
@@ -84,6 +81,11 @@ struct {
    uint32_t txHz = defaultFrequency;
 } settings;
 
+/// Number of 15-minute intervals since power on. The value gets
+/// written to EEPROM when it exceeds 2 (30 minutes) so that it is
+/// possible to see how long the previous uptime was.
+uint32_t uptime;
+
 size_t getAnnouncementBufferSize() {
    return sizeof settings.announcementFormat;
 }
@@ -117,29 +119,30 @@ void setTxHz(uint32_t Hz) {
 }
 
 void initSettings() {
-   (void) EEPROM_readAnything(0, settings);
+   (void) EEPROM_readAnything(4, settings);
 }
 
 void saveSettings() {
-   (void) EEPROM_writeAnything(0, settings);
+   (void) EEPROM_writeAnything(4, settings);
 }
 
-/// Write to flash so that next time we start, so we can report
-/// how long the previous run was.
 void updateUptime() {
    //    EEPROM.write(0, ++uptime);
    //  eeprom_write_dword((uint32_t *) 0, );
-   ++settings.uptime;
-   Serial.print("Updated time: ");
-   Serial.println(settings.uptime);
+   ++uptime;
+   if (1 < uptime) {
+      Serial.print("Updated time: ");
+      Serial.println(uptime);
+      (void) EEPROM_writeAnything(0, uptime);
+   }
 }
 
 void setUptime(uint32_t u) {
-   settings.uptime = u;
+   uptime = u;
 }
 
 uint32_t getUptime() {
-   return settings.uptime;
+   return uptime;
 }
   
 void setLowVoltageThreshold(int32_t v) {

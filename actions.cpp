@@ -13,7 +13,7 @@
 
 #include "Time.h"
 
-const char* version("1.1");
+const char* version("1.2");
 
 const char* getVersion() {
   return version;
@@ -467,6 +467,7 @@ void printBanner() {
       "--------\r\n"
       "? - Help\r\n"
       "A - Set low-voltage alarm threshold in millivolts [2700-12000]\r\n"
+      "B - Set high-voltage alarm threshold in millivolts [2700-12000]\r\n"
       "D - Set dit duration in milliseconds [20-200]\r\n"
       "F - Set normal announcement format\r\n"
       "    A-Z     literal character\r\n"
@@ -485,11 +486,12 @@ void printBanner() {
       "    %T      time of day in four-digit 24-hour time: HHMM\r\n"
       "    %U      uptime in four digits: HHMM\r\n"
       "G - Set low-voltage announcement format\r\n"
+      "H - Set high-voltage announcement format\r\n"
       "I - Set normal announcement interval in seconds [20-86400]\r\n"
-      "J - Set low-voltage announcement interval in seconds [20-86400]\r\n"
+      "J - Set alarm announcement interval in seconds [20-86400]\r\n"
       "L - Print settings and log\r\n"
       "O - Load settings from EEPROM\r\n"
-      "P - Set output frequency (pitch) in Hz [55-1670]\r\n"
+      "P - Set output frequency (pitch) in Hz [55-1760]\r\n"
       "S - Save settings to EEPROM\r\n"
       "T - Set the 24-hour time [0000-2359]\r\n"
       );
@@ -671,6 +673,17 @@ void readEvalPrint() {
          setLowVoltageThreshold(v);
       } 
       Serial.print("> ");
+   } else if (cmd == 'B') {
+      uint32_t v;
+      if (readRange(v,
+                    "Enter high-voltage threshold in mV [2700-12000]: ",
+                    getHighVoltageThresholdDefault(),
+                    getMaximumVoltage()))
+      {
+         printLabelValueUnits("\r\nLow-voltage threshold: ", v, " mV");
+         setHighVoltageThreshold(v);
+      } 
+      Serial.print("> ");
    } else if (cmd == 'D') {
       uint32_t v;
       if (readRange(v, "Enter 'dit' duration in ms [20-200]: ", 20, 200)) {
@@ -726,7 +739,7 @@ void readEvalPrint() {
       Serial.print("> ");
    } else if (cmd == 'P') {
       uint32_t v;
-      if (readRange(v, "Enter output frequency in Hz [55-1670]: ", 55, 1760)) {
+      if (readRange(v, "Enter output frequency in Hz [55-1760]: ", 55, 1760)) {
          printLabelValueUnits("\r\nOutput frequency: ", v, " Hz");
          setTxHz(v);
       } 
@@ -784,15 +797,19 @@ void txHelp(MorseToken) {
 void txMenu(MorseToken) {
    txString(
       "A  LOW V IN MV, "
+      "B  HIGH V IN MV, "
       "C  CLEAR, "
       "D  DIT MS, "
       "F  MSG FMT, "
-      "G  ALARM FMT, "
-      "H  ERASE ONE, "
+      "G  ALARM LOW FMT, "
+      "H  ALARM HIGH FMT, "
       "I  RPT SECS, "
       "J  RPT ALARM SECS, "
       "L  LIST, "
+      "M  MENU, "
+      "O  LOAD, "
       "P  TONE HZ, "
+      "S  SAVE, "
       "T  TIME, "
       "U  UPTIME. K"
       );
@@ -820,7 +837,7 @@ void txSettings(MorseToken) {
    }
    txString(buf);
    txString(" . "
-            "ALARM VOLTAGE IS ");
+            "ALARM LOW-VOLTAGE IS ");
    txUnsigned(getLowVoltageThreshold());
    txString(" MV. "
             "ALARM MSG RPT SKED IS ");
@@ -892,7 +909,7 @@ const char* getFormatForState() {
    case voltageNominal: return getAnnouncementFormat();
    case voltageHigh:    return getAlarmHighFormat();
    default:
-      txError(MorseToken());
+      txError();
       Serial.println("INTERNAL ERROR: Undefined state in getFormatForState().");
       return 0;
    }

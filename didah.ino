@@ -56,8 +56,7 @@ rechargable battery.
 
 The CPU module in Didah is a Teensy3 running at 24 MHz. There is a
 voltage divider and voltage regulator designed support voltages up to
-20V, however voltages greater than 11.7V are not distinguished due to
-a defect. The lowest voltage that can be monitored is approximately
+20V. The lowest voltage that can be monitored is approximately
 2.7V.
 
 ## Setting Operational Parameters via Morse Code
@@ -157,7 +156,7 @@ Command | Description
       J | Set alarm announcement interval in seconds [20-86400]
       L | Print settings and log
       O | Load settings from EEPROM
-      P | Set output frequency (pitch) in Hz [55-1670]
+      P | Set output frequency (pitch) in Hz [55-1760]
       S | Save settings to EEPROM
       T | Set the 24-hour time [0000-2359]
 
@@ -218,13 +217,21 @@ A-Z            | Literal character
 
 The default announcement format is `BAT 4801 MV ? 4801 MV`.
 
-### Setting the Alarm Announcement Format
+### Setting the Low-Voltage Alarm Announcement Format
 
-The Normal Announcement Format command (`G`) prompts the user for a
-text template for periodic announcements when the voltage is below the
-nominal level. The template format is identical to the nominal
+The Low-Voltage Announcement Format command (`G`) prompts the user for
+a text template for periodic announcements when the voltage is below
+the nominal range. The template format is identical to the nominal
 announcement format above. The default alarm format is `BAT 4801 MV ?
 4801 MV`.
+
+### Setting the High-Voltage Alarm Announcement Format
+
+The High-Voltage Alarm Format command (`H`) prompts the user for a
+text template for periodic announcements when the voltage is above the
+nominal ramge. The template format is identical to the nominal
+announcement format above. The default alarm format is `BAT 15000 MV ?
+15000 MV`.
 
 ### Setting the Normal Announcement Interval
 
@@ -250,7 +257,7 @@ A typical log message is as follows:
 ~~~~
 Didah Voltage Monitor
 =====================
-Version: 1.1
+Version: 1.2
 Documentation: http://pictographer.com/didah
 
 Device to periodically announce input voltage in Morse code.
@@ -289,7 +296,7 @@ time-of-day.
 ### Setting the Output Frequency (Side Tone)
 
 The output frequency or side tone can be set using the (P) command. The
-frequency range is 55 to 1670 Hz. The default frequency is 750.
+frequency range is 55 to 1760 Hz. The default frequency is 750.
 
 ### Saving Settings
 
@@ -330,8 +337,11 @@ G  ALARM LOW FMT,
 H  ALARM HIGH FMT,
 I  RPT SECS, 
 J  RPT ALARM SECS, 
-L  LIST, 
+L  LIST,
+M  MENU,
+O  LOAD,
 P  TONE HZ, 
+S  SAVE,
 T  TIME, 
 U  UPTIME. 
 K~~~~
@@ -408,13 +418,13 @@ format is `BAT 4801 MV ? 4801 MV`.
 
 ### Setting the Alarm Low-Voltage Announcement Format
 
-The `--.` (G) command causes the system to prompt for a format string. 
-Refer to the F command above for details.
+The `--.` (G) command causes the system to prompt for a low-voltage
+alert format string.  Refer to the F command above for details.
 
 ### Setting the Alarm High-Voltage Announcement Format
 
-The `....` (H) command causes the system to prompt for a format string. 
-Refer to the F command above for details.
+The `....` (H) command causes the system to prompt for a high-voltage
+alert format string. Refer to the F command above for details.
 
 ### Setting the Normal Announcement Interval
 
@@ -437,9 +447,9 @@ For example,
 
 ~~~~
 SETTINGS.
-MSG RPT SKED IS  6_____ 0_____ 0 SECONDS.
+MSG RPT SKED IS 600 SECONDS.
 MSG FORMAT IS  BAT ?V MV ? ?V MV . 
-ALARM VOLTAGE IS 4_____ 0_____ 0_____ 0  MV. 
+ALARM VOLTAGE IS 4000  MV. 
 ALARM MSG RPT SKED IS 30 SECONDS. 
 ALARM MSG FORMAT IS  BAT ?V MV ? ?V MV .~~~~
 
@@ -448,6 +458,9 @@ ALARM MSG FORMAT IS  BAT ?V MV ? ?V MV .~~~~
 The `---` (O) command loads settings from EEPROM.
 
 ### Setting the Output Frequency (Side Tone)
+
+The `.--.` (P) command sets the output frequency or side tone. The
+frequency range is 55 to 1760 Hz. The default frequency is 750.
 
 ### Saving Settings
 
@@ -472,9 +485,48 @@ The `-..-` (X) command exchanges the top two entries of the stack.
 
 */
 
+/** \page Development
+The code is hosted at https://github.com/pictographer/didah
+and compiled with Teensyduino, Version 1.16 under OS X 10.8.4.
+
+Didah started as an experiment in bootstrapping. How effectively could
+one develop and debug using touch sensors as input and beeps as
+output, with the aim of supporting home and garden automation? The
+idea evolved into a portable gadget designed for learning Morse code,
+with the aim of becoming a Personal Digital Assistant (PDA), perhaps
+of interest to people who could not easily use a screen. A friend
+asked if it could be made to monitor a voltage that transmits readings
+via Morse code. This seemed like a good opportunity to do something
+useful, so here it is. The PDA code is still present, but not
+connected to the user interfaces. The previous aims have not been
+forgotten. Most of the development would be useful for multiple use
+cases. For example, garden applications could take advantage of the
+ADC battery monitoring and could communicate by flashing lights in
+Morse code.
+
+The required hardware is a Teensy3, $19 at the time of writing. 
+http://pjrc.com/store/teensy3.html 
+
+For the Morse Code voltage monitor, a voltage regulator and voltage
+divider are also needed. The USB power input to the Teensy3 has been
+cut so that there is no conflict between the battery input and the USB
+serial connection. Other power arrangements are described on the
+Forum. I intend to make photographs, a bill of materials, and
+schematic available.
+
+The PJRC discussion forum is http://forum.pjrc.com/forum.php and my
+user name there is pictographer.
+
+Paul Stoffrengen provides support above and beyond anything I've seen
+elsewhere for his products. He inspires the community around him to
+collaborate and contribute.
+
+ */
+
 #include <cctype>
 #include "Arduino.h"
 #include <EEPROM.h>
+#include "EEPROMAnything.h"
 #include "settings.h"
 #include "actions.h"
 #include "stack.h"
@@ -514,12 +566,19 @@ void setup() {
    assignAction(MorseToken(MORSE_AR), dispatchOnStack);
    assignAction(MorseToken(MORSE_AS), dispatchOnStack);
 
+#if defined(PDA)
    assignAction(MorseToken(MORSE_CT), keyboardMode);
+#endif
    assignAction(MorseToken(MORSE_INTER), dispatchOnStack);
 
    if (Serial) {
       printBanner();
    }
+
+   uint32_t u;
+   (void) EEPROM_readAnything(0, u);
+   setUptime(u);
+
    txString("K");
    Serial.setTimeout(3 * 1000);
 }
@@ -543,6 +602,8 @@ void loop() {
          setAlarmState('-');
       }
    }
+//\todo If last update of uptime was longer than 15 minutes ago,
+//update it and reset the timer. What happens when the user sets the time?
    if (token.valid()) {
       Serial.println(token.toChar());
 

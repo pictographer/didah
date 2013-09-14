@@ -1,4 +1,4 @@
-didah
+Didah
 =====
 
 Morse code by touch and tones for a personal digital assistant and amateur radio repeater voltage monitor appliance.
@@ -66,3 +66,4 @@ Voltage monitor hardware configuration
 - 1 piezoelectric speaker
 
 See http://pictographer.com/didah for voltage monitor appliance documentation.
+See https://github.com/pictographer/didah for source code.
