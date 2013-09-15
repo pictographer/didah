@@ -354,6 +354,6 @@ void toggleRedLED() {
    redLED(!(activityLight % 6));
 }
 
-uint32_t getRaw() {
-   return voltageMonitor.getRaw();
+uint32_t getRawVoltage() {
+   return voltageMonitor.getRawVoltage();
 }

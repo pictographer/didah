@@ -27,12 +27,13 @@ const int temperatureSensor = 38;
 
 
 Voltage Regulation
-    Voltage Regulator
-    High-Side Capacitor
-    Low-Side Capacitor 102.5K Ohm
+    Voltage Regulator LP2950CZ-3.3 TO-92
+        http://www.onsemi.com/pub_link/Collateral/LP2950-D.PDF
+    High-Side Capacitor 10uF 6V tantalum
+    Low-Side Capacitor 10uF 6V tantalum
 Voltage Divider
-    Big Resistor 0.993 MOhm brown black green gold (nominally 1 Mohm 5%)
-    Small Resistor 107.5 kOhm brown red yellow gold (nominally 120 Kohm 5%)
+    Big Resistor 0.993 MOhm brown black green gold (nominally 1 MOhm 5%)
+    Small Resistor 107.5 kOhm brown red yellow gold (nominally 120 KOhm 5%)
     VIN Capacitor
         2200 pF Ceramic "222M"
     G Capacitor

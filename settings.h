@@ -6,11 +6,11 @@
 /// The default low-voltage threshold is the minimum voltage.
 const int32_t getLowVoltageThresholdDefault();
 
-/// The default high-voltage threshold is the minimum voltage.
+/// The default high-voltage threshold is the maximum voltage.
 const int32_t getHighVoltageThresholdDefault();
 
 /// Get the maximum voltage the appliance is designed to accept. Returns
-/// 12000 mV.
+/// 16000 mV.
 const int32_t getMaximumVoltage();
 
 /// Returns the message format template

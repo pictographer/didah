@@ -174,7 +174,7 @@ The default threshold is 2700 millivolts.
 \htmlonly
 <p><code>
 &gt; <b>A</b></br>
-Enter low-voltage threshold in mV [2700-12000]: <b>4000</b></br>
+Enter low-voltage threshold in mV [2700-16000]: <b>4000</b></br>
 Low-voltage threshold: 4000 mV</br>
 &gt;
 </code></p>
@@ -186,7 +186,7 @@ The High-voltage Alarm Threshold command (`B`) prompts for a value in
 millivolts, ranging from 2700 to 16000 millivolts. When the input voltage 
 rises above this threshold, alternate values are used for the announcement
 repetition format and interval. The red LED is lit continuously at a dim level.
-The default threshold is 15000 millivolts.
+The default threshold is 16000 millivolts.
 
 ### Setting the Dit Duration
 
@@ -230,8 +230,8 @@ announcement format above. The default alarm format is `BAT 4801 MV ?
 The High-Voltage Alarm Format command (`H`) prompts the user for a
 text template for periodic announcements when the voltage is above the
 nominal ramge. The template format is identical to the nominal
-announcement format above. The default alarm format is `BAT 15000 MV ?
-15000 MV`.
+announcement format above. The default alarm format is `BAT 16000 MV ?
+16000 MV`.
 
 ### Setting the Normal Announcement Interval
 
@@ -275,7 +275,7 @@ Nominal announcement format: BAT %V MV ? %V MV
 Nominal announcement interval: 600 seconds
 Low-voltage alarm threshold: 2700 mV
 Low-voltage alarm announcement format: BAT %V MV ? %V MV
-High-voltage alarm threshold: 15000 mV
+High-voltage alarm threshold: 16000 mV
 High-voltage alarm announcement format: BAT %V MV ? %V MV
 Alarm interval: 30 seconds
 Dit duration: 40 ms
@@ -348,7 +348,7 @@ K~~~~
 
 ### Setting the Low-voltage Alarm Threshold
 
-The `.-` (A) command expects a number ranging from 2700 to 12000 to
+The `.-` (A) command expects a number ranging from 2700 to 16000 to
 have been entered and sets the low-voltage alarm threshold
 accordingly.
 
@@ -565,6 +565,7 @@ void setup() {
 
    assignAction(MorseToken(MORSE_AR), dispatchOnStack);
    assignAction(MorseToken(MORSE_AS), dispatchOnStack);
+   assignAction(MorseToken(MORSE_SS), dispatchOnStack);
 
 #if defined(PDA)
    assignAction(MorseToken(MORSE_CT), keyboardMode);
@@ -592,15 +593,17 @@ void loop() {
    // evaluation function on them.
    MorseToken token(getMorse());
    time_t currentSeconds(now());
-   if (currentSeconds % getVoltagePollInterval() == 0) {
-      long vin(readMillivolts());
-      if (vin <= getLowVoltageThreshold()) {
-         setAlarmState('V');
-      } else if (getHighVoltageThreshold() <= vin) {
-         setAlarmState('^');
-      } else {
-         setAlarmState('-');
-      }
+
+   // Update the voltage alarm state.
+   // Note: Not much work here. Just reading and writing a few values
+   // in RAM.
+   long vin(readMillivolts());
+   if (vin <= getLowVoltageThreshold()) {
+      setAlarmState('v');
+   } else if (getHighVoltageThreshold() <= vin) {
+      setAlarmState('^');
+   } else {
+      setAlarmState('-');
    }
 //\todo If last update of uptime was longer than 15 minutes ago,
 //update it and reset the timer. What happens when the user sets the time?
@@ -615,8 +618,6 @@ void loop() {
       readEvalPrint();
    } else {
       toggleGreenLED();
-      if (getAlarmState() != '-') {
-         toggleRedLED();
-      }
+      redLED(getAlarmState() != '-');
    }
 }

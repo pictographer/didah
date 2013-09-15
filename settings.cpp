@@ -15,16 +15,16 @@ const int32_t getLowVoltageThresholdDefault() {
    return lowVoltageThresholdDefault;
 }
 
-const int32_t highVoltageThresholdDefault = 15000;
-
-const int32_t getHighVoltageThresholdDefault() {
-   return highVoltageThresholdDefault;
-}
-
 const int32_t maximumVoltage = 16000;
 
 const int32_t getMaximumVoltage() {
    return maximumVoltage;
+}
+
+const int32_t highVoltageThresholdDefault = maximumVoltage;
+
+const int32_t getHighVoltageThresholdDefault() {
+   return highVoltageThresholdDefault;
 }
 
 const char* getAnnouncementFormatDefault() {

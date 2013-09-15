@@ -95,7 +95,6 @@ void dispatchOnStack(MorseToken code) {
       txString("ET1");
    } else if (matchScore("C") == 255) {
       // Clear the stack.
-      txListSymbolStack(MorseToken());
       clearSymbolStack(MorseToken());
       Serial.println("Cleared stack.");
    } else if (matchScore("nA") == 255) {
@@ -114,8 +113,8 @@ void dispatchOnStack(MorseToken code) {
       // Set the high voltage threshold.
       popN(1);
       uint32_t n(stackDigitsToUnsigned());
-      const uint32_t hi(getMaximumVoltage() - getHighVoltageThresholdDefault());
-      if (n - getHighVoltageThresholdDefault() < hi) {
+      const uint32_t hi(getMaximumVoltage() - getLowVoltageThresholdDefault());
+      if (n - getLowVoltageThresholdDefault() < hi) {
          setHighVoltageThreshold(n);
          txString("K");
       } else {
@@ -160,6 +159,7 @@ void dispatchOnStack(MorseToken code) {
    } else if (matchScore("c^SS^") == 255) {
       // Erase the top of the stack.
       popN(2);
+      txListSymbolStack(MorseToken());
       txString("K");
    } else if (matchScore("nI") == 255) {
       // Set the nominal announcement repetition interval.
@@ -211,6 +211,7 @@ void dispatchOnStack(MorseToken code) {
       // Exchange the top two elements of the stack.
       popN(1);
       exchangeStack(MorseToken());
+      txListSymbolStack(MorseToken());
       txString("K");
    } else if (matchScore("?") == 255) {
       // Transmit the help text.
@@ -389,6 +390,51 @@ void printTouchThresholds() {
    printLabelValueUnits(pinLabel2, getPinThreshold(dahPin), " pF");
 }
 
+uint32_t getVoltagePollInterval() {
+   return 15UL;
+}
+
+/// Voltage state: Low, Nominal, or High.  Just for fun, the Hamming
+/// distance between these ASCII codes is selected to be greater than
+/// 1. Start in an alarm state. First reading should clear it.
+enum alarmStateEnum {
+   voltageLow = 'v',            // 111 0110
+   voltageNominal = '-',        // 010 1101
+   voltageHigh = '^'            // 101 1110
+} alarmState = voltageLow;
+
+void setAlarmState(char newState) {
+   alarmState = static_cast<alarmStateEnum>(newState);
+}
+
+char getAlarmState() {
+   return alarmState;
+}
+
+uint32_t getIntervalForState() {
+   uint32_t result;
+   if (alarmState != voltageNominal) {
+      result = getAlarmInterval();
+   } else {
+      result = getAnnouncementInterval();
+   }
+   return result;
+}
+
+const char* getFormatForState() {
+   switch (alarmState) {
+   case voltageLow:     return getAlarmLowFormat();
+   case voltageNominal: return getAnnouncementFormat();
+   case voltageHigh:    return getAlarmHighFormat();
+   default:
+      txError();
+      Serial.print("INTERNAL ERROR: Undefined state in getFormatForState().");
+      Serial.println((char) alarmState);
+      Serial.println((int) alarmState);
+      return 0;
+   }
+}
+
 /// Report settings and measurements over the serial port.
 void printLog() {
    Serial.print(
@@ -420,11 +466,17 @@ void printLog() {
    // Last uptime over 24hr
    //!\todo not yet.
    uint32_t u(getUptime());
-   // If this is still running 7656 years from now, send me a bug report
+   // If this is still running 7,656 years from now, send me a bug report
    // about the overflow.
    printLabelValueUnits("Uptime: ", 15 * u, " minutes");
-
-   printLabelValueUnits("Measured voltage: ", readMillivolts(), " mV");
+   char* voltageLabel;
+   switch (getAlarmState()) {
+   case voltageLow:     voltageLabel = " mV ALARM LOW!"; break;
+   case voltageNominal: voltageLabel = " mV (nominal)"; break;
+   case voltageHigh:    voltageLabel = " mV ALARM HIGH!"; break;
+   default:             voltageLabel = " (INTERNAL ERROR)";
+   }
+   printLabelValueUnits("Measured voltage: ", readMillivolts(), voltageLabel);
    printLabelValueUnits("Temperature: ", getInternalTemperatureC(), " C");
 
    Serial.println();
@@ -466,8 +518,8 @@ void printBanner() {
       "Commands\r\n"
       "--------\r\n"
       "? - Help\r\n"
-      "A - Set low-voltage alarm threshold in millivolts [2700-12000]\r\n"
-      "B - Set high-voltage alarm threshold in millivolts [2700-12000]\r\n"
+      "A - Set low-voltage alarm threshold in millivolts [2700-16000]\r\n"
+      "B - Set high-voltage alarm threshold in millivolts [2700-16000]\r\n"
       "D - Set dit duration in milliseconds [20-200]\r\n"
       "F - Set normal announcement format\r\n"
       "    A-Z     literal character\r\n"
@@ -665,7 +717,7 @@ void readEvalPrint() {
    } else if (cmd == 'A') {
       uint32_t v;
       if (readRange(v,
-                    "Enter low-voltage threshold in mV [2700-12000]: ",
+                    "Enter low-voltage threshold in mV [2700-16000]: ",
                     getLowVoltageThresholdDefault(),
                     getMaximumVoltage()))
       {
@@ -676,8 +728,8 @@ void readEvalPrint() {
    } else if (cmd == 'B') {
       uint32_t v;
       if (readRange(v,
-                    "Enter high-voltage threshold in mV [2700-12000]: ",
-                    getHighVoltageThresholdDefault(),
+                    "Enter high-voltage threshold in mV [2700-16000]: ",
+                    getLowVoltageThresholdDefault(),
                     getMaximumVoltage()))
       {
          printLabelValueUnits("\r\nLow-voltage threshold: ", v, " mV");
@@ -872,49 +924,6 @@ void txSettings(MorseToken) {
    txString(" .");
 }
 
-uint32_t getVoltagePollInterval() {
-   return 30UL;
-}
-
-/// Voltage state: Low, Nominal, or High.  Just for fun, the Hamming
-/// distance between these ASCII codes is selected to be greater than
-/// 1.
-enum alarmStateEnum {
-   voltageLow = 'v',            // 111 0110
-   voltageNominal = '-',        // 010 1101
-   voltageHigh = '^'            // 101 1110
-} alarmState;
-
-void setAlarmState(char newState) {
-   alarmState = static_cast<alarmStateEnum>(newState);
-}
-
-char getAlarmState() {
-   return alarmState;
-}
-
-uint32_t getIntervalForState() {
-   uint32_t result;
-   if (alarmState != voltageNominal) {
-      result = getAlarmInterval();
-   } else {
-      result = getAnnouncementInterval();
-   }
-   return result;
-}
-
-const char* getFormatForState() {
-   switch (alarmState) {
-   case voltageLow:     return getAlarmLowFormat();
-   case voltageNominal: return getAnnouncementFormat();
-   case voltageHigh:    return getAlarmHighFormat();
-   default:
-      txError();
-      Serial.println("INTERNAL ERROR: Undefined state in getFormatForState().");
-      return 0;
-   }
-}
-
 void txRaw(MorseToken) {
-   Serial.println(getRaw());
+   Serial.println(getRawVoltage());
 }

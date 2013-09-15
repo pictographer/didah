@@ -123,4 +123,4 @@ void toggleGreenLED();
 void toggleRedLED();
 
 ///\brief Get the raw analog input.
-uint32_t getRaw();
+uint32_t getRawVoltage();

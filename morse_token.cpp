@@ -44,42 +44,42 @@ const char* morsePunctuation = "!\"$&'()+,-./:;=?@_";
 
 /// Convert a Morse code into ASCII.
 char m2a(MorseToken code) { 
-  char result('x');
-  if (!code.valid()) {
-    ; // Return 'x' for error.
-  } else if (code.pause()) {
-    result = ' ';
-  } else {
-    int length(-2);
-    uint8_t t(MORSE_MSB | (code >> 1));
-    while (t) {
-      t <<= 1;
-      ++length;
-    }
-    uint8_t raw(code);
-    raw >>= (CHAR_BIT * sizeof MorseToken(0) - length);
-    raw |= 1 << length;
+   char result('x');
+   if (!code.valid()) {
+      ; // Return 'x' for error.
+   } else if (code.pause()) {
+      result = ' ';
+   } else {
+      int length(-2);
+      uint8_t t(MORSE_MSB | (code >> 1));
+      while (t) {
+         t <<= 1;
+         ++length;
+      }
+      uint8_t raw(code);
+      raw >>= (CHAR_BIT * sizeof MorseToken(0) - length);
+      raw |= 1 << length;
 
-    if (raw < sizeof morseTree) {
-      result = morseTree[raw];
-    } else {
       // Translate the subset of the prosigns/abbreviations that can
       // be represented by a single ASCII character, but are not
-      // present in morseTree above. These tokens have 7 symbols. Due
-      // to a limitation of the getMorse() function, we never get
-      // here. Dollary sign is recognized as a six symbol prefix of
-      // its seven symbol code.
+      // present in morseTree. These tokens have 7 symbols. Dollary
+      // sign is recognized as a six symbol prefix of its seven symbol
+      // code.
       //
       // Note: MORSE_ERROR does not fit in the 8-bit representation of
       // MorseToken.
       switch (raw) {
       case MORSE_DOLLAR: result = '$'; break;
+      case MORSE_SS:     result = '#'; break;
       default:
-	; // Nothing more to do since result is initialized to 'x'.
+         if (raw < sizeof morseTree) {
+            result = morseTree[raw];
+         } else {
+            ; // Nothing more to do since result is initialized to 'x'.
+         }
       }
-    }
-  }
-  return result;
+   }
+   return result;
 }
 
 /// Convert a single ASCII character into a Morse code token.

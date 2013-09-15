@@ -66,7 +66,7 @@ public:
          ;
       }
    }
-   uint32_t getRaw() {
+   uint32_t getRawVoltage() {
       return analogRead(analogInput);
    }
 
@@ -125,8 +125,6 @@ public:
       }
 
       if (0.0 < mid_count) {
-         Serial.print("Filtered: ");
-         Serial.println(mid_sum/mid_count);
          mv_hold = gain * mid_sum / mid_count + offset;
       } else {
          mv_hold = gain * sample_sum / sample_count + offset;
@@ -156,5 +154,5 @@ private:
    float binsum[K];
 
    /// The most recent voltage reading.
-   long mv_hold;
+   int32_t mv_hold;
 };

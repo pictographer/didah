@@ -79,6 +79,11 @@
 /// Understood. "Sho'nuff."
 #define MORSE_SN     MORSE_ACK
 
+/// ^SS^ Erase last character. This non-standard prosign is used
+/// because it is a prefix of MORSE_ERROR that fits into a single
+/// byte, including the sentinel.
+#define MORSE_SS     M8(000000)
+
 /// SOS. Not to be used unless there is iminent danger to life or
 /// destruction of property.
 #define MORSE_SOS    B16(00011100,01000000)
