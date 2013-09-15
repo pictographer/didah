@@ -1629,6 +1629,7 @@ naming: default grid - extended grid/package width</description>
 <text x="17.78" y="-7.62" size="1.778" layer="91">ditPin</text>
 <text x="17.78" y="2.54" size="1.778" layer="91">dahPin</text>
 <text x="20.32" y="63.5" size="1.778" layer="91">earphoneRightPin</text>
+<text x="101.6" y="-7.62" size="1.778" layer="91">http://pictographer.com/didah</text>
 </plain>
 <instances>
 <instance part="T1" gate="G$1" x="66.04" y="48.26"/>
