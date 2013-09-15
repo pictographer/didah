@@ -126,18 +126,24 @@ void saveSettings() {
    (void) EEPROM_writeAnything(4, settings);
 }
 
+bool timeIsSet(false);
+
+bool isTimeSet() {
+   return timeIsSet;
+}
+
+elapsedMicros sinceUptime;
+
 void updateUptime() {
-   //    EEPROM.write(0, ++uptime);
-   //  eeprom_write_dword((uint32_t *) 0, );
-   ++uptime;
-   if (1 < uptime) {
-      Serial.print("Updated time: ");
-      Serial.println(uptime);
+   if (15 * 60 * 1000000 <= sinceUptime) {
+      ++uptime;
       (void) EEPROM_writeAnything(0, uptime);
+      sinceUptime = 0;
    }
 }
 
-void setUptime(uint32_t u) {
+void setUptime(uint32_t u, bool initializing) {
+   timeIsSet = !initializing;
    uptime = u;
 }
 

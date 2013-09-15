@@ -51,11 +51,22 @@ uint32_t getTxHz();
 /// Set the transmission frequency (side tone).
 void setTxHz(uint32_t Hz);
 
-/// Write to flash so that next time we start, so we can report
-/// how long the previous run was.
+///\brief If 15 minutes have elapsed since last time, write to EEPROM.
+///
+/// Until the user sets the time, the uptime stays fixed at whatever value
+/// was stored in EEPROM. Once the user sets the time, the value starts
+/// updating to EEPROM every 15 minutes. So in the case of intermittent
+/// power, this will tell you the duration of the first interval. Which is
+/// not a bad thing to know.
 void updateUptime();
 
-void setUptime(uint32_t u);
+/// Has the user set the time?
+///\note The uptime is only updated when the time is set. This gives
+/// the user the opportunity to see the uptime before the first power
+/// failure if power is intermittent.
+bool isTimeSet();
+
+void setUptime(uint32_t u, bool initializing = false);
 
 uint32_t getUptime();
 

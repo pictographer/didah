@@ -191,6 +191,7 @@ void dispatchOnStack(MorseToken code) {
       uint32_t minute(n % 100);
       if (hour < 24 && minute < 60) {
          setTime(hour, minute, 0, 0, 0, 0);
+         setUptime(0);
          txString("K");
       } else {
          txError();
@@ -391,7 +392,7 @@ void printTouchThresholds() {
 }
 
 uint32_t getVoltagePollInterval() {
-   return 15UL;
+   return 30UL;
 }
 
 /// Voltage state: Low, Nominal, or High.  Just for fun, the Hamming
@@ -461,22 +462,30 @@ void printLog() {
    buffer[2] = '0' + m / 10;
    buffer[3] = '0' + m % 10;
 
-   printLabelValueUnits("Time: ", buffer);
+   printLabelValueUnits("Time: ", buffer,
+                        isTimeSet() ? "" : " (Unset. Use T to set.)");
 
-   // Last uptime over 24hr
-   //!\todo not yet.
+   // Uptime is incremented only when the time is set.
    uint32_t u(getUptime());
+
    // If this is still running 7,656 years from now, send me a bug report
    // about the overflow.
-   printLabelValueUnits("Uptime: ", 15 * u, " minutes");
-   char* voltageLabel;
+   printLabelValueUnits("Uptime: ", 15 * u,
+                        isTimeSet() ? " minutes" : " minutes (Previous run.)");
+   const char* vl[] = {
+      " (INTERNAL ERROR)",
+      " mV ALARM LOW!",
+      " mV (Nominal)",
+      " mV ALARM HIGH!"
+   };
+   size_t vi(0);
    switch (getAlarmState()) {
-   case voltageLow:     voltageLabel = " mV ALARM LOW!"; break;
-   case voltageNominal: voltageLabel = " mV (nominal)"; break;
-   case voltageHigh:    voltageLabel = " mV ALARM HIGH!"; break;
-   default:             voltageLabel = " (INTERNAL ERROR)";
+   case voltageLow:     vi = 1; break;
+   case voltageNominal: vi = 2; break;
+   case voltageHigh:    vi = 3; break;
+   default:             vi = 0;
    }
-   printLabelValueUnits("Measured voltage: ", readMillivolts(), voltageLabel);
+   printLabelValueUnits("Measured voltage: ", readMillivolts(), vl[vi]);
    printLabelValueUnits("Temperature: ", getInternalTemperatureC(), " C");
 
    Serial.println();
@@ -807,6 +816,7 @@ void readEvalPrint() {
       if (readRange(v, "Enter the 24-hour time [0000-2359]: ", 0, 2359)) {
          printLabelValueUnits("\r\nTime set to: ", v, "");
          setTime(v / 100, v % 100, 0, 0, 0, 0);
+         setUptime(0);
       } 
       Serial.print("> ");
    } else if (cmd == 'U') {

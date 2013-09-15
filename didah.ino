@@ -578,7 +578,7 @@ void setup() {
 
    uint32_t u;
    (void) EEPROM_readAnything(0, u);
-   setUptime(u);
+   setUptime(u, true);
 
    txString("K");
    Serial.setTimeout(3 * 1000);
@@ -595,8 +595,6 @@ void loop() {
    time_t currentSeconds(now());
 
    // Update the voltage alarm state.
-   // Note: Not much work here. Just reading and writing a few values
-   // in RAM.
    long vin(readMillivolts());
    if (vin <= getLowVoltageThreshold()) {
       setAlarmState('v');
@@ -605,8 +603,9 @@ void loop() {
    } else {
       setAlarmState('-');
    }
-//\todo If last update of uptime was longer than 15 minutes ago,
-//update it and reset the timer. What happens when the user sets the time?
+
+   updateUptime();
+
    if (token.valid()) {
       Serial.println(token.toChar());
 

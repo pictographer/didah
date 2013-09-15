@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <limits>
 #include "Time.h"
+#include "actions.h"
 
 /// Size of ring buffer for samples
 const static size_t N = 2000;
@@ -34,8 +35,14 @@ public:
 
    /// Return the latest voltage reading.
    long getValue() {
-      // Limit update rate to once per second.
-      if (now() != updateTime) {
+      // Limit update rate.
+      //\todo Need a better way of inhibiting the long update
+      // calculation when the user is providing Morse code
+      //input. Perhaps disable this unless idle for a few seconds.
+      time_t currentSeconds(now());
+      if (updateTime != currentSeconds &&
+          currentSeconds % getVoltagePollInterval() == 0)
+      {
          update();
       }
       return mv_hold;

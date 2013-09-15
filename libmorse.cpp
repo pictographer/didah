@@ -347,6 +347,7 @@ uint8_t matchScore(const char* pattern) {
    return score;
 }
 
+#if defined(PDA)
 void keyboardMode(MorseToken) {
    txString("KB");
    bool didSpace(true);
@@ -382,6 +383,7 @@ void keyboardMode(MorseToken) {
    }
    txString("?");
 }
+#endif
 
 /// Receive keying into buffer until \em AR prosign is received,
 ///timeout, or buffer full.
