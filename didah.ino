@@ -16,7 +16,7 @@
 ///    * a terminal block output. 
 /// The voltage monitor also has a green LED and a red LED.
 ///
-/// The touch sensor buttons function as an Iambic Keyer with one
+/// The touch sensor buttons function as an Iambic keyer with one
 /// button for dit, and the other for dah. The serial port provides a
 /// command line interface for viewing and modifying settings.
 ///
@@ -24,8 +24,10 @@
 /// are pushed on a stack. When the contents of the stack match a
 /// command, the command is executed. Like an HP calculator, a typical
 /// command sequence has arguments entered, followed by a command.
+///
+/// ![Didah Voltage Monitor schematic](../../schematic/didah_schematic.png)
 
-///\page License License Agreement
+///\page 1 License License Agreement
 /// Permission is hereby granted, free of charge, to any person obtaining
 /// a copy of this software and associated documentation files (the
 /// "Software"), to deal in the Software without restriction, including
@@ -45,7 +47,7 @@
 /// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 /// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-/** \page Instructions
+/** \page 2 Instructions
 # The Didah Voltage Monitor Appliance
 
 The Didah Voltage Monitor Appliance is intended to periodically report
@@ -68,18 +70,20 @@ adjusted.
 
 Audio output is generated three ways:
 - An internal speaker
-- A stereo headphone jack wired to the right channel only useful
+- A stereo headphone jack wired to the right channel only intended
 for demonstrations or noisy environments
 - The TX output terminal to be wired to the repeat transmitter
 
-A very abbreviated menu can be requested by entering an M (`--`).
+A very abbreviated menu can be requested by entering an M
+(`--`). Output can be aborted by holding a key for approximately 100
+milliseconds, but this action may be interpreted as a command.
 
 Commands are keyed in three ways:
 - Simple commands consist of a single Morse code token, such as M to
 request the menu of commands.
-- Commands that require arguments are entered after the arguments so
-that it is possible to review and correct the arguments before
-entering the command.
+- Commands that require arguments are entered by first entering the
+arguments and then entering the command. This makes it possible to
+review and correct the arguments before committing to the action.
 - Commands that require freeform text initiate a text copying mode
 terminated by the <span class="prosign">AR</span> prosign or by a
 timeout.
@@ -264,39 +268,38 @@ Device to periodically announce input voltage in Morse code.
 
 Measurements
 --------
-Time: 1736
-Uptime: 0 minutes
-Measured voltage: 4858 mV
-Temperature: 27.93 C
+Time: 1514
+Uptime: 315 minutes
+Measured voltage: 4939 mV (Nominal)
+Temperature: 25.87 C
 
 Settings
 --------
 Nominal announcement format: BAT %V MV ? %V MV
 Nominal announcement interval: 600 seconds
 Low-voltage alarm threshold: 2700 mV
-Low-voltage alarm announcement format: BAT %V MV ? %V MV
+Low-voltage alarm announcement format: LOW V %V ? %V TEMP %C C
 High-voltage alarm threshold: 16000 mV
-High-voltage alarm announcement format: BAT %V MV ? %V MV
-Alarm interval: 30 seconds
+High-voltage alarm announcement format: HIGH V %V ? %V TEMP %C C
+Alarm interval: 60 seconds
 Dit duration: 40 ms
-Output frequency: 750 Hz ~~~~
+Output frequency: 900 Hz
+~~~~
 
 ### Loading Persistent Settings
 
-The Load Settings command (O) restores settings saved previously.
-\b N.B. This command takes effect immediately without confirmation. Any unsaved
-changes are overwritten.
+The Load Settings command (O) restores settings saved previously.  \b
+N.B. This command takes effect immediately without confirmation. Any
+unsaved changes are overwritten.
 
-\e \b Question: 
-Should the device power on with factory settings, thus 
-providing a fail-safe mode for user configuration errors; or should the device
-restore the user's saved settings so that autonomous restarts only lose the
-time-of-day.
+In the event of a temporary power failure, settings revert to their
+default values; the settings saved by the user are not automatically
+restored.
 
 ### Setting the Output Frequency (Side Tone)
 
 The output frequency or side tone can be set using the (P) command. The
-frequency range is 55 to 1760 Hz. The default frequency is 750.
+frequency range is 55 to 1760 Hz. The default frequency is 750 Hz.
 
 ### Saving Settings
 
@@ -307,8 +310,11 @@ changes are overwritten.
 
 ### Setting the Time
 
-The Time command (T) prompts the user for the current 24-hour time [0000-2359].
-The time in seconds is used to determine the timing of the announcements.
+The Time command (T) prompts the user for the current 24-hour time
+[0000-2359].  The time in seconds is used to determine the timing of
+the announcements. \b N.B. The uptime stored in EEPROM does not get
+updated unless the time is set. This allows the user to see how long
+the appliance was up before a power failure.
 
 ## Morse Code Interaction
 
@@ -455,7 +461,8 @@ ALARM MSG FORMAT IS  BAT ?V MV ? ?V MV .~~~~
 
 ### Loading Persistent Settings
 
-The `---` (O) command loads settings from EEPROM.
+The `---` (O) command loads settings from EEPROM. Saved settings are not 
+automatically restored at power on.
 
 ### Setting the Output Frequency (Side Tone)
 
@@ -473,19 +480,34 @@ from mis-configuration.
 
 The `-` (T) command expects the 24-hour time to have been entered as
 four digits HHMM (leading zeros may be omitted) and sets the time
-accordingly. The seconds are implicitly set to zero.
+accordingly. The seconds are implicitly set to zero. Until the time 
+is set, the uptime stored in EEPROM is not updated.
 
 ### Stack Manipulation Commands
 
 The `-.-.` (C) command clears the stack.
 
-The `......` (<span class="prosign">SS</span>) command pops the stack.
+The `......` (<span class="prosign">SS</span>) command pops the stack
+(erases the last element).
 
 The `-..-` (X) command exchanges the top two entries of the stack.
 
 */
 
-/** \page Development
+/** \page 3 Didah Personal Digital Assistant
+![PDA Exterior](../../pics/pda_exterior.jpg)
+![PDA Interior](../../pics/pda_interior.jpg)
+![PDA Components](../../pics/pda_components.jpg)
+ */
+
+/** \page 4 Didah Voltage Monitor Appliance
+![Voltage Monitor in action](../../pics/voltage_monitor_action.jpg)
+![Voltage Monitor ports](../../pics/voltage_monitor_ports.jpg)
+![Voltage Monitor interior](../../pics/voltage_monitor_interior.jpg)
+![Voltage Monitor bottom](../../pics/voltage_monitor_bottom.jpg)
+ */
+
+/** \page 5 Software Development
 The code is hosted at https://github.com/pictographer/didah
 and compiled with Teensyduino, Version 1.16 under OS X 10.8.4.
 
@@ -521,6 +543,63 @@ Paul Stoffrengen provides support above and beyond anything I've seen
 elsewhere for his products. He inspires the community around him to
 collaborate and contribute.
 
+ */
+
+/** \page 6 Bill of Materials
+
+The voltage monitor was assembled from the following components:
+
+- 1 Teensy3
+http://www.pjrc.com/store/teensy3.html
+- 1 stereo minijack
+- 2 small rivets
+- 1 voltage regulator LP2950CZ-3.3 TO-92 
+http://www.onsemi.com/pub_link/Collateral/LP2950-D.PDF
+- 2 tantalum capacitors 10uF 6V
+- 1 1 MOhm 5% resistor
+- 1 120 KOhm 5% resistor
+- 2 Ceramic capacitors 222M 2.2nF
+- 1 small speaker (specifications not known)
+- 1 8x1 female header at 0.1" spacing
+- 1 red SMT LED
+- 1 green SMT LED
+- 5 330 Ohm SMT resistors
+- 2 2x1 terminal blocks
+- 1 thin blank fiberglass board
+- 1 small protoboard approximately 6 x 9 holes at 0.1"
+- Assorted wire including 22 gauge solid tinned wire for connecting to
+the female header, and higher gages for point-to-point wiring
+- Epoxy, super glue, silicon adhesive
+- 1 fine-tipped permanent marker
+
+The PDA was assembled from the following components:
+
+- 1 Teensy3
+http://www.pjrc.com/store/teensy3.html
+- 1 Altoids Smalls container
+- 1 stereo minijack
+- 1 thin blank fiberglass board
+- 1 10 KOhm trim potentiometer
+- 1 2-pin JST battery connector
+- 1 850 mAh lithium ion battery
+https://www.sparkfun.com/products/341
+- 2 chrome hole covers
+- heatshrink tubing for insulation between the hole covers and the case
+- 1 usb battery charger
+http://www.adafruit.com/products/1304?gclid=CMXfh_jLzrkCFYs1QgodM3AAyw
+- Assorted wire
+
+Tools:
+
+- Rotary tool
+- Razor knife
+- Small files
+- Soldering iron and related tools
+- Small vice
+
+Caveats: I'm a novice at electronics. It's very unlikely I picked the
+best components, the best way of assembling them, or the best circuit
+for this purpose. That said, everything described here works.
  */
 
 #include <cctype>

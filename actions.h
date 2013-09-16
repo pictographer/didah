@@ -120,7 +120,6 @@ void txTimeHHMM(MorseToken code);
 void txTimeVerbose(MorseToken code);
 
 /// Transmit the uptime.
-///\todo Figure out the protocol for updating the uptime.
 void txUptime(MorseToken);
 
 /// Transmit the internal temperature as an integer in Celsius.

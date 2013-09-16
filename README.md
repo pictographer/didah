@@ -61,9 +61,11 @@ Voltage monitor hardware configuration
 - Stereo minijack
 - Screw terminals for +12V, TX, and GND
 - Two touch buttons
-- 1 red LED
-- 1 green LED
-- 1 piezoelectric speaker
+- Red LED
+- Green LED
+- Piezoelectric speaker
+- Voltage regulator
+- Voltage divider
 
 See http://pictographer.com/didah for voltage monitor appliance documentation.
 See https://github.com/pictographer/didah for source code.

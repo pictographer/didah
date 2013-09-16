@@ -60,7 +60,6 @@
 // "QTB" - I do not agree; I shall repeat the first letter or first figure
 //         of each
 
-//!\todo
 //   txGreeting(MorseToken());
 //   } else if (matchScore("ddA") == 255) {
 //      txAlfaBravoCharlie(MorseToken());
