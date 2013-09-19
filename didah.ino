@@ -13,8 +13,11 @@
 /// sources of audio output:
 ///    * an internal speaker, 
 ///    * an earphone jack, and
-///    * a terminal block output. 
-/// The voltage monitor also has a green LED and a red LED.
+///    * a terminal block transmit output (TX). 
+/// The terminal block also has a transmit enable (TE) open collector
+/// output (push to talk).
+///
+/// The voltage monitor has a green LED and a red LED.
 ///
 /// The touch sensor buttons function as an Iambic keyer with one
 /// button for dit, and the other for dah. The serial port provides a
@@ -73,6 +76,8 @@ Audio output is generated three ways:
 - A stereo headphone jack wired to the right channel only intended
 for demonstrations or noisy environments
 - The TX output terminal to be wired to the repeat transmitter
+- The TE output is an open collector that activates 120 ms prior to
+transmission.
 
 A very abbreviated menu can be requested by entering an M
 (`--`). Output can be aborted by holding a key for approximately 100
@@ -261,7 +266,7 @@ A typical log message is as follows:
 ~~~~
 Didah Voltage Monitor
 =====================
-Version: 1.2
+Version: 1.3
 Documentation: http://pictographer.com/didah
 
 Device to periodically announce input voltage in Morse code.
@@ -569,6 +574,13 @@ http://www.onsemi.com/pub_link/Collateral/LP2950-D.PDF
 - 1 small protoboard approximately 6 x 9 holes at 0.1"
 - Assorted wire including 22 gauge solid tinned wire for connecting to
 the female header, and higher gages for point-to-point wiring
+- 1 plastic box LMB #P100
+width 1.51", length 2.26", height 0.785"
+http://www.lmbheeger.com/products.asp?catid=59
+Note: this project box has two screw pillers that prevent the T3 from
+being mounted length-wise. The T3 is just slightly longer than the box
+is wide on the interior, so it doesn't really fit the other way either
+without some very precise carving.
 - Epoxy, super glue, silicon adhesive
 - 1 fine-tipped permanent marker
 
@@ -691,7 +703,10 @@ void loop() {
       doAction(token);
 
    } else if (currentSeconds % getIntervalForState() == 0) {
+      digitalWrite(txEnablePin, HIGH);
+      delayMicroseconds(getRadioStartupDelay());
       txString(getFormatForState());
+      digitalWrite(txEnablePin, LOW);
    } else if (Serial.available()) {
       readEvalPrint();
    } else {

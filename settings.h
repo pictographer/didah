@@ -3,6 +3,9 @@
 ///\file settings.h
 #pragma once
 
+/// Enable the radio transmitter for 120 ms before transmitting.
+const uint32_t getRadioStartupDelay();
+
 /// The default low-voltage threshold is the minimum voltage.
 const int32_t getLowVoltageThresholdDefault();
 

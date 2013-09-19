@@ -6,6 +6,13 @@
 
 #define defaultAnnouncementFormat "BAT %V MV ? %V MV"
 
+/// Enable the radio transmitter for 120 ms before transmitting.
+const uint32_t radioStartupDelay = 120000;
+
+const uint32_t getRadioStartupDelay() {
+   return radioStartupDelay;
+}
+
 /// Duration of a dit in microseconds
 const uint32_t ditMicrosDefault = 40000;
 

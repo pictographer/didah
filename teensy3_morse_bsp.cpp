@@ -164,7 +164,7 @@ void setDuty(uint8_t dutyCycle) {
   duty = dutyCycle;
 }
 
-bool earphonePresent(false);
+bool earphonePresent = false;
 
 bool isEarphonePresent() {
    return earphonePresent;
@@ -294,6 +294,8 @@ void initPorts() {
 
    pinMode(ledPin, OUTPUT);
    pinMode(beepPin, OUTPUT);
+   pinMode(txPin, OUTPUT);
+   pinMode(txEnablePin, OUTPUT);
    pinMode(earphoneRightPin, OUTPUT);
    pinMode(piezoTxP, OUTPUT);
    pinMode(piezoTxN, OUTPUT);

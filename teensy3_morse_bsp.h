@@ -34,7 +34,7 @@ void beep(uint32_t frequency, uint32_t durationMicros);
 /// Teensy 3.0 LED
 const int ledPin = 13;          // Not used in the appliance.
 
-/// Pin attached to a small speaker.
+/// Pin attached to a small speaker in the PDA hardware.
 const int beepPin = 10;
 
 const int earphoneRightDetectPin = 3;
@@ -44,7 +44,12 @@ const int earphoneRightPin = 4;
 
 const int piezoTxP = 22;
 const int piezoTxN = 20;
+
+/// Sends audio to the radio.
 const int txPin = 23;
+
+/// Provides "push to talk" open collector enabling the radio.
+const int txEnablePin = 14;
 
 const int ledRedP = 27;
 const int ledRedN = 30;
