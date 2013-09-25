@@ -13,7 +13,7 @@
 
 #include "Time.h"
 
-const char* version("1.2");
+const char* version("1.3");
 
 const char* getVersion() {
   return version;
@@ -76,6 +76,8 @@ void push1RestoreAll(MorseToken code) {
 void dispatchOnStack(MorseToken code) {
    pushSymbolStack(code);
    if (matchScore("V") == 255) {
+      // Pop the 'V'.
+      popN(1);
       // Transmit the top of the stack.
       txSymbolStackTop(MorseToken());
    } else if (matchScore("QRS") == 255) {
@@ -90,9 +92,6 @@ void dispatchOnStack(MorseToken code) {
       // Ask the time.
       txTimeHHMM(MorseToken());
       popN(4);
-   } else if (matchScore("QSR") == 255) {
-      // Request identification.
-      txString("ET1");
    } else if (matchScore("C") == 255) {
       // Clear the stack.
       clearSymbolStack(MorseToken());
@@ -138,24 +137,36 @@ void dispatchOnStack(MorseToken code) {
       txString("TX MSG END WITH ^AR^  K");
       char buffer[128];
       rxString(buffer, sizeof buffer);
-      txString("K");
-      setAnnouncementFormat(buffer);
+      if (buffer[0]) {
+         txString("K");
+         setAnnouncementFormat(buffer);
+      } else {
+         txString("QTA");
+      }
    } else if (matchScore("G") == 255) {
       // Copy the alarm format.
       popN(1);
       txString("TX MSG END WITH ^AR^  K");
       char buffer[128];
       rxString(buffer, sizeof buffer);
-      txString("K");
-      setAlarmLowFormat(buffer);
+      if (buffer[0]) {
+         txString("K");
+         setAlarmLowFormat(buffer);
+      } else {
+         txString("QTA");
+      }
    } else if (matchScore("H") == 255) {
       // Copy the alarm format.
       popN(1);
       txString("TX MSG END WITH ^AR^  K");
       char buffer[128];
       rxString(buffer, sizeof buffer);
-      txString("K");
-      setAlarmHighFormat(buffer);
+      if (buffer[0]) {
+         txString("K");
+         setAlarmHighFormat(buffer);
+      } else {
+         txString("QTA");
+      }
    } else if (matchScore("c^SS^") == 255) {
       // Erase the top of the stack.
       popN(2);
@@ -197,6 +208,11 @@ void dispatchOnStack(MorseToken code) {
          txError();
          txString("RANGE");
       }
+   } else if (matchScore("O") == 255) {
+      initSettings();
+      Serial.println("Settings restored.\r\n");
+      printLog();
+      txString("K");
    } else if (matchScore("nP") == 255) {
       // Set the pitch of the side tone.
       popN(1);
@@ -622,7 +638,9 @@ void readEdit(char* buffer, bool& isNotTooLate,
       }
       isNotTooLate = elapsed < timeout;
    } while (p != end && isNotTooLate);
-   *p = 0;
+   if (isNotTooLate || p != buffer) {
+      *p = 0;
+   }
 }
 
 bool readLine(char* buffer, size_t n, uint32_t timeout) {
@@ -645,7 +663,7 @@ bool readNumber(uint32_t& v, uint32_t timeout) {
 
   readEdit(buffer, isNotTooLate, e, isdigit, timeout);
 
-  v = strtoul(buffer, 0, 0);
+  v = strtoul(buffer, 0, 10);
   return isNotTooLate;
 }
 
@@ -741,7 +759,7 @@ void readEvalPrint() {
                     getLowVoltageThresholdDefault(),
                     getMaximumVoltage()))
       {
-         printLabelValueUnits("\r\nLow-voltage threshold: ", v, " mV");
+         printLabelValueUnits("\r\nHigh-voltage threshold: ", v, " mV");
          setHighVoltageThreshold(v);
       } 
       Serial.print("> ");

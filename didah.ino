@@ -68,7 +68,7 @@ voltage divider and voltage regulator designed support voltages up to
 
 Two touch sensor rivets on the case labeled \c (.) and \c (-) operate
 as an Iambic keyer. Input is entered in International Morse Code. The
-dit duration is initially 30 milliseconds, although this can be
+dit duration is initially 100 milliseconds, although this can be
 adjusted.
 
 Audio output is generated three ways:
@@ -645,6 +645,7 @@ void setup() {
    assignAction(a2m('K'), dispatchOnStack);
    assignAction(a2m('L'), txSettings);
    assignAction(a2m('M'), txMenu);
+   assignAction(a2m('O'), dispatchOnStack);
    assignAction(a2m('P'), dispatchOnStack);
    assignAction(a2m('Q'), dispatchOnStack);
    assignAction(a2m('R'), dispatchOnStack);

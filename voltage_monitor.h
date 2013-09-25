@@ -14,7 +14,7 @@ const static size_t N = 2000;
 /// Number of histogram bins
 const static size_t K = 100;
 
-/// Calibration data:
+/// Old Calibration data:
 ///    39930 19600
 ///    33957 16700
 ///    10190 5330
@@ -23,8 +23,16 @@ const static size_t K = 100;
 ///
 /// Regression equation:
 ///    0.4874166181 * x + 0.1581747627
-const static float gain = 0.4874;
-const static float offset = 0.1582;
+///
+/// Calibration data:
+///    22804 11500
+///    25251 12600
+///    28800 14400
+///
+/// Regression equation:
+///    0.48534 * x + 399.65
+const static float gain = 0.48534;
+const static float offset = 399.65;
 
 ///\class VoltageMonitor
 ///\brief Computes the median of 2000 samples with the work spread over

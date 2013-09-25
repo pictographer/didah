@@ -219,7 +219,8 @@ void readEdit(char* buffer, bool& isNotTooLate,
 /// null termination. In all cases the buffer is null-terminated.
 bool readLine(char* buffer, size_t n, uint32_t timeout=60000000);
 
-/// Read a non-negative integer from the Serial port.
+/// Read a non-negative integer from the Serial port. Return true
+/// if at least one digit was read before the timeout.
 bool readNumber(uint32_t& v, uint32_t timeout=60000000);
 
 //@}

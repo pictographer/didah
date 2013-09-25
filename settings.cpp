@@ -14,7 +14,7 @@ const uint32_t getRadioStartupDelay() {
 }
 
 /// Duration of a dit in microseconds
-const uint32_t ditMicrosDefault = 40000;
+const uint32_t ditMicrosDefault = 100000;
 
 const int32_t lowVoltageThresholdDefault = 2700;
 
