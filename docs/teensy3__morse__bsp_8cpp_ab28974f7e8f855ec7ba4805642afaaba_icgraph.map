@@ -1,0 +1,6 @@
+<map id="activityLight" name="activityLight">
+<area shape="rect" id="node2" href="$teensy3__morse__bsp_8h.html#ae162e602c712201806b935cb21ce8284" title="Turn the green LED on (1) or off (0). " alt="" coords="159,5,239,32"/>
+<area shape="rect" id="node4" href="$teensy3__morse__bsp_8h.html#a1602f82bf26915dd2e462be2a99fc776" title="Change the state of the green LED. " alt="" coords="300,56,419,83"/>
+<area shape="rect" id="node5" href="$teensy3__morse__bsp_8h.html#a96d5d27859362b51477fd56bcc67fe7c" title="Change the state of the red LED. " alt="" coords="145,107,252,133"/>
+<area shape="rect" id="node3" href="$teensy3__morse__bsp_8h.html#a15bba6162d5a787569acccbf85402f71" title="Initialize the input and output ports used by appliance or PDA hardware. " alt="" coords="324,5,395,32"/>
+</map>

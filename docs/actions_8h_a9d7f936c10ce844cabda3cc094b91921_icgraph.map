@@ -1,0 +1,5 @@
+<map id="getAlarmState" name="getAlarmState">
+<area shape="rect" id="node2" href="$actions_8h.html#a7cb54685ddb3c45facf6daadcc4a5f4b" title="Report the current settings and sensor values via the serial port. " alt="" coords="159,31,227,57"/>
+<area shape="rect" id="node3" href="$actions_8h.html#a1fec7da4166b9612d2deec3d0262d60f" title="dispatchOnStack" alt="" coords="275,5,397,32"/>
+<area shape="rect" id="node4" href="$actions_8h.html#a9c9466bf6676f35ff08e8dc33518e483" title="Respond to commands from the serial port. " alt="" coords="286,56,386,83"/>
+</map>

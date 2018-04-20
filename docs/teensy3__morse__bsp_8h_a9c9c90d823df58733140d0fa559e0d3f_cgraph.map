@@ -1,0 +1,4 @@
+<map id="calibrateTouch" name="calibrateTouch">
+<area shape="rect" id="node2" href="$teensy3__morse__bsp_8cpp.html#a82911eac3bf13d6f36d10102a4c4d3c4" title="Generate a tone on the audio output pins. " alt="" coords="160,5,241,32"/>
+<area shape="rect" id="node3" href="$teensy3__morse__bsp_8cpp.html#ac70998cee1bf97f00aec4a1b4e5a4f60" title="isEarphonePresent" alt="" coords="289,5,421,32"/>
+</map>

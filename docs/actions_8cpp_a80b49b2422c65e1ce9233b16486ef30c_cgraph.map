@@ -1,0 +1,5 @@
+<map id="printTouchThresholds" name="printTouchThresholds">
+<area shape="rect" id="node2" href="$libmorse_8h.html#a485b054263abcc51f9987c8a9c824602" title="printLabelValueUnits" alt="" coords="200,5,343,32"/>
+<area shape="rect" id="node3" href="$teensy3__morse__bsp_8cpp.html#ab4a4cda59f6e32a1412e012d69bec6a9" title="Return the pin capacitance in pF. " alt="" coords="213,56,329,83"/>
+<area shape="rect" id="node4" href="$teensy3__morse__bsp_8cpp.html#af6899cd9b83df54106b259ab81ea5cb2" title="touchMargin" alt="" coords="391,56,484,83"/>
+</map>

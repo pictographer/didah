@@ -1,0 +1,4 @@
+<map id="getRawVoltage" name="getRawVoltage">
+<area shape="rect" id="node2" href="$actions_8h.html#a4dda4125d9a3fc8abbc9b2803e4497c4" title="Get the raw analog input. " alt="" coords="164,5,224,32"/>
+<area shape="rect" id="node3" href="$actions_8h.html#a9c9466bf6676f35ff08e8dc33518e483" title="Respond to commands from the serial port. " alt="" coords="272,5,372,32"/>
+</map>

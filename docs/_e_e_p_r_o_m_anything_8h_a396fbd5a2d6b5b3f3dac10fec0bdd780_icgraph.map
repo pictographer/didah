@@ -1,0 +1,5 @@
+<map id="EEPROM_writeAnything" name="EEPROM_writeAnything">
+<area shape="rect" id="node2" href="$settings_8h.html#ac7142ee2baa705d2dd402769467d5a4e" title="Save the settings to non&#45;volatile memory. " alt="" coords="222,5,321,32"/>
+<area shape="rect" id="node4" href="$settings_8h.html#a3525b6c2e13713de68dd08dbb1a6f933" title="If 15 minutes have elapsed since last time, write to EEPROM. " alt="" coords="220,56,323,83"/>
+<area shape="rect" id="node3" href="$actions_8h.html#a9c9466bf6676f35ff08e8dc33518e483" title="Respond to commands from the serial port. " alt="" coords="371,31,471,57"/>
+</map>

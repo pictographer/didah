@@ -1,0 +1,4 @@
+<map id="popN" name="popN">
+<area shape="rect" id="node2" href="$class_stack.html#afc30a7ee287e14f08802c2d43613f2b4" title="Return the number of elements currently in the stack. " alt="" coords="107,5,195,32"/>
+<area shape="rect" id="node3" href="$class_stack.html#a8b4caa181ab4cc209c270338e919cf8b" title="Discard the top element, if the stack is not empty. " alt="" coords="108,56,193,83"/>
+</map>

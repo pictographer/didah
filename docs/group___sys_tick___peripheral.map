@@ -1,0 +1,5 @@
+<map id="SysTick" name="SysTick">
+<area shape="rect" id="node3" href="$group___sys_tick___register___accessor___macros.html" title="SysTick &#45; Register\l accessor macros" alt="" coords="345,5,475,47"/>
+<area shape="rect" id="node4" href="$group___sys_tick___register___masks.html" title="SysTick Register Masks" alt="" coords="327,71,493,98"/>
+<area shape="rect" id="node2" href="$group___peripheral__defines.html" title="Peripheral type defines" alt="" coords="5,42,160,69"/>
+</map>

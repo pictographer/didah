@@ -1,0 +1,27 @@
+var group___a_x_b_s___register___accessor___macros =
+[
+    [ "AXBS_CRS", "group___a_x_b_s___register___accessor___macros.html#ga04b2b29af2fc083f1d4b676c1cfebb24", null ],
+    [ "AXBS_CRS0", "group___a_x_b_s___register___accessor___macros.html#ga343bbf238fb15bc5de1481fec8042f4f", null ],
+    [ "AXBS_CRS1", "group___a_x_b_s___register___accessor___macros.html#gad0361038aca1afb8d2d407dcdec63f25", null ],
+    [ "AXBS_CRS2", "group___a_x_b_s___register___accessor___macros.html#ga17bf3ea775d0e2ae04c0e04bbd94da6c", null ],
+    [ "AXBS_CRS3", "group___a_x_b_s___register___accessor___macros.html#gaf4e752b185c88a4aaae2c13cb66d7252", null ],
+    [ "AXBS_CRS4", "group___a_x_b_s___register___accessor___macros.html#ga7a1f3bbd11248d965c5118709ddb5516", null ],
+    [ "AXBS_CRS_REG", "group___a_x_b_s___register___accessor___macros.html#gaa30f55525640429154d1652859524832", null ],
+    [ "AXBS_MGPCR0", "group___a_x_b_s___register___accessor___macros.html#ga55c0ba761150814fcd2a4a04089b1ed5", null ],
+    [ "AXBS_MGPCR0_REG", "group___a_x_b_s___register___accessor___macros.html#gac1b692121aae3307439d8a9c9bcfcf0a", null ],
+    [ "AXBS_MGPCR1", "group___a_x_b_s___register___accessor___macros.html#ga97c9483a4ad8f53f0c2b52e2e10fcd50", null ],
+    [ "AXBS_MGPCR1_REG", "group___a_x_b_s___register___accessor___macros.html#ga76506c532d79ae456a8c7bb93c2aaab5", null ],
+    [ "AXBS_MGPCR2", "group___a_x_b_s___register___accessor___macros.html#ga7a659911cdb22e0a1f630eb30502090c", null ],
+    [ "AXBS_MGPCR2_REG", "group___a_x_b_s___register___accessor___macros.html#ga6aed791b752c5b45919a592387ac8886", null ],
+    [ "AXBS_MGPCR4", "group___a_x_b_s___register___accessor___macros.html#gae3f8cd76e1859270c547ecbd1c30f079", null ],
+    [ "AXBS_MGPCR4_REG", "group___a_x_b_s___register___accessor___macros.html#gac6fb09bd099ed7f65c2c40752e9c5583", null ],
+    [ "AXBS_MGPCR5", "group___a_x_b_s___register___accessor___macros.html#gac7bb0cca5fc0f31eb9842e7fd07cb1e4", null ],
+    [ "AXBS_MGPCR5_REG", "group___a_x_b_s___register___accessor___macros.html#ga3204b23f9ef7113aace0c9f3f88e303b", null ],
+    [ "AXBS_PRS", "group___a_x_b_s___register___accessor___macros.html#ga98cf1a1f313aa06fb4b74e337a1982ce", null ],
+    [ "AXBS_PRS0", "group___a_x_b_s___register___accessor___macros.html#ga51c41c430b9e769dba2e453a898544ec", null ],
+    [ "AXBS_PRS1", "group___a_x_b_s___register___accessor___macros.html#ga5db2867317f2f0262d0635d9ab20d9be", null ],
+    [ "AXBS_PRS2", "group___a_x_b_s___register___accessor___macros.html#gab63cdae0c060943d74206236a1c1bdb9", null ],
+    [ "AXBS_PRS3", "group___a_x_b_s___register___accessor___macros.html#ga0ee4fbd111f2bc66090137e19a5144c2", null ],
+    [ "AXBS_PRS4", "group___a_x_b_s___register___accessor___macros.html#gae836c4bff452bdbdb82178d026935fb9", null ],
+    [ "AXBS_PRS_REG", "group___a_x_b_s___register___accessor___macros.html#ga88215ff6f327312c2306aaf23da1ed6d", null ]
+];

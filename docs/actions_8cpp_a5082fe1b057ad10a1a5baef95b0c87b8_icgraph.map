@@ -1,0 +1,7 @@
+<map id="readEdit" name="readEdit">
+<area shape="rect" id="node2" href="$actions_8h.html#a2ad756bcfcbe405b56b23e3b640b49d2" title="Read a string from the serial terminal up to a return or the end of the buffer. Return false if timeo..." alt="" coords="135,5,206,32"/>
+<area shape="rect" id="node5" href="$actions_8h.html#ac48ed1c3e6c7cccae93b47d7e6f2f888" title="readNumber" alt="" coords="124,56,217,83"/>
+<area shape="rect" id="node3" href="$settings_8h.html#a76fe6d50deae647113180dc5f9f844c6" title="Get a message format from the serial console. " alt="" coords="265,5,407,32"/>
+<area shape="rect" id="node4" href="$actions_8h.html#a9c9466bf6676f35ff08e8dc33518e483" title="Respond to commands from the serial port. " alt="" coords="455,31,555,57"/>
+<area shape="rect" id="node6" href="$actions_8h.html#a578278ac08b3288454ac5a86fbb15d76" title="Prompt for a value from the serial port. " alt="" coords="293,56,379,83"/>
+</map>

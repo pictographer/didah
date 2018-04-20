@@ -1,0 +1,27 @@
+var group___w_d_o_g___register___accessor___macros =
+[
+    [ "WDOG_PRESC", "group___w_d_o_g___register___accessor___macros.html#gac927e6dd73774cbbb57d36bbe3351925", null ],
+    [ "WDOG_PRESC_REG", "group___w_d_o_g___register___accessor___macros.html#ga112fe0b00030bebececaf5ee470394cc", null ],
+    [ "WDOG_REFRESH", "group___w_d_o_g___register___accessor___macros.html#ga0b4ee41e96710a1c020f3eb2af43f857", null ],
+    [ "WDOG_REFRESH_REG", "group___w_d_o_g___register___accessor___macros.html#ga3ea0555f4cb61c5280404f2a46b2895d", null ],
+    [ "WDOG_RSTCNT", "group___w_d_o_g___register___accessor___macros.html#gae3600ebbeca42091142fe17f7f2eab6a", null ],
+    [ "WDOG_RSTCNT_REG", "group___w_d_o_g___register___accessor___macros.html#ga7c32f9835d954eee361e1477d2d4a07c", null ],
+    [ "WDOG_STCTRLH", "group___w_d_o_g___register___accessor___macros.html#ga682e2c5e771ae99e572597d5a9ee8620", null ],
+    [ "WDOG_STCTRLH_REG", "group___w_d_o_g___register___accessor___macros.html#ga1f87578559ffa9508f29e7a8b5f852f0", null ],
+    [ "WDOG_STCTRLL", "group___w_d_o_g___register___accessor___macros.html#gabe98a0873c234c1297e69e1cfb7ebb9e", null ],
+    [ "WDOG_STCTRLL_REG", "group___w_d_o_g___register___accessor___macros.html#ga9390a99165a8ed47a8d47310dd1b7a44", null ],
+    [ "WDOG_TMROUTH", "group___w_d_o_g___register___accessor___macros.html#gab4868d043e2cfec8f98cfb8782bd60e6", null ],
+    [ "WDOG_TMROUTH_REG", "group___w_d_o_g___register___accessor___macros.html#gad347a017205966537d23260e4ad0a7cc", null ],
+    [ "WDOG_TMROUTL", "group___w_d_o_g___register___accessor___macros.html#ga37ac1b7e81db9a5b20a502c970d712c2", null ],
+    [ "WDOG_TMROUTL_REG", "group___w_d_o_g___register___accessor___macros.html#ga290f160f7b9f64e2ecec8e752f7ba6a3", null ],
+    [ "WDOG_TOVALH", "group___w_d_o_g___register___accessor___macros.html#ga64a1039724acdbacf39352885a760505", null ],
+    [ "WDOG_TOVALH_REG", "group___w_d_o_g___register___accessor___macros.html#ga3495178bd50541f858403de84b2132df", null ],
+    [ "WDOG_TOVALL", "group___w_d_o_g___register___accessor___macros.html#ga1ed33751ec9e2b0d17178c1acaf264b7", null ],
+    [ "WDOG_TOVALL_REG", "group___w_d_o_g___register___accessor___macros.html#ga5867725d00829838e63aa304cd8e571e", null ],
+    [ "WDOG_UNLOCK", "group___w_d_o_g___register___accessor___macros.html#gaae3cce316f6ec53a8962eae6e10652d4", null ],
+    [ "WDOG_UNLOCK_REG", "group___w_d_o_g___register___accessor___macros.html#ga7f3bae362f30d21d2036bc38e216b40a", null ],
+    [ "WDOG_WINH", "group___w_d_o_g___register___accessor___macros.html#gafba071ed7ec77bbc7c4a8523902d73b1", null ],
+    [ "WDOG_WINH_REG", "group___w_d_o_g___register___accessor___macros.html#ga044a2078fb0f549de3bd68c329f4defb", null ],
+    [ "WDOG_WINL", "group___w_d_o_g___register___accessor___macros.html#gafcfff3b1d3ea71447881afd8b633b29c", null ],
+    [ "WDOG_WINL_REG", "group___w_d_o_g___register___accessor___macros.html#ga6de8f153524881bc674e0c1bf87529f3", null ]
+];

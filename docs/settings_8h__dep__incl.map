@@ -1,0 +1,6 @@
+<map id="settings.h" name="settings.h">
+<area shape="rect" id="node2" href="$actions_8cpp.html" title="Implementation of application&#45;specific actions. " alt="" coords="5,80,95,107"/>
+<area shape="rect" id="node3" href="$libmorse_8cpp.html" title="Implementation of Morse code operations. " alt="" coords="119,80,215,107"/>
+<area shape="rect" id="node4" href="$morse__digit_8cpp.html" title="Implementation of decimal digit to Morse code conversion. " alt="" coords="239,80,354,107"/>
+<area shape="rect" id="node5" href="$pda_8cpp.html" title="Implementation of Personal Digital Assistant functions. " alt="" coords="379,80,447,107"/>
+</map>

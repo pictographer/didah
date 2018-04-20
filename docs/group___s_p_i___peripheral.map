@@ -1,0 +1,5 @@
+<map id="SPI" name="SPI">
+<area shape="rect" id="node1" href="$group___s_p_i___register___accessor___macros.html" title="SPI &#45; Register accessor\l macros" alt="" coords="300,5,463,47"/>
+<area shape="rect" id="node2" href="$group___peripheral__defines.html" title="Peripheral type defines" alt="" coords="5,42,160,69"/>
+<area shape="rect" id="node3" href="$group___s_p_i___register___masks.html" title="SPI Register Masks" alt="" coords="311,71,451,98"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="readMillivolts" name="readMillivolts">
+<area shape="rect" id="node2" href="$class_voltage_monitor.html#a70902b84f9864c95d5553a0644a64f4f" title="Return the latest voltage reading. " alt="" coords="152,31,320,57"/>
+<area shape="rect" id="node3" href="$actions_8cpp.html#a2b8c3769e2aa32a2da9e2f3f85ac73dd" title="A sample ADC reading is taken each time through the main loop, and written to a ring buffer..." alt="" coords="371,5,521,32"/>
+<area shape="rect" id="node4" href="$class_voltage_monitor.html#a75871331808c34b40d04059ee2af0f27" title="Filter and scale raw ADC values to millivolts. " alt="" coords="368,56,524,83"/>
+</map>

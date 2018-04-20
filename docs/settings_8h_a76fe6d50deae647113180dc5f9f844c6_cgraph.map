@@ -1,0 +1,7 @@
+<map id="readMessageFormat" name="readMessageFormat">
+<area shape="rect" id="node2" href="$actions_8cpp.html#a61292cbf2195723405664063ddd74f20" title="Read a string from the serial terminal up to a return or the end of the buffer. Return false if timeo..." alt="" coords="265,5,335,32"/>
+<area shape="rect" id="node4" href="$actions_8cpp.html#a59fabf5710b8a28d43d988e855aa8eec" title="Perform in&#45;place conversion of the given buffer to upper case. " alt="" coords="251,56,349,83"/>
+<area shape="rect" id="node5" href="$actions_8cpp.html#af32495a4b35631dfa2faacf5c46e78a4" title="Check for unsupported punctuation and some invalid escape sequences. " alt="" coords="231,107,369,133"/>
+<area shape="rect" id="node6" href="$settings_8cpp.html#a4d7d051b0e06002f98b24455142d1f2e" title="getAnnouncementFormatDefault" alt="" coords="195,157,405,184"/>
+<area shape="rect" id="node3" href="$actions_8cpp.html#a5082fe1b057ad10a1a5baef95b0c87b8" title="Read a line from the serial port with support for rubbing out preceding characters. " alt="" coords="453,5,524,32"/>
+</map>

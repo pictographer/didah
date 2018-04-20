@@ -1,0 +1,49 @@
+<map id="txUnsigned" name="txUnsigned">
+<area shape="rect" id="node2" href="$actions_8h.html#ad02149679fa3cc6a4957d1a318408ffd" title="Transmit the uptime. " alt="" coords="141,1981,216,2008"/>
+<area shape="rect" id="node3" href="$libmorse_8h.html#a0ee2308940264ea9ac8e50afc1a4d285" title="txString" alt="" coords="264,740,331,767"/>
+<area shape="rect" id="node15" href="$actions_8h.html#a395ec10538b43bf0543c55595fe2df68" title="Transmit the current settings and sensor values. " alt="" coords="1144,2057,1225,2084"/>
+<area shape="rect" id="node34" href="$actions_8h.html#a7250e2a10954515bd25b75aa6b929dd0" title="Transmit the internal temperature as an integer in Celsius. " alt="" coords="1105,2260,1264,2287"/>
+<area shape="rect" id="node35" href="$actions_8h.html#aa8631f5b2d7b56da3dcb2f14b372a263" title="Transmit the internal temperature in integer in Fahrenheit. " alt="" coords="1106,2184,1263,2211"/>
+<area shape="rect" id="node36" href="$pda_8h.html#a35d0b57846aa0f585f9409957bc1957e" title="playNote" alt="" coords="1147,1956,1222,1983"/>
+<area shape="rect" id="node37" href="$pda_8h.html#aba3c77bbaeda68253d8795c44bb0b4ff" title="sumStack" alt="" coords="1144,1880,1225,1907"/>
+<area shape="rect" id="node4" href="$actions_8h.html#a1fec7da4166b9612d2deec3d0262d60f" title="dispatchOnStack" alt="" coords="1312,728,1435,755"/>
+<area shape="rect" id="node5" href="$pda_8h.html#aaabb3ac0c23f35a499bc17efe829f326" title="Transmit the 24&#45;hr time. " alt="" coords="384,715,488,741"/>
+<area shape="rect" id="node6" href="$actions_8h.html#af2f54a5ad42f85a2394de363b9ea12c1" title="txTimeVerbose" alt="" coords="381,5,491,32"/>
+<area shape="rect" id="node7" href="$actions_8h.html#a68d867ac633d6976afcbf1180e2123a5" title="Increase the unit time by 5000 microseconds. " alt="" coords="565,1779,648,1805"/>
+<area shape="rect" id="node8" href="$actions_8h.html#a40eae45b6e35fc4fdff30b28d2aca4fe" title="Decrease the unit time by 5000 microseconds. " alt="" coords="569,309,644,336"/>
+<area shape="rect" id="node9" href="$actions_8h.html#af5ab0754fc086c5192a892f045ab3a29" title="Transmit the AR prosign three times. " alt="" coords="410,56,462,83"/>
+<area shape="rect" id="node10" href="$actions_8h.html#a9ad095efd293f9cbc1a7ab301e03954e" title="Transmit II &lt;code&gt; AR. " alt="" coords="768,715,831,741"/>
+<area shape="rect" id="node11" href="$actions_8h.html#a6f7cb6d14d9e723cdaf5e51f1265906f" title="Transmit CQ CQ CQ DE ET1 ET1 K. " alt="" coords="395,107,477,133"/>
+<area shape="rect" id="node12" href="$actions_8h.html#aa39383c189ec39df4fe9337c5edc98c2" title="getPressure" alt="" coords="390,157,482,184"/>
+<area shape="rect" id="node13" href="$actions_8h.html#a929cef8463968746bf3e3198d96e15a1" title="Transmit help text. " alt="" coords="577,1829,637,1856"/>
+<area shape="rect" id="node14" href="$actions_8h.html#ac1653963283d3235280327ec65629ef7" title="Transmit a tersely&#45;worded command list. " alt="" coords="403,208,469,235"/>
+<area shape="rect" id="node16" href="$libmorse_8h.html#ab94e088615119d1faae7df22ce50aedf" title="Transmit a Morse code prosign indicating an error. 8 dits. " alt="" coords="405,1019,467,1045"/>
+<area shape="rect" id="node20" href="$pda_8h.html#a1dc125d402fe76077cb4d166ac0fbf7a" title="askNext" alt="" coords="1149,1221,1220,1248"/>
+<area shape="rect" id="node22" href="$pda_8h.html#abf2e0c8c523ed9ddee8a9194c9800b99" title="askSum" alt="" coords="1149,1525,1220,1552"/>
+<area shape="rect" id="node25" href="$libmorse_8cpp.html#afa60f07ebee7c34ef41c3dfb64222bb6" title="Score the given pattern against the state of the symbol stack. " alt="" coords="1139,461,1231,488"/>
+<area shape="rect" id="node26" href="$libmorse_8h.html#a25fad1f4d176afaa89839cc897891e78" title="rxString" alt="" coords="1151,512,1218,539"/>
+<area shape="rect" id="node29" href="$pda_8h.html#a959876507019ccc24303937cc277bb31" title="gradeNext" alt="" coords="951,1120,1033,1147"/>
+<area shape="rect" id="node41" href="$pda_8h.html#ac1f9ea31ffc81530ac4a07fa2469f13c" title="txAlfaBravoCharlie" alt="" coords="927,1171,1057,1197"/>
+<area shape="rect" id="node42" href="$pda_8cpp.html#a47afc6664036a43243457f6f66cb90f8" title="txAlphaNNN" alt="" coords="944,1576,1040,1603"/>
+<area shape="rect" id="node44" href="$pda_8h.html#a3c36576745952735f04eaa82b933e6fa" title="Play one of 10 sound effects based on the digit on the stack. " alt="" coords="740,1323,859,1349"/>
+<area shape="rect" id="node45" href="$pda_8h.html#a59acff867d89a88cb2142895d95b12e8" title="gradeSum" alt="" coords="759,1424,840,1451"/>
+<area shape="rect" id="node48" href="$pda_8h.html#a5875d17f5eb7a7cb45b34d772ea743d8" title="txAlphabetSong" alt="" coords="379,259,493,285"/>
+<area shape="rect" id="node17" href="$actions_8h.html#af4c12896b2807b2ac63725a650efea6b" title="restoreActions" alt="" coords="746,1221,853,1248"/>
+<area shape="rect" id="node23" href="$actions_8h.html#ae3b76158e4805ae5426e51c42f6f265a" title="Get the alarm format for the current alarm state. " alt="" coords="541,968,672,995"/>
+<area shape="rect" id="node24" href="$libmorse_8h.html#ac4a29ea9b7bb06c2d9e8c4d74f486b91" title="Accumulate a Morse token. " alt="" coords="954,512,1030,539"/>
+<area shape="rect" id="node27" href="$libmorse_8h.html#a9fdfce728595d72b78dc7c834ab99a40" title="Transmit a literal Morse code value. " alt="" coords="573,613,641,640"/>
+<area shape="rect" id="node31" href="$libmorse_8h.html#acd4b292f5e412ee4f05aed9dafbc072d" title="Convert an ASCII character into Morse code and transmit it. " alt="" coords="766,613,833,640"/>
+<area shape="rect" id="node38" href="$morse__token_8h.html#a9ec0688da83c93d634e79b2d7ad7ad64" title="Convert Morse 0&#45;9 to the corresponding digit. " alt="" coords="585,1373,628,1400"/>
+<area shape="rect" id="node43" href="$pda_8h.html#aee08a527408a7a8a4b5490d13b767cb2" title="txMetronome" alt="" coords="943,1525,1041,1552"/>
+<area shape="rect" id="node47" href="$stack_8h.html#a86ad401a3d9c5525c80c4a5a6573bf50" title="Swap s0 and s1. " alt="" coords="551,867,663,893"/>
+<area shape="rect" id="node18" href="$actions_8h.html#ad07e1d9a717a212364090e192e951ea5" title="push1RestoreAll" alt="" coords="933,1221,1051,1248"/>
+<area shape="rect" id="node21" href="$pda_8h.html#a15825e7325bc5cdbd18cf2c6055baef1" title="gradeRestore" alt="" coords="942,1373,1042,1400"/>
+<area shape="rect" id="node19" href="$pda_8h.html#a5218392624b017b817b80d6b16ea920d" title="askNextAlfa" alt="" coords="1137,1171,1232,1197"/>
+<area shape="rect" id="node28" href="$actions_8h.html#a5396567e85aa94852a84b3fff96369b9" title="Transmit the top element of the stack. " alt="" coords="733,664,866,691"/>
+<area shape="rect" id="node30" href="$actions_8h.html#a6436621df3b98909e885083436d6b9e2" title="List the contents of the symbol stack. " alt="" coords="733,563,865,589"/>
+<area shape="rect" id="node32" href="$actions_8h.html#a10cd3e1b2a19dc7fc00e94af138ebce2" title="Transmit the mac address. " alt="" coords="939,613,1045,640"/>
+<area shape="rect" id="node33" href="$libmorse_8h.html#a47abdd74b66d7180c47d192bab8bdccb" title="Transmit an unsigned integer in Morse code. " alt="" coords="948,2057,1036,2084"/>
+<area shape="rect" id="node39" href="$class_morse_token.html#adbcf2bf93f283c2c69a93dd69d03c38b" title="Convert Morse 0&#45;9 to the corresponding digit. " alt="" coords="738,1475,861,1501"/>
+<area shape="rect" id="node46" href="$stack_8h.html#a89e98012b4180ef8ce90108ebcfbde1d" title="stackDigitsToUnsigned" alt="" coords="720,1373,879,1400"/>
+<area shape="rect" id="node40" href="$actions_8h.html#a142b42f94ccf46a7a9706fe9b63b4501" title="Attempt to control the output volume but adjusting the PWM duty cycle. " alt="" coords="950,1424,1034,1451"/>
+</map>

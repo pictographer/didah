@@ -1,0 +1,33 @@
+<map id="txSettings" name="txSettings">
+<area shape="rect" id="node2" href="$libmorse_8cpp.html#a0ee2308940264ea9ac8e50afc1a4d285" title="txString" alt="" coords="187,309,253,336"/>
+<area shape="rect" id="node18" href="$libmorse_8cpp.html#a47abdd74b66d7180c47d192bab8bdccb" title="Transmit an unsigned integer in Morse code. " alt="" coords="599,360,687,387"/>
+<area shape="rect" id="node28" href="$settings_8cpp.html#ab38fd90c96469830fd799d88bc8099a6" title="Get the normal announcement interval in seconds. " alt="" coords="135,487,305,513"/>
+<area shape="rect" id="node29" href="$settings_8cpp.html#a088799682590552129c153e36ce09a52" title="Get the periodic announcement format. " alt="" coords="136,537,304,564"/>
+<area shape="rect" id="node30" href="$settings_8cpp.html#a6742b95e92feeab64383890dcb8a51d2" title="Get the low&#45;voltage alarm threshold. " alt="" coords="137,588,303,615"/>
+<area shape="rect" id="node31" href="$settings_8cpp.html#a09b2a494a5b9fec41d2cbb6c34484cc0" title="Set the repetition inteval in seconds of when in the alarm state. " alt="" coords="161,639,279,665"/>
+<area shape="rect" id="node32" href="$settings_8cpp.html#a846e579c0e4875f098993e2a44e44182" title="Get the format of periodic low&#45;voltage alarm messages. " alt="" coords="151,689,289,716"/>
+<area shape="rect" id="node3" href="$teensy3__morse__bsp_8cpp.html#ab306f692c5c9455a0c82782a67ff0147" title="touchPoll" alt="" coords="815,183,891,209"/>
+<area shape="rect" id="node5" href="$settings_8cpp.html#a960551e90dfdad18f3c9b1338ccba7db" title="Get the dit duration in microseconds. " alt="" coords="1137,323,1233,349"/>
+<area shape="rect" id="node6" href="$libmorse_8cpp.html#a9fdfce728595d72b78dc7c834ab99a40" title="Transmit a literal Morse code value. " alt="" coords="991,537,1059,564"/>
+<area shape="rect" id="node16" href="$libmorse_8cpp.html#acd4b292f5e412ee4f05aed9dafbc072d" title="Convert an ASCII character into Morse code and transmit it. " alt="" coords="819,588,886,615"/>
+<area shape="rect" id="node17" href="$teensy3__morse__bsp_8cpp.html#a8761e874366e227690fba2964e1bc445" title="getInternalTemperatureC" alt="" coords="559,436,726,463"/>
+<area shape="rect" id="node19" href="$actions_8cpp.html#aed718ec1bd4cc7adb2f65d40a6784496" title="Transmit the internal temperature in integer in Fahrenheit. " alt="" coords="353,385,511,412"/>
+<area shape="rect" id="node20" href="$actions_8cpp.html#aaabb3ac0c23f35a499bc17efe829f326" title="Transmit the 24&#45;hr time. " alt="" coords="380,81,484,108"/>
+<area shape="rect" id="node21" href="$actions_8cpp.html#ad02149679fa3cc6a4957d1a318408ffd" title="Transmit the uptime. " alt="" coords="395,284,469,311"/>
+<area shape="rect" id="node23" href="$teensy3__morse__bsp_8cpp.html#ae8dd28759e56dbd2ee9bc9ae96d1783c" title="Return the most recent ADC measurement of the input voltage. Perform analog to digital conversion on ..." alt="" coords="383,31,481,57"/>
+<area shape="rect" id="node27" href="$libmorse_8cpp.html#ac3f000c98271c6d0a7710135e18189bc" title="On my hardware there is cross&#45;coupling between the serial port and the touch sensors. Without the code below, long messages to the serial port trigger a touch input. " alt="" coords="599,183,686,209"/>
+<area shape="rect" id="node4" href="$teensy3__morse__bsp_8cpp.html#af6899cd9b83df54106b259ab81ea5cb2" title="touchMargin" alt="" coords="979,183,1072,209"/>
+<area shape="rect" id="node7" href="$class_morse_token.html#a48cd72aeb868391449d1f51c1d0bf5cc" title="Treat code == 0 as the error token. " alt="" coords="1120,512,1249,539"/>
+<area shape="rect" id="node8" href="$teensy3__morse__bsp_8cpp.html#af66e71e3fac9b6a2c6532bc8a513bfde" title="Output a square wave on pin 10 at the given frequency for the given duration. " alt="" coords="1159,563,1210,589"/>
+<area shape="rect" id="node14" href="$settings_8cpp.html#a8575b9b52638114a4f32d1462cf9b7c1" title="Get the transmission frequency (side tone). " alt="" coords="1149,461,1221,488"/>
+<area shape="rect" id="node15" href="$libmorse_8cpp.html#ab94e088615119d1faae7df22ce50aedf" title="Transmit a Morse code prosign indicating an error. " alt="" coords="1154,613,1215,640"/>
+<area shape="rect" id="node9" href="$teensy3__morse__bsp_8cpp.html#a6f674d5b9985ea3a7eeb0df299c2e405" title="pollEarphonePresent" alt="" coords="1297,487,1440,513"/>
+<area shape="rect" id="node10" href="$teensy3__morse__bsp_8cpp.html#a2d6b4ace33ed5e497dedd03217540c63" title="Set the PWM frequency for the audio output pins. " alt="" coords="1313,537,1424,564"/>
+<area shape="rect" id="node11" href="$teensy3__morse__bsp_8cpp.html#a82911eac3bf13d6f36d10102a4c4d3c4" title="Generate a tone on the audio output pins. " alt="" coords="1328,588,1409,615"/>
+<area shape="rect" id="node13" href="$teensy3__morse__bsp_8cpp.html#a6c982a7d7805f1dd5426eb98c915cfdd" title="Turn the red LED on (1) or off (0). " alt="" coords="1335,639,1402,665"/>
+<area shape="rect" id="node12" href="$teensy3__morse__bsp_8cpp.html#ac70998cee1bf97f00aec4a1b4e5a4f60" title="isEarphonePresent" alt="" coords="1488,588,1620,615"/>
+<area shape="rect" id="node22" href="$settings_8cpp.html#a7b4efa097b94f9a90c5bbafcdf93fe4f" title="getUptime" alt="" coords="601,284,684,311"/>
+<area shape="rect" id="node24" href="$class_voltage_monitor.html#a70902b84f9864c95d5553a0644a64f4f" title="Return the latest voltage reading. " alt="" coords="559,31,727,57"/>
+<area shape="rect" id="node25" href="$actions_8cpp.html#a2b8c3769e2aa32a2da9e2f3f85ac73dd" title="A sample ADC reading is taken each time through the main loop, and written to a ring buffer..." alt="" coords="778,5,927,32"/>
+<area shape="rect" id="node26" href="$class_voltage_monitor.html#a75871331808c34b40d04059ee2af0f27" title="Filter and scale raw ADC values to millivolts. " alt="" coords="775,56,931,83"/>
+</map>

@@ -1,0 +1,21 @@
+<map id="symbolStackSize" name="symbolStackSize">
+<area shape="rect" id="node2" href="$actions_8h.html#a6436621df3b98909e885083436d6b9e2" title="List the contents of the symbol stack. " alt="" coords="277,5,409,32"/>
+<area shape="rect" id="node4" href="$actions_8h.html#a142b42f94ccf46a7a9706fe9b63b4501" title="Attempt to control the output volume but adjusting the PWM duty cycle. " alt="" coords="301,56,385,83"/>
+<area shape="rect" id="node5" href="$libmorse_8cpp.html#afa60f07ebee7c34ef41c3dfb64222bb6" title="Score the given pattern against the state of the symbol stack. " alt="" coords="297,107,389,133"/>
+<area shape="rect" id="node6" href="$pda_8h.html#a3c36576745952735f04eaa82b933e6fa" title="Play one of 10 sound effects based on the digit on the stack. " alt="" coords="284,157,403,184"/>
+<area shape="rect" id="node7" href="$pda_8h.html#a35d0b57846aa0f585f9409957bc1957e" title="playNote" alt="" coords="306,208,381,235"/>
+<area shape="rect" id="node8" href="$pda_8h.html#ac1f9ea31ffc81530ac4a07fa2469f13c" title="txAlfaBravoCharlie" alt="" coords="278,613,409,640"/>
+<area shape="rect" id="node10" href="$pda_8cpp.html#a47afc6664036a43243457f6f66cb90f8" title="txAlphaNNN" alt="" coords="295,411,391,437"/>
+<area shape="rect" id="node11" href="$pda_8h.html#aee08a527408a7a8a4b5490d13b767cb2" title="txMetronome" alt="" coords="294,461,393,488"/>
+<area shape="rect" id="node12" href="$pda_8h.html#aba3c77bbaeda68253d8795c44bb0b4ff" title="sumStack" alt="" coords="303,512,384,539"/>
+<area shape="rect" id="node13" href="$pda_8h.html#a59acff867d89a88cb2142895d95b12e8" title="gradeSum" alt="" coords="303,664,384,691"/>
+<area shape="rect" id="node16" href="$pda_8h.html#a959876507019ccc24303937cc277bb31" title="gradeNext" alt="" coords="491,385,573,412"/>
+<area shape="rect" id="node18" href="$stack_8h.html#abefdfbf9131b5ea5926f9ecbecb6b1e6" title="Access the stack using an index where 0 is the top of the stack. " alt="" coords="177,309,216,336"/>
+<area shape="rect" id="node20" href="$stack_8h.html#a89e98012b4180ef8ce90108ebcfbde1d" title="stackDigitsToUnsigned" alt="" coords="264,259,423,285"/>
+<area shape="rect" id="node3" href="$actions_8h.html#a1fec7da4166b9612d2deec3d0262d60f" title="dispatchOnStack" alt="" coords="471,183,593,209"/>
+<area shape="rect" id="node9" href="$pda_8h.html#a5218392624b017b817b80d6b16ea920d" title="askNextAlfa" alt="" coords="641,537,736,564"/>
+<area shape="rect" id="node14" href="$pda_8h.html#a15825e7325bc5cdbd18cf2c6055baef1" title="gradeRestore" alt="" coords="482,664,582,691"/>
+<area shape="rect" id="node15" href="$pda_8h.html#abf2e0c8c523ed9ddee8a9194c9800b99" title="askSum" alt="" coords="653,664,724,691"/>
+<area shape="rect" id="node17" href="$pda_8h.html#a1dc125d402fe76077cb4d166ac0fbf7a" title="askNext" alt="" coords="653,385,724,412"/>
+<area shape="rect" id="node19" href="$actions_8h.html#a5396567e85aa94852a84b3fff96369b9" title="Transmit the top element of the stack. " alt="" coords="277,309,410,336"/>
+</map>

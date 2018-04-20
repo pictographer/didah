@@ -1,0 +1,8 @@
+<map id="pushSymbolStack" name="pushSymbolStack">
+<area shape="rect" id="node2" href="$actions_8h.html#ad07e1d9a717a212364090e192e951ea5" title="push1RestoreAll" alt="" coords="183,43,302,69"/>
+<area shape="rect" id="node3" href="$pda_8h.html#a5218392624b017b817b80d6b16ea920d" title="askNextAlfa" alt="" coords="352,5,447,32"/>
+<area shape="rect" id="node4" href="$pda_8h.html#a1dc125d402fe76077cb4d166ac0fbf7a" title="askNext" alt="" coords="364,81,435,108"/>
+<area shape="rect" id="node5" href="$actions_8h.html#a1fec7da4166b9612d2deec3d0262d60f" title="dispatchOnStack" alt="" coords="181,144,304,171"/>
+<area shape="rect" id="node6" href="$pda_8h.html#a15825e7325bc5cdbd18cf2c6055baef1" title="gradeRestore" alt="" coords="193,195,293,221"/>
+<area shape="rect" id="node7" href="$pda_8h.html#abf2e0c8c523ed9ddee8a9194c9800b99" title="askSum" alt="" coords="364,220,435,247"/>
+</map>

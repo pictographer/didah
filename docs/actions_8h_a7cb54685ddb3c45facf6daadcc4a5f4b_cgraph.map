@@ -1,0 +1,23 @@
+<map id="printLog" name="printLog">
+<area shape="rect" id="node2" href="$libmorse_8h.html#a485b054263abcc51f9987c8a9c824602" title="printLabelValueUnits" alt="" coords="135,5,278,32"/>
+<area shape="rect" id="node3" href="$actions_8cpp.html#a492edd5621b1b6f219c1138beb303fe1" title="getVersion" alt="" coords="165,56,249,83"/>
+<area shape="rect" id="node5" href="$settings_8cpp.html#af63c25c773ddd97f32d6d0d364eda35a" title="isTimeSet" alt="" coords="166,107,247,133"/>
+<area shape="rect" id="node7" href="$settings_8cpp.html#a7b4efa097b94f9a90c5bbafcdf93fe4f" title="getUptime" alt="" coords="165,157,248,184"/>
+<area shape="rect" id="node8" href="$actions_8cpp.html#a9d7f936c10ce844cabda3cc094b91921" title="Get the low&#45;voltage alarm state. This determines the message format and repetition interval..." alt="" coords="154,208,259,235"/>
+<area shape="rect" id="node9" href="$teensy3__morse__bsp_8cpp.html#ae8dd28759e56dbd2ee9bc9ae96d1783c" title="Return the most recent ADC measurement of the input voltage. Perform analog to digital conversion on ..." alt="" coords="157,259,256,285"/>
+<area shape="rect" id="node13" href="$teensy3__morse__bsp_8cpp.html#a8761e874366e227690fba2964e1bc445" title="getInternalTemperatureC" alt="" coords="123,309,290,336"/>
+<area shape="rect" id="node14" href="$settings_8cpp.html#a088799682590552129c153e36ce09a52" title="Get the periodic announcement format. " alt="" coords="123,360,291,387"/>
+<area shape="rect" id="node15" href="$settings_8cpp.html#ab38fd90c96469830fd799d88bc8099a6" title="Get the normal announcement interval in seconds. " alt="" coords="121,411,292,437"/>
+<area shape="rect" id="node16" href="$settings_8cpp.html#a6742b95e92feeab64383890dcb8a51d2" title="Get the low&#45;voltage alarm threshold. " alt="" coords="124,461,289,488"/>
+<area shape="rect" id="node17" href="$settings_8cpp.html#a846e579c0e4875f098993e2a44e44182" title="Get the format of periodic low&#45;voltage alarm messages. " alt="" coords="137,512,276,539"/>
+<area shape="rect" id="node18" href="$settings_8cpp.html#a6b0bcdf814f86e78aadb0dbd4d80eda2" title="Get the high&#45;voltage alarm threshold. " alt="" coords="123,563,291,589"/>
+<area shape="rect" id="node19" href="$settings_8cpp.html#a0508347a0269b133a9dbc300904807e8" title="Get the format of periodic high&#45;voltage alarm messages. " alt="" coords="135,613,278,640"/>
+<area shape="rect" id="node20" href="$settings_8cpp.html#a09b2a494a5b9fec41d2cbb6c34484cc0" title="Set the repetition inteval in seconds of when in the alarm state. " alt="" coords="148,664,265,691"/>
+<area shape="rect" id="node21" href="$settings_8cpp.html#a960551e90dfdad18f3c9b1338ccba7db" title="Get the dit duration in microseconds. " alt="" coords="159,715,255,741"/>
+<area shape="rect" id="node22" href="$settings_8cpp.html#a8575b9b52638114a4f32d1462cf9b7c1" title="Get the transmission frequency (side tone). " alt="" coords="171,765,243,792"/>
+<area shape="rect" id="node4" href="$actions_8cpp.html#ae72528ef0a66ea3edf8dd68a1448a2ed" title="version" alt="" coords="392,56,456,83"/>
+<area shape="rect" id="node6" href="$settings_8cpp.html#a696d9ef198af47b248ab05065cb25087" title="timeIsSet" alt="" coords="385,107,463,133"/>
+<area shape="rect" id="node10" href="$class_voltage_monitor.html#a70902b84f9864c95d5553a0644a64f4f" title="Return the latest voltage reading. " alt="" coords="340,259,508,285"/>
+<area shape="rect" id="node11" href="$actions_8cpp.html#a2b8c3769e2aa32a2da9e2f3f85ac73dd" title="A sample ADC reading is taken each time through the main loop, and written to a ring buffer..." alt="" coords="559,233,709,260"/>
+<area shape="rect" id="node12" href="$class_voltage_monitor.html#a75871331808c34b40d04059ee2af0f27" title="Filter and scale raw ADC values to millivolts. " alt="" coords="556,284,712,311"/>
+</map>

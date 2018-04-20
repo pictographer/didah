@@ -1,0 +1,5 @@
+<map id="MCM" name="MCM">
+<area shape="rect" id="node1" href="$group___peripheral__defines.html" title="Peripheral type defines" alt="" coords="5,35,160,61"/>
+<area shape="rect" id="node3" href="$group___m_c_m___register___masks.html" title="MCM Register Masks" alt="" coords="321,5,472,32"/>
+<area shape="rect" id="node4" href="$group___m_c_m___register___accessor___macros.html" title="MCM &#45; Register accessor\l macros" alt="" coords="311,57,483,98"/>
+</map>

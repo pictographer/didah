@@ -1,0 +1,5 @@
+<map id="DMA" name="DMA">
+<area shape="rect" id="node1" href="$group___d_m_a___register___masks.html" title="DMA Register Masks" alt="" coords="319,5,467,32"/>
+<area shape="rect" id="node2" href="$group___d_m_a___register___accessor___macros.html" title="DMA &#45; Register accessor\l macros" alt="" coords="308,57,479,98"/>
+<area shape="rect" id="node3" href="$group___peripheral__defines.html" title="Peripheral type defines" alt="" coords="5,35,160,61"/>
+</map>

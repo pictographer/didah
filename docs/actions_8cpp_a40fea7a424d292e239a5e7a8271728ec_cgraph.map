@@ -1,0 +1,8 @@
+<map id="txTick" name="txTick">
+<area shape="rect" id="node2" href="$sound_8cpp.html#a77ffd11f8a990ba2130061186e49535a" title="Play a PWM tone at a given frequency and duration. " alt="" coords="144,56,219,83"/>
+<area shape="rect" id="node7" href="$settings_8cpp.html#ad02597259b5753e0c98605bce44a9fc8" title="Get the default dit duration in microseconds. " alt="" coords="112,107,251,133"/>
+<area shape="rect" id="node3" href="$teensy3__morse__bsp_8cpp.html#a2d6b4ace33ed5e497dedd03217540c63" title="Set the PWM frequency for the audio output pins. " alt="" coords="299,5,409,32"/>
+<area shape="rect" id="node4" href="$teensy3__morse__bsp_8cpp.html#a82911eac3bf13d6f36d10102a4c4d3c4" title="Generate a tone on the audio output pins. " alt="" coords="313,56,395,83"/>
+<area shape="rect" id="node6" href="$teensy3__morse__bsp_8cpp.html#a36cda3a6dd77f2141cfc703c55a47ff8" title="getDuty" alt="" coords="320,107,388,133"/>
+<area shape="rect" id="node5" href="$teensy3__morse__bsp_8cpp.html#ac70998cee1bf97f00aec4a1b4e5a4f60" title="isEarphonePresent" alt="" coords="457,56,589,83"/>
+</map>

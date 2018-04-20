@@ -1,0 +1,7 @@
+<map id="codeHash" name="codeHash">
+<area shape="rect" id="node2" href="$actions_8h.html#a76e8c23475fa40e7d5504df1379711d8" title="Hash a Morse code symbol to a table location and store action there. " alt="" coords="135,56,232,83"/>
+<area shape="rect" id="node6" href="$actions_8h.html#a9a7251c47cd69137c16e9e7e5cf6179e" title="Invoke an action from the actions table. " alt="" coords="147,107,220,133"/>
+<area shape="rect" id="node3" href="$pda_8h.html#a5218392624b017b817b80d6b16ea920d" title="askNextAlfa" alt="" coords="280,5,375,32"/>
+<area shape="rect" id="node4" href="$pda_8h.html#abf2e0c8c523ed9ddee8a9194c9800b99" title="askSum" alt="" coords="292,56,363,83"/>
+<area shape="rect" id="node5" href="$pda_8h.html#a1dc125d402fe76077cb4d166ac0fbf7a" title="askNext" alt="" coords="292,107,363,133"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="printLabelValueUnits" name="printLabelValueUnits">
+<area shape="rect" id="node2" href="$actions_8cpp.html#a80b49b2422c65e1ce9233b16486ef30c" title="printTouchThresholds" alt="" coords="196,5,343,32"/>
+<area shape="rect" id="node3" href="$actions_8h.html#a7cb54685ddb3c45facf6daadcc4a5f4b" title="Report the current settings and sensor values via the serial port. " alt="" coords="235,56,303,83"/>
+<area shape="rect" id="node5" href="$actions_8h.html#a9c9466bf6676f35ff08e8dc33518e483" title="Respond to commands from the serial port. " alt="" coords="402,107,502,133"/>
+<area shape="rect" id="node6" href="$teensy3__morse__bsp_8h.html#a4e9ec9948bd3c498f1d4b7780a4e0fdd" title="Report register settings related to the external clock crystal. " alt="" coords="220,157,319,184"/>
+<area shape="rect" id="node4" href="$actions_8h.html#a1fec7da4166b9612d2deec3d0262d60f" title="dispatchOnStack" alt="" coords="391,56,513,83"/>
+</map>

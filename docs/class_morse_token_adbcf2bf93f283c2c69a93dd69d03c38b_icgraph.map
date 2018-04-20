@@ -1,0 +1,8 @@
+<map id="MorseToken::m2i" name="MorseToken::m2i">
+<area shape="rect" id="node2" href="$actions_8h.html#a142b42f94ccf46a7a9706fe9b63b4501" title="Attempt to control the output volume but adjusting the PWM duty cycle. " alt="" coords="199,5,283,32"/>
+<area shape="rect" id="node3" href="$pda_8h.html#ac1f9ea31ffc81530ac4a07fa2469f13c" title="txAlfaBravoCharlie" alt="" coords="176,56,307,83"/>
+<area shape="rect" id="node5" href="$pda_8cpp.html#a47afc6664036a43243457f6f66cb90f8" title="txAlphaNNN" alt="" coords="193,107,289,133"/>
+<area shape="rect" id="node6" href="$pda_8h.html#aee08a527408a7a8a4b5490d13b767cb2" title="txMetronome" alt="" coords="192,157,291,184"/>
+<area shape="rect" id="node7" href="$pda_8h.html#aba3c77bbaeda68253d8795c44bb0b4ff" title="sumStack" alt="" coords="201,208,282,235"/>
+<area shape="rect" id="node4" href="$pda_8h.html#a5218392624b017b817b80d6b16ea920d" title="askNextAlfa" alt="" coords="355,56,449,83"/>
+</map>

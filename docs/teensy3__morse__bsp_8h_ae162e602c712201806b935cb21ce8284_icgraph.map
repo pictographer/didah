@@ -1,0 +1,4 @@
+<map id="greenLED" name="greenLED">
+<area shape="rect" id="node2" href="$teensy3__morse__bsp_8h.html#a15bba6162d5a787569acccbf85402f71" title="Initialize the input and output ports used by appliance or PDA hardware. " alt="" coords="157,5,228,32"/>
+<area shape="rect" id="node3" href="$teensy3__morse__bsp_8h.html#a1602f82bf26915dd2e462be2a99fc776" title="Change the state of the green LED. " alt="" coords="133,56,252,83"/>
+</map>

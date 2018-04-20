@@ -1,0 +1,5 @@
+<map id="SIM" name="SIM">
+<area shape="rect" id="node1" href="$group___peripheral__defines.html" title="Peripheral type defines" alt="" coords="5,35,160,61"/>
+<area shape="rect" id="node2" href="$group___s_i_m___register___masks.html" title="SIM Register Masks" alt="" coords="313,5,456,32"/>
+<area shape="rect" id="node3" href="$group___s_i_m___register___accessor___macros.html" title="SIM &#45; Register accessor\l macros" alt="" coords="303,57,467,98"/>
+</map>

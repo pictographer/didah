@@ -1,0 +1,5 @@
+<map id="ITM" name="ITM">
+<area shape="rect" id="node1" href="$group___peripheral__defines.html" title="Peripheral type defines" alt="" coords="5,35,160,61"/>
+<area shape="rect" id="node3" href="$group___i_t_m___register___masks.html" title="ITM Register Masks" alt="" coords="312,5,453,32"/>
+<area shape="rect" id="node4" href="$group___i_t_m___register___accessor___macros.html" title="ITM &#45; Register accessor\l macros" alt="" coords="301,57,464,98"/>
+</map>
