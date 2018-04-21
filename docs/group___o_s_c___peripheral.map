@@ -1,5 +1,0 @@
-<map id="OSC" name="OSC">
-<area shape="rect" id="node1" href="$group___peripheral__defines.html" title="Peripheral type defines" alt="" coords="5,35,160,61"/>
-<area shape="rect" id="node2" href="$group___o_s_c___register___masks.html" title="OSC Register Masks" alt="" coords="318,5,465,32"/>
-<area shape="rect" id="node3" href="$group___o_s_c___register___accessor___macros.html" title="OSC &#45; Register accessor\l macros" alt="" coords="307,57,476,98"/>
-</map>

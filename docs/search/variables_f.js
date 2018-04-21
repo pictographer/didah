@@ -1,4 +1,24 @@
 var searchData=
 [
-  ['qdctrl',['QDCTRL',['../struct_f_t_m___mem_map.html#a88687af53ea301e8e0c793d8539dd4dd',1,'FTM_MemMap']]]
+  ['s',['s',['../class_stack.html#a533e5a0f40d9bcc3133797a27c0876b5',1,'Stack']]],
+  ['sample',['sample',['../class_voltage_monitor.html#a663f702bd29581c3fcd3add364bd38ad',1,'VoltageMonitor']]],
+  ['sample_5fcount',['sample_count',['../class_voltage_monitor.html#a3522090e522d8ae27b056b1219a23c81',1,'VoltageMonitor']]],
+  ['savedactions',['savedActions',['../actions_8cpp.html#a9c900ba2be4056adcd2e2e8065a27dd9',1,'actions.cpp']]],
+  ['scgc1',['SCGC1',['../struct_s_i_m___mem_map.html#a60b8b2dca489117a38ffb151a9811a16',1,'SIM_MemMap']]],
+  ['scgc2',['SCGC2',['../struct_s_i_m___mem_map.html#a24daa19260e48fdf48c35cf7ed920d3a',1,'SIM_MemMap']]],
+  ['scgc3',['SCGC3',['../struct_s_i_m___mem_map.html#a5001a137aa37a5970e622219a5703956',1,'SIM_MemMap']]],
+  ['scgc4',['SCGC4',['../struct_s_i_m___mem_map.html#a96c123ab70356a131990c9ae3812834e',1,'SIM_MemMap']]],
+  ['scgc5',['SCGC5',['../struct_s_i_m___mem_map.html#ae9d560d3862eb171c739acaf92daa8aa',1,'SIM_MemMap']]],
+  ['scgc6',['SCGC6',['../struct_s_i_m___mem_map.html#ad40dd833ac37056f5341b692039a5f10',1,'SIM_MemMap']]],
+  ['scgc7',['SCGC7',['../struct_s_i_m___mem_map.html#aa35362a8c756eedb82b8cf00f98c43da',1,'SIM_MemMap']]],
+  ['sdid',['SDID',['../struct_s_i_m___mem_map.html#a536b8d3e185149c51e88387350e20fb3',1,'SIM_MemMap']]],
+  ['settings',['settings',['../settings_8cpp.html#aaee6ba96e5e536217bf1d62188a0b4f8',1,'settings.cpp']]],
+  ['sincetouch',['sinceTouch',['../libmorse_8cpp.html#a321e03deebf4be28bd72581b33805719',1,'libmorse.cpp']]],
+  ['sinceuptime',['sinceUptime',['../settings_8cpp.html#ab301b362494cee1093e9621f3218ff4b',1,'settings.cpp']]],
+  ['sopt1',['SOPT1',['../struct_s_i_m___mem_map.html#a1152a6ef88c78e762df97badf10b5050',1,'SIM_MemMap']]],
+  ['sopt2',['SOPT2',['../struct_s_i_m___mem_map.html#ae4c4bf827aeca9c2de082cdfafdea3d1',1,'SIM_MemMap']]],
+  ['sopt4',['SOPT4',['../struct_s_i_m___mem_map.html#adf28cda65cea7072379ec6064d0d93cc',1,'SIM_MemMap']]],
+  ['sopt5',['SOPT5',['../struct_s_i_m___mem_map.html#a19e2ddf391b1d9c03240be8267fdf781',1,'SIM_MemMap']]],
+  ['sopt6',['SOPT6',['../struct_s_i_m___mem_map.html#aa8030cdf04fef86a5fd4b10f7686e5fa',1,'SIM_MemMap']]],
+  ['sopt7',['SOPT7',['../struct_s_i_m___mem_map.html#a04a22056fd7d08179705d29cda1b9e2a',1,'SIM_MemMap']]]
 ];

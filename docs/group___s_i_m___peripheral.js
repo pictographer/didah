@@ -1,15 +1,13 @@
 var group___s_i_m___peripheral =
 [
-    [ "SIM - Register accessor macros", "group___s_i_m___register___accessor___macros.html", "group___s_i_m___register___accessor___macros" ],
-    [ "SIM Register Masks", "group___s_i_m___register___masks.html", "group___s_i_m___register___masks" ],
     [ "SIM_MemMap", "struct_s_i_m___mem_map.html", [
       [ "CLKDIV1", "struct_s_i_m___mem_map.html#afa315c39ebd4ef380b7f8d67a88d4f82", null ],
       [ "CLKDIV2", "struct_s_i_m___mem_map.html#a5596e21e5998efdcd3e29354487d8f2d", null ],
       [ "FCFG1", "struct_s_i_m___mem_map.html#a2b78edd16e6d046eb3399182216bf816", null ],
       [ "FCFG2", "struct_s_i_m___mem_map.html#afd105923b2815e01119a5bc195ceebd6", null ],
-      [ "RESERVED_0", "struct_s_i_m___mem_map.html#aacad3c3f1dc1012d92e3f19b56f2517d", null ],
-      [ "RESERVED_1", "struct_s_i_m___mem_map.html#adba6606eff204f543702e9113e20e543", null ],
-      [ "RESERVED_2", "struct_s_i_m___mem_map.html#a1495fc1937d9aa9b2dd1a42b2f2dc7b1", null ],
+      [ "RESERVED_0", "struct_s_i_m___mem_map.html#a52620f52f530923f73c225693bd1be58", null ],
+      [ "RESERVED_1", "struct_s_i_m___mem_map.html#ae97b8ef108928032cc6070216fec02ec", null ],
+      [ "RESERVED_2", "struct_s_i_m___mem_map.html#ad2fdee624a3af7bd030a350a9632a6a9", null ],
       [ "SCGC1", "struct_s_i_m___mem_map.html#a60b8b2dca489117a38ffb151a9811a16", null ],
       [ "SCGC2", "struct_s_i_m___mem_map.html#a24daa19260e48fdf48c35cf7ed920d3a", null ],
       [ "SCGC3", "struct_s_i_m___mem_map.html#a5001a137aa37a5970e622219a5703956", null ],
@@ -29,7 +27,6 @@ var group___s_i_m___peripheral =
       [ "UIDMH", "struct_s_i_m___mem_map.html#af4fb6d5bc3fa71f9c905570d87a2e93f", null ],
       [ "UIDML", "struct_s_i_m___mem_map.html#a51e871d8ac13db8b605b6ec1b3292be4", null ]
     ] ],
-    [ "SIM_BASE_PTR", "group___s_i_m___peripheral.html#ga719ec5df95fbb5732438f794f2cccf3c", null ],
     [ "SIM_FCFG1_DEPART", "group___s_i_m___peripheral.html#ga68137c3e32ef5c0477b548ad10de565f", null ],
     [ "SIM_FCFG1_DEPART_MASK", "group___s_i_m___peripheral.html#ga7b4c8f63810498cd22002a2f3b1bdc0d", null ],
     [ "SIM_FCFG1_DEPART_SHIFT", "group___s_i_m___peripheral.html#ga828f3d67b0fb411b1f32f5ac8105964f", null ],
@@ -54,6 +51,5 @@ var group___s_i_m___peripheral =
     [ "SIM_FCFG2_REG", "group___s_i_m___peripheral.html#ga28d588cd36812f942a01c0ee0ad1beb0", null ],
     [ "SIM_FCFG2_SWAPPFLSH_MASK", "group___s_i_m___peripheral.html#ga9e43eb1fe8cf3bc2b415b94b85409da3", null ],
     [ "SIM_FCFG2_SWAPPFLSH_SHIFT", "group___s_i_m___peripheral.html#gab18fc86e3344548dbc17e941e7d7ef54", null ],
-    [ "SIM_MemMapPtr", "group___s_i_m___peripheral.html#ga708a122e8ca55082e0cf67cab6a77d02", null ],
     [ "SIM_MemMapPtr", "group___s_i_m___peripheral.html#ga708a122e8ca55082e0cf67cab6a77d02", null ]
 ];

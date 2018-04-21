@@ -10,7 +10,6 @@ var files =
     [ "libmorse.h", "libmorse_8h.html", "libmorse_8h" ],
     [ "mac.cpp", "mac_8cpp.html", "mac_8cpp" ],
     [ "mac.h", "mac_8h.html", "mac_8h" ],
-    [ "MK20DZ10.h", "_m_k20_d_z10_8h.html", "_m_k20_d_z10_8h" ],
     [ "morse_digit.cpp", "morse__digit_8cpp.html", "morse__digit_8cpp" ],
     [ "morse_digit.h", "morse__digit_8h.html", "morse__digit_8h" ],
     [ "morse_token.cpp", "morse__token_8cpp.html", "morse__token_8cpp" ],

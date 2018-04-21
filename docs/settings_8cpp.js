@@ -54,7 +54,7 @@ var settings_8cpp =
     [ "lowVoltageThresholdDefault", "settings_8cpp.html#a821923f182341ce017b59ddf7de154ba", null ],
     [ "maximumVoltage", "settings_8cpp.html#a9490645e93d98f515c3b581cfa6f3480", null ],
     [ "radioStartupDelay", "settings_8cpp.html#ace2d1d0b6cf8323d585f449b2beeea76", null ],
-    [ "settings", "settings_8cpp.html#a3f7f64d56674cfa19739d82cefbc7732", null ],
+    [ "settings", "settings_8cpp.html#aaee6ba96e5e536217bf1d62188a0b4f8", null ],
     [ "sinceUptime", "settings_8cpp.html#ab301b362494cee1093e9621f3218ff4b", null ],
     [ "txHz", "settings_8cpp.html#ad1be6ff9743dad3b264a8fee543d38f9", null ],
     [ "uptime", "settings_8cpp.html#a1b779ab5fbfacabc8e27077f21c46100", null ]

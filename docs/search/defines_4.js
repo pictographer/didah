@@ -1,8 +1,6 @@
 var searchData=
 [
   ['m8',['M8',['../prosign_8h.html#ac1963e3f891a1177818ffc7f8834564b',1,'prosign.h']]],
-  ['mcu_5factive',['MCU_ACTIVE',['../_m_k20_d_z10_8h.html#a8514d8d6cd73e72192314d085ffaa555',1,'MK20DZ10.h']]],
-  ['mcu_5fmem_5fmap_5fversion',['MCU_MEM_MAP_VERSION',['../_m_k20_d_z10_8h.html#acb0f54172ffa1052aec8b964bf7642d6',1,'MK20DZ10.h']]],
   ['morse_5faa',['MORSE_AA',['../prosign_8h.html#ac3122d6d4e386479279c2145f7e8c659',1,'prosign.h']]],
   ['morse_5fack',['MORSE_ACK',['../prosign_8h.html#a75855440fa92a4b8316ac71aca8a8126',1,'prosign.h']]],
   ['morse_5famper',['MORSE_AMPER',['../prosign_8h.html#a6c491e4e9d3e9cca223163599c1a5a95',1,'prosign.h']]],

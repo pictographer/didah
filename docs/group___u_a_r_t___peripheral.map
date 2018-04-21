@@ -1,5 +1,0 @@
-<map id="UART" name="UART">
-<area shape="rect" id="node1" href="$group___u_a_r_t___register___accessor___macros.html" title="UART &#45; Register accessor\l macros" alt="" coords="315,5,492,47"/>
-<area shape="rect" id="node2" href="$group___peripheral__defines.html" title="Peripheral type defines" alt="" coords="5,42,160,69"/>
-<area shape="rect" id="node3" href="$group___u_a_r_t___register___masks.html" title="UART Register Masks" alt="" coords="326,71,481,98"/>
-</map>
