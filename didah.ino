@@ -501,16 +501,16 @@ The `-..-` (X) command exchanges the top two entries of the stack.
 */
 
 /** \page 3 Didah Personal Digital Assistant
-![PDA Exterior](../../pics/pda_exterior.jpg)
-![PDA Interior](../../pics/pda_interior.jpg)
-![PDA Components](../../pics/pda_components.jpg)
+![PDA Exterior](../pics/pda_exterior.jpg)
+![PDA Interior](../pics/pda_interior.jpg)
+![PDA Components](../pics/pda_components.jpg)
  */
 
 /** \page 4 Didah Voltage Monitor Appliance
-![Voltage Monitor in action](../../pics/voltage_monitor_action.jpg)
-![Voltage Monitor ports](../../pics/voltage_monitor_ports.jpg)
-![Voltage Monitor interior](../../pics/voltage_monitor_interior.jpg)
-![Voltage Monitor bottom](../../pics/voltage_monitor_bottom.jpg)
+![Voltage Monitor in action](../pics/voltage_monitor_action.jpg)
+![Voltage Monitor ports](../pics/voltage_monitor_ports.jpg)
+![Voltage Monitor interior](../pics/voltage_monitor_interior.jpg)
+![Voltage Monitor bottom](../pics/voltage_monitor_bottom.jpg)
  */
 
 /** \page 5 Software Development
