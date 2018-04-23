@@ -1,4 +1,5 @@
 // -*- mode: C++; -*-
+/**@file*/
 ///\file didah.ino
 ///\brief Top-level entry points for the Morse code PDA/Application
 
