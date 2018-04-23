@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="_e_e_p_r_o_m_anything_8h.html" target="_top" xlink:title="Loads and stores arbitrary structures to non&#45;volatile memory. ">
+<g id="a_node2"><a xlink:href="EEPROMAnything_8h.xhtml" target="_top" xlink:title="Loads and stores arbitrary structures to non&#45;volatile memory. ">
 <polygon fill="white" stroke="black" points="20.5,-56.5 20.5,-75.5 127.5,-75.5 127.5,-56.5 20.5,-56.5"/>
 <text text-anchor="middle" x="74" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">EEPROMAnything.h</text>
 </a>

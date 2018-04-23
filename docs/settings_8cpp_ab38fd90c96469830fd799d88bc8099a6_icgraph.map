@@ -1,7 +1,0 @@
-<map id="getAnnouncementInterval" name="getAnnouncementInterval">
-<area shape="rect" id="node2" href="$actions_8h.html#a7da0aacad52707defcc8db8be6a21b8c" title="Get the announcement interval for the current alarm state. " alt="" coords="224,5,357,32"/>
-<area shape="rect" id="node3" href="$actions_8h.html#a7cb54685ddb3c45facf6daadcc4a5f4b" title="Report the current settings and sensor values via the serial port. " alt="" coords="257,56,325,83"/>
-<area shape="rect" id="node6" href="$actions_8h.html#a395ec10538b43bf0543c55595fe2df68" title="Transmit the current settings and sensor values. " alt="" coords="250,107,331,133"/>
-<area shape="rect" id="node4" href="$actions_8h.html#a1fec7da4166b9612d2deec3d0262d60f" title="dispatchOnStack" alt="" coords="405,31,528,57"/>
-<area shape="rect" id="node5" href="$actions_8h.html#a9c9466bf6676f35ff08e8dc33518e483" title="Respond to commands from the serial port. " alt="" coords="417,81,517,108"/>
-</map>

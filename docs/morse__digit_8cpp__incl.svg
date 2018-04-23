@@ -62,7 +62,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="teensy3__morse__bsp_8h.html" target="_top" xlink:title="Teensy 3.0 board support package. ">
+<g id="a_node2"><a xlink:href="teensy3__morse__bsp_8h.xhtml" target="_top" xlink:title="Teensy 3.0 board support package. ">
 <polygon fill="white" stroke="black" points="478,-112.5 478,-131.5 591,-131.5 591,-112.5 478,-112.5"/>
 <text text-anchor="middle" x="534.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">teensy3_morse_bsp.h</text>
 </a>
@@ -75,7 +75,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="settings_8h.html" target="_top" xlink:title="User settings. ">
+<g id="a_node4"><a xlink:href="settings_8h.xhtml" target="_top" xlink:title="User settings. ">
 <polygon fill="white" stroke="black" points="525,-224.5 525,-243.5 584,-243.5 584,-224.5 525,-224.5"/>
 <text text-anchor="middle" x="554.5" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">settings.h</text>
 </a>
@@ -88,7 +88,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="actions_8h.html" target="_top" xlink:title="Application&#45;specific actions. ">
+<g id="a_node5"><a xlink:href="actions_8h.xhtml" target="_top" xlink:title="Application&#45;specific actions. ">
 <polygon fill="white" stroke="black" points="371.5,-224.5 371.5,-243.5 427.5,-243.5 427.5,-224.5 371.5,-224.5"/>
 <text text-anchor="middle" x="399.5" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">actions.h</text>
 </a>
@@ -101,7 +101,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node15 -->
 <g id="node15" class="node"><title>Node15</title>
-<g id="a_node15"><a xlink:href="morse__digit_8h.html" target="_top" xlink:title="Three implementations of a function that converts a decimal digit to Morse code. ">
+<g id="a_node15"><a xlink:href="morse__digit_8h.xhtml" target="_top" xlink:title="Three implementations of a function that converts a decimal digit to Morse code. ">
 <polygon fill="white" stroke="black" points="602,-224.5 602,-243.5 677,-243.5 677,-224.5 602,-224.5"/>
 <text text-anchor="middle" x="639.5" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">morse_digit.h</text>
 </a>
@@ -129,7 +129,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="libmorse_8h.html" target="_top" xlink:title="Morse code operations. ">
+<g id="a_node6"><a xlink:href="libmorse_8h.xhtml" target="_top" xlink:title="Morse code operations. ">
 <polygon fill="white" stroke="black" points="222.5,-168.5 222.5,-187.5 284.5,-187.5 284.5,-168.5 222.5,-168.5"/>
 <text text-anchor="middle" x="253.5" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">libmorse.h</text>
 </a>
@@ -142,7 +142,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node12 -->
 <g id="node12" class="node"><title>Node12</title>
-<g id="a_node12"><a xlink:href="morse__token_8h.html" target="_top" xlink:title="Defines the MorseToken class and various helpers. ">
+<g id="a_node12"><a xlink:href="morse__token_8h.xhtml" target="_top" xlink:title="Defines the MorseToken class and various helpers. ">
 <polygon fill="white" stroke="black" points="266,-112.5 266,-131.5 347,-131.5 347,-112.5 266,-112.5"/>
 <text text-anchor="middle" x="306.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">morse_token.h</text>
 </a>
@@ -160,7 +160,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="binconst_8h.html" target="_top" xlink:title="Binary constant generator macro. ">
+<g id="a_node7"><a xlink:href="binconst_8h.xhtml" target="_top" xlink:title="Binary constant generator macro. ">
 <polygon fill="white" stroke="black" points="161.5,-0.5 161.5,-19.5 223.5,-19.5 223.5,-0.5 161.5,-0.5"/>
 <text text-anchor="middle" x="192.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">binconst.h</text>
 </a>
@@ -238,7 +238,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node14 -->
 <g id="node14" class="node"><title>Node14</title>
-<g id="a_node14"><a xlink:href="prosign_8h.html" target="_top" xlink:title="Prosign constants. ">
+<g id="a_node14"><a xlink:href="prosign_8h.xhtml" target="_top" xlink:title="Prosign constants. ">
 <polygon fill="white" stroke="black" points="237.5,-56.5 237.5,-75.5 293.5,-75.5 293.5,-56.5 237.5,-56.5"/>
 <text text-anchor="middle" x="265.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">prosign.h</text>
 </a>

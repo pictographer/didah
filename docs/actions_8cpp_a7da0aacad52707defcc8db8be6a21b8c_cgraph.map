@@ -1,4 +1,0 @@
-<map id="getIntervalForState" name="getIntervalForState">
-<area shape="rect" id="node2" href="$settings_8cpp.html#a09b2a494a5b9fec41d2cbb6c34484cc0" title="Set the repetition inteval in seconds of when in the alarm state. " alt="" coords="213,5,331,32"/>
-<area shape="rect" id="node3" href="$settings_8cpp.html#ab38fd90c96469830fd799d88bc8099a6" title="Get the normal announcement interval in seconds. " alt="" coords="187,56,357,83"/>
-</map>

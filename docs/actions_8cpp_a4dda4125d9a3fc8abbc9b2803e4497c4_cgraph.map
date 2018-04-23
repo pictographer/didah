@@ -1,4 +1,0 @@
-<map id="txRaw" name="txRaw">
-<area shape="rect" id="node2" href="$teensy3__morse__bsp_8cpp.html#a0e2da33375826e329ea5f4c8d1d10224" title="Get the raw analog input. " alt="" coords="113,5,224,32"/>
-<area shape="rect" id="node3" href="$class_voltage_monitor.html#adc6eeb394de76a58d498dd1adc4fe3bf" title="VoltageMonitor::getRawVoltage" alt="" coords="272,5,479,32"/>
-</map>

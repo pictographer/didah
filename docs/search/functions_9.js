@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['keyboardmode',['keyboardMode',['../libmorse_8h.html#a8861be4ba681255772f156a773aee7be',1,'libmorse.h']]]
+  ['letterexpired',['letterExpired',['../libmorse_8cpp.xhtml#a647dbf56318dc047df6e087c77f10727',1,'letterExpired():&#160;libmorse.cpp'],['../libmorse_8h.xhtml#a647dbf56318dc047df6e087c77f10727',1,'letterExpired():&#160;libmorse.cpp']]]
 ];

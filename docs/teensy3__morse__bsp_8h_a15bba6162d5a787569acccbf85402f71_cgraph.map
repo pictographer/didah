@@ -1,7 +1,0 @@
-<map id="initPorts" name="initPorts">
-<area shape="rect" id="node2" href="$teensy3__morse__bsp_8cpp.html#ae162e602c712201806b935cb21ce8284" title="Turn the green LED on (1) or off (0). " alt="" coords="137,5,217,32"/>
-<area shape="rect" id="node4" href="$teensy3__morse__bsp_8cpp.html#a9c9c90d823df58733140d0fa559e0d3f" title="Establish a baseline for a touch sensor when no touch is present. " alt="" coords="124,56,231,83"/>
-<area shape="rect" id="node3" href="$teensy3__morse__bsp_8cpp.html#ab28974f7e8f855ec7ba4805642afaaba" title="activityLight" alt="" coords="279,5,371,32"/>
-<area shape="rect" id="node5" href="$teensy3__morse__bsp_8cpp.html#a82911eac3bf13d6f36d10102a4c4d3c4" title="Generate a tone on the audio output pins. " alt="" coords="284,56,365,83"/>
-<area shape="rect" id="node6" href="$teensy3__morse__bsp_8cpp.html#ac70998cee1bf97f00aec4a1b4e5a4f60" title="isEarphonePresent" alt="" coords="419,56,551,83"/>
-</map>

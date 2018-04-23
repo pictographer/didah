@@ -1,4 +1,0 @@
-<map id="m2a" name="m2a">
-<area shape="rect" id="node2" href="$class_morse_token.html#a48cd72aeb868391449d1f51c1d0bf5cc" title="Treat code == 0 as the error token. " alt="" coords="104,5,233,32"/>
-<area shape="rect" id="node3" href="$class_morse_token.html#adc74054417a8636c1d34d43c34628731" title="Treat code == 1 as a space. " alt="" coords="100,56,237,83"/>
-</map>

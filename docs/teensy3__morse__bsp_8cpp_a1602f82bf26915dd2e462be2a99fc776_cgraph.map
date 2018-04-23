@@ -1,4 +1,0 @@
-<map id="toggleGreenLED" name="toggleGreenLED">
-<area shape="rect" id="node2" href="$teensy3__morse__bsp_8cpp.html#ab28974f7e8f855ec7ba4805642afaaba" title="activityLight" alt="" coords="300,5,392,32"/>
-<area shape="rect" id="node3" href="$teensy3__morse__bsp_8cpp.html#ae162e602c712201806b935cb21ce8284" title="Turn the green LED on (1) or off (0). " alt="" coords="172,31,252,57"/>
-</map>

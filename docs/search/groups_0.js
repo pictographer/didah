@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sim',['SIM',['../group___s_i_m___peripheral.html',1,'']]]
+  ['sim',['SIM',['../group__SIM__Peripheral.xhtml',1,'']]]
 ];

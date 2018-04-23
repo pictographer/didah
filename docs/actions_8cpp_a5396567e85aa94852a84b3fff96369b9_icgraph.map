@@ -1,6 +1,0 @@
-<map id="txSymbolStackTop" name="txSymbolStackTop">
-<area shape="rect" id="node2" href="$actions_8h.html#a1fec7da4166b9612d2deec3d0262d60f" title="dispatchOnStack" alt="" coords="187,5,309,32"/>
-<area shape="rect" id="node3" href="$pda_8h.html#a959876507019ccc24303937cc277bb31" title="gradeNext" alt="" coords="207,56,289,83"/>
-<area shape="rect" id="node4" href="$pda_8h.html#a5218392624b017b817b80d6b16ea920d" title="askNextAlfa" alt="" coords="357,31,452,57"/>
-<area shape="rect" id="node5" href="$pda_8h.html#a1dc125d402fe76077cb4d166ac0fbf7a" title="askNext" alt="" coords="369,81,440,108"/>
-</map>

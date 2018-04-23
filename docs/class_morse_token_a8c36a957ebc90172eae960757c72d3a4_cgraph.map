@@ -1,5 +1,0 @@
-<map id="MorseToken::toChar" name="MorseToken::toChar">
-<area shape="rect" id="node2" href="$morse__token_8h.html#a98f44690e97cbd7ea9445ca0a560a564" title="Convert a Morse code into ASCII. " alt="" coords="195,31,241,57"/>
-<area shape="rect" id="node3" href="$class_morse_token.html#a48cd72aeb868391449d1f51c1d0bf5cc" title="Treat code == 0 as the error token. " alt="" coords="293,5,423,32"/>
-<area shape="rect" id="node4" href="$class_morse_token.html#adc74054417a8636c1d34d43c34628731" title="Treat code == 1 as a space. " alt="" coords="289,56,427,83"/>
-</map>

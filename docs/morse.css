@@ -1,4 +1,0 @@
-/* Override the em tag to indicate Morse code prosigns. */
-.memdoc em {text-decoration:overline;font-style:normal}
-.mdescRight em {text-decoration:overline;font-style:normal}
-.prosign {text-decoration:overline;font-style:normal}

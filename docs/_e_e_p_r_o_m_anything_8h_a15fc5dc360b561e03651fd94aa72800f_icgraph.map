@@ -1,5 +1,0 @@
-<map id="EEPROM_readAnything" name="EEPROM_readAnything">
-<area shape="rect" id="node2" href="$settings_8h.html#a98c2398d8260d9517353a1a7e33b73ea" title="Load the settings from non&#45;volatile memory. " alt="" coords="216,31,303,57"/>
-<area shape="rect" id="node3" href="$actions_8h.html#a1fec7da4166b9612d2deec3d0262d60f" title="dispatchOnStack" alt="" coords="351,5,473,32"/>
-<area shape="rect" id="node4" href="$actions_8h.html#a9c9466bf6676f35ff08e8dc33518e483" title="Respond to commands from the serial port. " alt="" coords="362,56,462,83"/>
-</map>

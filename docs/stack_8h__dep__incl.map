@@ -1,6 +1,6 @@
 <map id="stack.h" name="stack.h">
-<area shape="rect" id="node2" href="$actions_8cpp.html" title="Implementation of application&#45;specific actions. " alt="" coords="5,80,95,107"/>
-<area shape="rect" id="node3" href="$libmorse_8cpp.html" title="Implementation of Morse code operations. " alt="" coords="119,80,215,107"/>
-<area shape="rect" id="node4" href="$pda_8cpp.html" title="Implementation of Personal Digital Assistant functions. " alt="" coords="240,80,308,107"/>
-<area shape="rect" id="node5" href="$stack_8cpp.html" title="Implementation of Stack&#45;related convenience functions. " alt="" coords="332,80,411,107"/>
+<area shape="rect" id="node2" href="$actions_8cpp.xhtml" title="Implementation of application&#45;specific actions. " alt="" coords="5,80,95,107"/>
+<area shape="rect" id="node3" href="$libmorse_8cpp.xhtml" title="Implementation of Morse code operations. " alt="" coords="119,80,215,107"/>
+<area shape="rect" id="node4" href="$pda_8cpp.xhtml" title="Implementation of Personal Digital Assistant functions. " alt="" coords="240,80,308,107"/>
+<area shape="rect" id="node5" href="$stack_8cpp.xhtml" title="Implementation of Stack&#45;related convenience functions. " alt="" coords="332,80,411,107"/>
 </map>

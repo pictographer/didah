@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sim_5fmemmap',['SIM_MemMap',['../struct_s_i_m___mem_map.html',1,'']]],
-  ['stack',['Stack',['../class_stack.html',1,'']]]
+  ['sim_5fmemmap',['SIM_MemMap',['../structSIM__MemMap.xhtml',1,'']]],
+  ['stack',['Stack',['../classStack.xhtml',1,'']]]
 ];

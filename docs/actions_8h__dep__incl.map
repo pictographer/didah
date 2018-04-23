@@ -1,10 +1,10 @@
 <map id="actions.h" name="actions.h">
-<area shape="rect" id="node2" href="$actions_8cpp.html" title="Implementation of application&#45;specific actions. " alt="" coords="5,80,95,107"/>
-<area shape="rect" id="node3" href="$libmorse_8cpp.html" title="Implementation of Morse code operations. " alt="" coords="119,80,215,107"/>
-<area shape="rect" id="node4" href="$morse__digit_8cpp.html" title="Implementation of decimal digit to Morse code conversion. " alt="" coords="239,80,354,107"/>
-<area shape="rect" id="node5" href="$morse__token_8cpp.html" title="Implementation of Morse code operations. " alt="" coords="378,80,501,107"/>
-<area shape="rect" id="node6" href="$pda_8cpp.html" title="Implementation of Personal Digital Assistant functions. " alt="" coords="525,80,593,107"/>
-<area shape="rect" id="node7" href="$stack_8cpp.html" title="Implementation of Stack&#45;related convenience functions. " alt="" coords="617,80,696,107"/>
-<area shape="rect" id="node8" href="$voltage__monitor_8h.html" title="Trivial co&#45;routine to gather and filter ADC samples. " alt="" coords="721,80,846,107"/>
-<area shape="rect" id="node9" href="$teensy3__morse__bsp_8cpp.html" title="Implementation of Teensy 3.0 board support package. " alt="" coords="701,155,865,181"/>
+<area shape="rect" id="node2" href="$actions_8cpp.xhtml" title="Implementation of application&#45;specific actions. " alt="" coords="5,80,95,107"/>
+<area shape="rect" id="node3" href="$libmorse_8cpp.xhtml" title="Implementation of Morse code operations. " alt="" coords="119,80,215,107"/>
+<area shape="rect" id="node4" href="$morse__digit_8cpp.xhtml" title="Implementation of decimal digit to Morse code conversion. " alt="" coords="239,80,354,107"/>
+<area shape="rect" id="node5" href="$morse__token_8cpp.xhtml" title="Implementation of Morse code operations. " alt="" coords="378,80,501,107"/>
+<area shape="rect" id="node6" href="$pda_8cpp.xhtml" title="Implementation of Personal Digital Assistant functions. " alt="" coords="525,80,593,107"/>
+<area shape="rect" id="node7" href="$stack_8cpp.xhtml" title="Implementation of Stack&#45;related convenience functions. " alt="" coords="617,80,696,107"/>
+<area shape="rect" id="node8" href="$voltage__monitor_8h.xhtml" title="Trivial co&#45;routine to gather and filter ADC samples. " alt="" coords="721,80,846,107"/>
+<area shape="rect" id="node9" href="$teensy3__morse__bsp_8cpp.xhtml" title="Implementation of Teensy 3.0 board support package. " alt="" coords="701,155,865,181"/>
 </map>

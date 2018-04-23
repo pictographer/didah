@@ -1,3 +1,0 @@
-<map id="sampleVoltage" name="sampleVoltage">
-<area shape="rect" id="node2" href="$class_voltage_monitor.html#a78d3d4456a0c99f9fc16e57ce842c15d" title="Keep the most recent N samples in a ring buffer. " alt="" coords="161,5,340,32"/>
-</map>
