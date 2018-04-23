@@ -1,6 +1,6 @@
 <map id="libmorse.h" name="libmorse.h">
-<area shape="rect" id="node2" href="$binconst_8h.xhtml" title="Binary constant generator macro. " alt="" coords="170,229,252,256"/>
-<area shape="rect" id="node7" href="$teensy3__morse__bsp_8h.xhtml" title="Teensy 3.0 board support package. " alt="" coords="198,80,349,107"/>
-<area shape="rect" id="node9" href="$morse__token_8h.xhtml" title="Defines the MorseToken class and various helpers. " alt="" coords="425,80,533,107"/>
-<area shape="rect" id="node11" href="$prosign_8h.xhtml" title="Prosign constants. " alt="" coords="391,155,466,181"/>
+<area shape="rect" id="node2" href="$binconst_8h.html" title="Binary constant generator macro. " alt="" coords="170,229,252,256"/>
+<area shape="rect" id="node7" href="$teensy3__morse__bsp_8h.html" title="Teensy 3.0 board support package. " alt="" coords="198,80,349,107"/>
+<area shape="rect" id="node9" href="$morse__token_8h.html" title="Defines the MorseToken class and various helpers. " alt="" coords="425,80,533,107"/>
+<area shape="rect" id="node11" href="$prosign_8h.html" title="Prosign constants. " alt="" coords="391,155,466,181"/>
 </map>

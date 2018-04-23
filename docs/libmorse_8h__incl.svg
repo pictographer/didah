@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="binconst_8h.xhtml" target="_top" xlink:title="Binary constant generator macro. ">
+<g id="a_node2"><a xlink:href="binconst_8h.html" target="_top" xlink:title="Binary constant generator macro. ">
 <polygon fill="white" stroke="black" points="123.326,-0.5 123.326,-19.5 185.326,-19.5 185.326,-0.5 123.326,-0.5"/>
 <text text-anchor="middle" x="154.326" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">binconst.h</text>
 </a>
@@ -69,7 +69,7 @@
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="teensy3__morse__bsp_8h.xhtml" target="_top" xlink:title="Teensy 3.0 board support package. ">
+<g id="a_node7"><a xlink:href="teensy3__morse__bsp_8h.html" target="_top" xlink:title="Teensy 3.0 board support package. ">
 <polygon fill="white" stroke="black" points="144.826,-112.5 144.826,-131.5 257.826,-131.5 257.826,-112.5 144.826,-112.5"/>
 <text text-anchor="middle" x="201.326" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">teensy3_morse_bsp.h</text>
 </a>
@@ -82,7 +82,7 @@
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="morse__token_8h.xhtml" target="_top" xlink:title="Defines the MorseToken class and various helpers. ">
+<g id="a_node9"><a xlink:href="morse__token_8h.html" target="_top" xlink:title="Defines the MorseToken class and various helpers. ">
 <polygon fill="white" stroke="black" points="314.826,-112.5 314.826,-131.5 395.826,-131.5 395.826,-112.5 314.826,-112.5"/>
 <text text-anchor="middle" x="355.326" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">morse_token.h</text>
 </a>
@@ -125,7 +125,7 @@
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
-<g id="a_node11"><a xlink:href="prosign_8h.xhtml" target="_top" xlink:title="Prosign constants. ">
+<g id="a_node11"><a xlink:href="prosign_8h.html" target="_top" xlink:title="Prosign constants. ">
 <polygon fill="white" stroke="black" points="289.326,-56.5 289.326,-75.5 345.326,-75.5 345.326,-56.5 289.326,-56.5"/>
 <text text-anchor="middle" x="317.326" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">prosign.h</text>
 </a>

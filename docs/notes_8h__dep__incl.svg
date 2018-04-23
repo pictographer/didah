@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="actions_8cpp.xhtml" target="_top" xlink:title="Implementation of application&#45;specific actions. ">
+<g id="a_node2"><a xlink:href="actions_8cpp.html" target="_top" xlink:title="Implementation of application&#45;specific actions. ">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-19.5 67,-19.5 67,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="33.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">actions.cpp</text>
 </a>
@@ -29,7 +29,7 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="pda_8cpp.xhtml" target="_top" xlink:title="Implementation of Personal Digital Assistant functions. ">
+<g id="a_node3"><a xlink:href="pda_8cpp.html" target="_top" xlink:title="Implementation of Personal Digital Assistant functions. ">
 <polygon fill="white" stroke="black" points="85,-0.5 85,-19.5 136,-19.5 136,-0.5 85,-0.5"/>
 <text text-anchor="middle" x="110.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">pda.cpp</text>
 </a>

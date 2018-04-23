@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['morsetoken',['MorseToken',['../classMorseToken.xhtml',1,'']]]
+  ['morsetoken',['MorseToken',['../classMorseToken.html',1,'']]]
 ];

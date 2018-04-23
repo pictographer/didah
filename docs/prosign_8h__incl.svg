@@ -16,7 +16,7 @@
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="binconst_8h.xhtml" target="_top" xlink:title="Binary constant generator macro. ">
+<g id="a_node2"><a xlink:href="binconst_8h.html" target="_top" xlink:title="Binary constant generator macro. ">
 <polygon fill="white" stroke="black" points="0,-0.5 0,-19.5 62,-19.5 62,-0.5 0,-0.5"/>
 <text text-anchor="middle" x="31" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">binconst.h</text>
 </a>

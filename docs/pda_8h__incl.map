@@ -1,7 +1,7 @@
 <map id="pda.h" name="pda.h">
-<area shape="rect" id="node2" href="$libmorse_8h.xhtml" title="Morse code operations. " alt="" coords="232,80,315,107"/>
-<area shape="rect" id="node3" href="$binconst_8h.xhtml" title="Binary constant generator macro. " alt="" coords="170,304,252,331"/>
-<area shape="rect" id="node8" href="$teensy3__morse__bsp_8h.xhtml" title="Teensy 3.0 board support package. " alt="" coords="198,155,349,181"/>
-<area shape="rect" id="node10" href="$morse__token_8h.xhtml" title="Defines the MorseToken class and various helpers. " alt="" coords="425,155,533,181"/>
-<area shape="rect" id="node12" href="$prosign_8h.xhtml" title="Prosign constants. " alt="" coords="391,229,466,256"/>
+<area shape="rect" id="node2" href="$libmorse_8h.html" title="Morse code operations. " alt="" coords="232,80,315,107"/>
+<area shape="rect" id="node3" href="$binconst_8h.html" title="Binary constant generator macro. " alt="" coords="170,304,252,331"/>
+<area shape="rect" id="node8" href="$teensy3__morse__bsp_8h.html" title="Teensy 3.0 board support package. " alt="" coords="198,155,349,181"/>
+<area shape="rect" id="node10" href="$morse__token_8h.html" title="Defines the MorseToken class and various helpers. " alt="" coords="425,155,533,181"/>
+<area shape="rect" id="node12" href="$prosign_8h.html" title="Prosign constants. " alt="" coords="391,229,466,256"/>
 </map>

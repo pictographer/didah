@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['voltagemonitor',['VoltageMonitor',['../classVoltageMonitor.xhtml',1,'']]]
+  ['voltagemonitor',['VoltageMonitor',['../classVoltageMonitor.html',1,'']]]
 ];

@@ -62,7 +62,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node2 -->
 <g id="node2" class="node"><title>Node2</title>
-<g id="a_node2"><a xlink:href="libmorse_8h.xhtml" target="_top" xlink:title="Morse code operations. ">
+<g id="a_node2"><a xlink:href="libmorse_8h.html" target="_top" xlink:title="Morse code operations. ">
 <polygon fill="white" stroke="black" points="53.8338,-168.5 53.8338,-187.5 115.834,-187.5 115.834,-168.5 53.8338,-168.5"/>
 <text text-anchor="middle" x="84.8338" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">libmorse.h</text>
 </a>
@@ -75,7 +75,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node14 -->
 <g id="node14" class="node"><title>Node14</title>
-<g id="a_node14"><a xlink:href="prosign_8h.xhtml" target="_top" xlink:title="Prosign constants. ">
+<g id="a_node14"><a xlink:href="prosign_8h.html" target="_top" xlink:title="Prosign constants. ">
 <polygon fill="white" stroke="black" points="175.834,-280.5 175.834,-299.5 231.834,-299.5 231.834,-280.5 175.834,-280.5"/>
 <text text-anchor="middle" x="203.834" y="-287.5" font-family="Helvetica,sans-Serif" font-size="10.00">prosign.h</text>
 </a>
@@ -88,7 +88,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="actions_8h.xhtml" target="_top" xlink:title="Application&#45;specific actions. ">
+<g id="a_node3"><a xlink:href="actions_8h.html" target="_top" xlink:title="Application&#45;specific actions. ">
 <polygon fill="white" stroke="black" points="244.834,-112.5 244.834,-131.5 300.834,-131.5 300.834,-112.5 244.834,-112.5"/>
 <text text-anchor="middle" x="272.834" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">actions.h</text>
 </a>
@@ -101,7 +101,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="libmorse_8cpp.xhtml" target="_top" xlink:title="Implementation of Morse code operations. ">
+<g id="a_node5"><a xlink:href="libmorse_8cpp.html" target="_top" xlink:title="Implementation of Morse code operations. ">
 <polygon fill="white" stroke="black" points="15.8338,-56.5 15.8338,-75.5 87.8338,-75.5 87.8338,-56.5 15.8338,-56.5"/>
 <text text-anchor="middle" x="51.8338" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">libmorse.cpp</text>
 </a>
@@ -114,7 +114,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node11 -->
 <g id="node11" class="node"><title>Node11</title>
-<g id="a_node11"><a xlink:href="teensy3__morse__bsp_8cpp.xhtml" target="_top" xlink:title="Implementation of Teensy 3.0 board support package. ">
+<g id="a_node11"><a xlink:href="teensy3__morse__bsp_8cpp.html" target="_top" xlink:title="Implementation of Teensy 3.0 board support package. ">
 <polygon fill="white" stroke="black" points="43.3338,-0.5 43.3338,-19.5 166.334,-19.5 166.334,-0.5 43.3338,-0.5"/>
 <text text-anchor="middle" x="104.834" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">teensy3_morse_bsp.cpp</text>
 </a>
@@ -127,7 +127,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node12 -->
 <g id="node12" class="node"><title>Node12</title>
-<g id="a_node12"><a xlink:href="pda_8h.xhtml" target="_top" xlink:title="Personal Digital Assistant functions. ">
+<g id="a_node12"><a xlink:href="pda_8h.html" target="_top" xlink:title="Personal Digital Assistant functions. ">
 <polygon fill="white" stroke="black" points="134.334,-112.5 134.334,-131.5 175.334,-131.5 175.334,-112.5 134.334,-112.5"/>
 <text text-anchor="middle" x="154.834" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">pda.h</text>
 </a>
@@ -140,7 +140,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node13 -->
 <g id="node13" class="node"><title>Node13</title>
-<g id="a_node13"><a xlink:href="sound_8cpp.xhtml" target="_top" xlink:title="Implementation of PWM sound effects. ">
+<g id="a_node13"><a xlink:href="sound_8cpp.html" target="_top" xlink:title="Implementation of PWM sound effects. ">
 <polygon fill="white" stroke="black" points="53.8338,-112.5 53.8338,-131.5 115.834,-131.5 115.834,-112.5 53.8338,-112.5"/>
 <text text-anchor="middle" x="84.8338" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">sound.cpp</text>
 </a>
@@ -153,7 +153,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="actions_8cpp.xhtml" target="_top" xlink:title="Implementation of application&#45;specific actions. ">
+<g id="a_node4"><a xlink:href="actions_8cpp.html" target="_top" xlink:title="Implementation of application&#45;specific actions. ">
 <polygon fill="white" stroke="black" points="580.334,-56.5 580.334,-75.5 647.334,-75.5 647.334,-56.5 580.334,-56.5"/>
 <text text-anchor="middle" x="613.834" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">actions.cpp</text>
 </a>
@@ -171,7 +171,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="morse__digit_8cpp.xhtml" target="_top" xlink:title="Implementation of decimal digit to Morse code conversion. ">
+<g id="a_node6"><a xlink:href="morse__digit_8cpp.html" target="_top" xlink:title="Implementation of decimal digit to Morse code conversion. ">
 <polygon fill="white" stroke="black" points="287.834,-56.5 287.834,-75.5 373.834,-75.5 373.834,-56.5 287.834,-56.5"/>
 <text text-anchor="middle" x="330.834" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">morse_digit.cpp</text>
 </a>
@@ -184,7 +184,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="morse__token_8cpp.xhtml" target="_top" xlink:title="Implementation of Morse code operations. ">
+<g id="a_node7"><a xlink:href="morse__token_8cpp.html" target="_top" xlink:title="Implementation of Morse code operations. ">
 <polygon fill="white" stroke="black" points="469.834,-56.5 469.834,-75.5 561.834,-75.5 561.834,-56.5 469.834,-56.5"/>
 <text text-anchor="middle" x="515.834" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">morse_token.cpp</text>
 </a>
@@ -197,7 +197,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="pda_8cpp.xhtml" target="_top" xlink:title="Implementation of Personal Digital Assistant functions. ">
+<g id="a_node8"><a xlink:href="pda_8cpp.html" target="_top" xlink:title="Implementation of Personal Digital Assistant functions. ">
 <polygon fill="white" stroke="black" points="106.334,-56.5 106.334,-75.5 157.334,-75.5 157.334,-56.5 106.334,-56.5"/>
 <text text-anchor="middle" x="131.834" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">pda.cpp</text>
 </a>
@@ -210,7 +210,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node9 -->
 <g id="node9" class="node"><title>Node9</title>
-<g id="a_node9"><a xlink:href="stack_8cpp.xhtml" target="_top" xlink:title="Implementation of Stack&#45;related convenience functions. ">
+<g id="a_node9"><a xlink:href="stack_8cpp.html" target="_top" xlink:title="Implementation of Stack&#45;related convenience functions. ">
 <polygon fill="white" stroke="black" points="392.334,-56.5 392.334,-75.5 451.334,-75.5 451.334,-56.5 392.334,-56.5"/>
 <text text-anchor="middle" x="421.834" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">stack.cpp</text>
 </a>
@@ -223,7 +223,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node10 -->
 <g id="node10" class="node"><title>Node10</title>
-<g id="a_node10"><a xlink:href="voltage__monitor_8h.xhtml" target="_top" xlink:title="Trivial co&#45;routine to gather and filter ADC samples. ">
+<g id="a_node10"><a xlink:href="voltage__monitor_8h.html" target="_top" xlink:title="Trivial co&#45;routine to gather and filter ADC samples. ">
 <polygon fill="white" stroke="black" points="175.834,-56.5 175.834,-75.5 269.834,-75.5 269.834,-56.5 175.834,-56.5"/>
 <text text-anchor="middle" x="222.834" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">voltage_monitor.h</text>
 </a>
@@ -261,7 +261,7 @@ var sectionId = 'dynsection-0';
 </g>
 <!-- Node15 -->
 <g id="node15" class="node"><title>Node15</title>
-<g id="a_node15"><a xlink:href="morse__token_8h.xhtml" target="_top" xlink:title="Defines the MorseToken class and various helpers. ">
+<g id="a_node15"><a xlink:href="morse__token_8h.html" target="_top" xlink:title="Defines the MorseToken class and various helpers. ">
 <polygon fill="white" stroke="black" points="232.334,-224.5 232.334,-243.5 313.334,-243.5 313.334,-224.5 232.334,-224.5"/>
 <text text-anchor="middle" x="272.834" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">morse_token.h</text>
 </a>

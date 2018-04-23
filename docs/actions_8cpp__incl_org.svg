@@ -36,7 +36,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="EEPROMAnything_8h.xhtml" target="_top" xlink:title="Loads and stores arbitrary structures to non&#45;volatile memory. ">
+<g id="a_node4"><a xlink:href="EEPROMAnything_8h.html" target="_top" xlink:title="Loads and stores arbitrary structures to non&#45;volatile memory. ">
 <polygon fill="white" stroke="black" points="67.1203,-224.5 67.1203,-243.5 174.12,-243.5 174.12,-224.5 67.1203,-224.5"/>
 <text text-anchor="middle" x="120.62" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">EEPROMAnything.h</text>
 </a>
@@ -49,7 +49,7 @@
 </g>
 <!-- Node5 -->
 <g id="node5" class="node"><title>Node5</title>
-<g id="a_node5"><a xlink:href="settings_8h.xhtml" target="_top" xlink:title="User settings. ">
+<g id="a_node5"><a xlink:href="settings_8h.html" target="_top" xlink:title="User settings. ">
 <polygon fill="white" stroke="black" points="688.12,-224.5 688.12,-243.5 747.12,-243.5 747.12,-224.5 688.12,-224.5"/>
 <text text-anchor="middle" x="717.62" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">settings.h</text>
 </a>
@@ -62,7 +62,7 @@
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="actions_8h.xhtml" target="_top" xlink:title="Application&#45;specific actions. ">
+<g id="a_node6"><a xlink:href="actions_8h.html" target="_top" xlink:title="Application&#45;specific actions. ">
 <polygon fill="white" stroke="black" points="460.62,-224.5 460.62,-243.5 516.62,-243.5 516.62,-224.5 460.62,-224.5"/>
 <text text-anchor="middle" x="488.62" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">actions.h</text>
 </a>
@@ -75,7 +75,7 @@
 </g>
 <!-- Node13 -->
 <g id="node13" class="node"><title>Node13</title>
-<g id="a_node13"><a xlink:href="teensy3__morse__bsp_8h.xhtml" target="_top" xlink:title="Teensy 3.0 board support package. ">
+<g id="a_node13"><a xlink:href="teensy3__morse__bsp_8h.html" target="_top" xlink:title="Teensy 3.0 board support package. ">
 <polygon fill="white" stroke="black" points="177.12,-112.5 177.12,-131.5 290.12,-131.5 290.12,-112.5 177.12,-112.5"/>
 <text text-anchor="middle" x="233.62" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">teensy3_morse_bsp.h</text>
 </a>
@@ -88,7 +88,7 @@
 </g>
 <!-- Node16 -->
 <g id="node16" class="node"><title>Node16</title>
-<g id="a_node16"><a xlink:href="prosign_8h.xhtml" target="_top" xlink:title="Prosign constants. ">
+<g id="a_node16"><a xlink:href="prosign_8h.html" target="_top" xlink:title="Prosign constants. ">
 <polygon fill="white" stroke="black" points="690.62,-56.5 690.62,-75.5 746.62,-75.5 746.62,-56.5 690.62,-56.5"/>
 <text text-anchor="middle" x="718.62" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00">prosign.h</text>
 </a>
@@ -101,7 +101,7 @@
 </g>
 <!-- Node17 -->
 <g id="node17" class="node"><title>Node17</title>
-<g id="a_node17"><a xlink:href="mac_8h.xhtml" target="_top" xlink:title="Platform&#45;specific code to retrieve the MAC address. ">
+<g id="a_node17"><a xlink:href="mac_8h.html" target="_top" xlink:title="Platform&#45;specific code to retrieve the MAC address. ">
 <polygon fill="white" stroke="black" points="765.62,-224.5 765.62,-243.5 809.62,-243.5 809.62,-224.5 765.62,-224.5"/>
 <text text-anchor="middle" x="787.62" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">mac.h</text>
 </a>
@@ -114,7 +114,7 @@
 </g>
 <!-- Node18 -->
 <g id="node18" class="node"><title>Node18</title>
-<g id="a_node18"><a xlink:href="notes_8h.xhtml" target="_top" xlink:title="Frequency values for equal&#45;tempered musical notes. ">
+<g id="a_node18"><a xlink:href="notes_8h.html" target="_top" xlink:title="Frequency values for equal&#45;tempered musical notes. ">
 <polygon fill="white" stroke="black" points="828.12,-224.5 828.12,-243.5 877.12,-243.5 877.12,-224.5 828.12,-224.5"/>
 <text text-anchor="middle" x="852.62" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">notes.h</text>
 </a>
@@ -127,7 +127,7 @@
 </g>
 <!-- Node19 -->
 <g id="node19" class="node"><title>Node19</title>
-<g id="a_node19"><a xlink:href="sound_8h.xhtml" target="_top" xlink:title="PWM sound effects. ">
+<g id="a_node19"><a xlink:href="sound_8h.html" target="_top" xlink:title="PWM sound effects. ">
 <polygon fill="white" stroke="black" points="580.12,-224.5 580.12,-243.5 631.12,-243.5 631.12,-224.5 580.12,-224.5"/>
 <text text-anchor="middle" x="605.62" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">sound.h</text>
 </a>
@@ -140,7 +140,7 @@
 </g>
 <!-- Node21 -->
 <g id="node21" class="node"><title>Node21</title>
-<g id="a_node21"><a xlink:href="stack_8h.xhtml" target="_top" xlink:title="Fixed&#45;sized stack for plain old data. ">
+<g id="a_node21"><a xlink:href="stack_8h.html" target="_top" xlink:title="Fixed&#45;sized stack for plain old data. ">
 <polygon fill="white" stroke="black" points="895.12,-224.5 895.12,-243.5 944.12,-243.5 944.12,-224.5 895.12,-224.5"/>
 <text text-anchor="middle" x="919.62" y="-231.5" font-family="Helvetica,sans-Serif" font-size="10.00">stack.h</text>
 </a>
@@ -178,7 +178,7 @@
 </g>
 <!-- Node7 -->
 <g id="node7" class="node"><title>Node7</title>
-<g id="a_node7"><a xlink:href="libmorse_8h.xhtml" target="_top" xlink:title="Morse code operations. ">
+<g id="a_node7"><a xlink:href="libmorse_8h.html" target="_top" xlink:title="Morse code operations. ">
 <polygon fill="white" stroke="black" points="432.62,-168.5 432.62,-187.5 494.62,-187.5 494.62,-168.5 432.62,-168.5"/>
 <text text-anchor="middle" x="463.62" y="-175.5" font-family="Helvetica,sans-Serif" font-size="10.00">libmorse.h</text>
 </a>
@@ -191,7 +191,7 @@
 </g>
 <!-- Node14 -->
 <g id="node14" class="node"><title>Node14</title>
-<g id="a_node14"><a xlink:href="morse__token_8h.xhtml" target="_top" xlink:title="Defines the MorseToken class and various helpers. ">
+<g id="a_node14"><a xlink:href="morse__token_8h.html" target="_top" xlink:title="Defines the MorseToken class and various helpers. ">
 <polygon fill="white" stroke="black" points="511.12,-112.5 511.12,-131.5 592.12,-131.5 592.12,-112.5 511.12,-112.5"/>
 <text text-anchor="middle" x="551.62" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00">morse_token.h</text>
 </a>
@@ -204,7 +204,7 @@
 </g>
 <!-- Node8 -->
 <g id="node8" class="node"><title>Node8</title>
-<g id="a_node8"><a xlink:href="binconst_8h.xhtml" target="_top" xlink:title="Binary constant generator macro. ">
+<g id="a_node8"><a xlink:href="binconst_8h.html" target="_top" xlink:title="Binary constant generator macro. ">
 <polygon fill="white" stroke="black" points="624.62,-0.5 624.62,-19.5 686.62,-19.5 686.62,-0.5 624.62,-0.5"/>
 <text text-anchor="middle" x="655.62" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">binconst.h</text>
 </a>

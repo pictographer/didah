@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['notes_2eh',['notes.h',['../notes_8h.xhtml',1,'']]]
+  ['notes_2eh',['notes.h',['../notes_8h.html',1,'']]]
 ];
