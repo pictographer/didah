@@ -10,11 +10,11 @@
 ///\n
 ///\details The hardware supplies two touch sensor buttons, an
 /// audio output, and a USB serial port. For the voltage monitor
-/// appliance, there are three 
+/// appliance, there are three
 /// sources of audio output:
-///    * an internal speaker, 
+///    * an internal speaker,
 ///    * an earphone jack, and
-///    * a terminal block transmit output (TX). 
+///    * a terminal block transmit output (TX).
 /// The terminal block also has a transmit enable (TE) open collector
 /// output (push to talk).
 ///
@@ -29,7 +29,7 @@
 /// command, the command is executed. Like an HP calculator, a typical
 /// command sequence has arguments entered, followed by a command.
 ///
-/// ![Didah Voltage Monitor schematic](../../schematic/didah_schematic.png)
+/// ![Didah Voltage Monitor schematic](schematic/didah_schematic.png)
 
 ///\page 1 License License Agreement
 /// Permission is hereby granted, free of charge, to any person obtaining
@@ -39,10 +39,10 @@
 /// distribute, sublicense, and/or sell copies of the Software, and to
 /// permit persons to whom the Software is furnished to do so, subject to
 /// the following conditions:
-/// 
+///
 /// The above copyright notice and this permission notice shall be
 /// included in all copies or substantial portions of the Software.
-/// 
+///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 /// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 /// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -148,7 +148,7 @@ minutes in Morse Code as follows:
 `BAT 4801 MV ? 4801 MV`
 
 The message content, repetition interval, transmission rate, pitch
-(side tone), and alarm level can all be configured. The configuration can be 
+(side tone), and alarm level can all be configured. The configuration can be
 saved to persistent storage.
 
 ## Command-line Interaction
@@ -177,7 +177,7 @@ The Help command (`?`) prints a banner, settings, and a brief list of commands.
 ### Setting the Low-voltage Alarm Threshold
 
 The Low-voltage Alarm Threshold command (`A`) prompts for a value in
-millivolts, ranging from 2700 to 16000 millivolts. When the input voltage 
+millivolts, ranging from 2700 to 16000 millivolts. When the input voltage
 falls below this threshold, alternate values are used for the announcement
 repetition format and interval. The red LED is lit continuously at a dim level.
 The default threshold is 2700 millivolts.
@@ -193,7 +193,7 @@ Low-voltage threshold: 4000 mV</br>
 ### Setting the Low-voltage Alarm Threshold
 
 The High-voltage Alarm Threshold command (`B`) prompts for a value in
-millivolts, ranging from 2700 to 16000 millivolts. When the input voltage 
+millivolts, ranging from 2700 to 16000 millivolts. When the input voltage
 rises above this threshold, alternate values are used for the announcement
 repetition format and interval. The red LED is lit continuously at a dim level.
 The default threshold is 16000 millivolts.
@@ -248,7 +248,7 @@ announcement format above. The default alarm format is `BAT 16000 MV ?
 The Normal Announcement Interval command (`I`) prompts the user for a
 time interval in seconds ranging from 20 to 86,400 (24 hours). When
 the voltage is nominal, and the time in seconds is a multiple of this
-value, a nominal announcement is transmitted. The default announcement 
+value, a nominal announcement is transmitted. The default announcement
 interval is 600 seconds (ten minutes).
 
 ### Setting the Alarm Announcement Interval
@@ -310,7 +310,7 @@ frequency range is 55 to 1760 Hz. The default frequency is 750 Hz.
 ### Saving Settings
 
 The Save command (S) stores the current settings to EEPROM. These settings
-are preserved when there is no power to the appliance. \b N.B. This 
+are preserved when there is no power to the appliance. \b N.B. This
 command takes effect immediately without confirmation. Any unsaved
 changes are overwritten.
 
@@ -342,20 +342,20 @@ The Menu Command (`--`) transmits an abbreviated list of commands:
 ~~~~
 A  LOW V IN MV,
 B  HIGH V IN MV,
-C  CLEAR, 
-D  DIT MS, 
-F  MSG FMT, 
-G  ALARM LOW FMT, 
+C  CLEAR,
+D  DIT MS,
+F  MSG FMT,
+G  ALARM LOW FMT,
 H  ALARM HIGH FMT,
-I  RPT SECS, 
-J  RPT ALARM SECS, 
+I  RPT SECS,
+J  RPT ALARM SECS,
 L  LIST,
 M  MENU,
 O  LOAD,
-P  TONE HZ, 
+P  TONE HZ,
 S  SAVE,
-T  TIME, 
-U  UPTIME. 
+T  TIME,
+U  UPTIME.
 K~~~~
 
 ### Setting the Low-voltage Alarm Threshold
@@ -364,12 +364,12 @@ The `.-` (A) command expects a number ranging from 2700 to 16000 to
 have been entered and sets the low-voltage alarm threshold
 accordingly.
 
-For example, to set the low-voltage alarm threshold to 5V, 
+For example, to set the low-voltage alarm threshold to 5V,
 
 User: `...../-----/-----/-----/.-` \n
 System: `-.-` \n
 
-If the number is out of range, the system will transmit 8 dits 
+If the number is out of range, the system will transmit 8 dits
 followed by the word "RANGE".
 
 ### Setting the High-voltage Alarm Threshold
@@ -378,12 +378,12 @@ The `-...` (B) command expects a number ranging from 2700 to 16000 to
 have been entered and sets the high-voltage alarm threshold
 accordingly.
 
-For example, to set the high-voltage alarm threshold to 14V, 
+For example, to set the high-voltage alarm threshold to 14V,
 
 User: `.----/....-/-----/-----/-----/-...` \n
 System: `-.-` \n
 
-If the number is out of range, the system will transmit 8 dits 
+If the number is out of range, the system will transmit 8 dits
 followed by the word "RANGE".
 
 ### Setting the Dit Duration
@@ -396,13 +396,13 @@ For example, to set the dit duration to 50ms,
 User: `...../-----/.-` \n
 System: `-.-` \n
 
-If the number is out of range, the system will transmit 8 dits 
+If the number is out of range, the system will transmit 8 dits
 followed by the word "RANGE".
 
 ### Setting the Normal Announcement Format
 
 The `..-.` (F) command causes the system to prompt for a format template.
-The system responds with 
+The system responds with
 `TX MSG END WITH` <span class="prosign">AR</span>  `K`.
 
 For example, here is how to make the system transmit the voltage
@@ -424,8 +424,8 @@ System: OVER\n
 followed immediately by one of V, F, C, T, or U. A question mark
 followed by a pause or any other token is transmitted literally.
 
-The format template is used for generating periodic messages when the 
-voltage level is nominal just prior to message generation. The default 
+The format template is used for generating periodic messages when the
+voltage level is nominal just prior to message generation. The default
 format is `BAT 4801 MV ? 4801 MV`.
 
 ### Setting the Alarm Low-Voltage Announcement Format
@@ -441,33 +441,33 @@ alert format string. Refer to the F command above for details.
 ### Setting the Normal Announcement Interval
 
 The `..` (I) command expects a number of seconds ranging from 20
-to 86400 to have been entered and sets the nominal announcement interval 
+to 86400 to have been entered and sets the nominal announcement interval
 accordingly. The interval is coordinated with the time of day. The default
 interval is 600 seconds (ten minutes).
 
 ### Setting the Alarm Announcement Interval
 
 The `.---` (J) command expects a number of seconds ranging from 20
-to 86400 to have been entered and sets the alarm announcement interval 
-accordingly. The interval is coordinated with the time of day. The default 
+to 86400 to have been entered and sets the alarm announcement interval
+accordingly. The interval is coordinated with the time of day. The default
 alarm interval is 30 seconds.
 
 ### The Log Command
 
-The `.-..` (L) command transmits a log of the current settings. 
+The `.-..` (L) command transmits a log of the current settings.
 For example,
 
 ~~~~
 SETTINGS.
 MSG RPT SKED IS 600 SECONDS.
-MSG FORMAT IS  BAT ?V MV ? ?V MV . 
-ALARM VOLTAGE IS 4000  MV. 
-ALARM MSG RPT SKED IS 30 SECONDS. 
+MSG FORMAT IS  BAT ?V MV ? ?V MV .
+ALARM VOLTAGE IS 4000  MV.
+ALARM MSG RPT SKED IS 30 SECONDS.
 ALARM MSG FORMAT IS  BAT ?V MV ? ?V MV .~~~~
 
 ### Loading Persistent Settings
 
-The `---` (O) command loads settings from EEPROM. Saved settings are not 
+The `---` (O) command loads settings from EEPROM. Saved settings are not
 automatically restored at power on.
 
 ### Setting the Output Frequency (Side Tone)
@@ -486,7 +486,7 @@ from mis-configuration.
 
 The `-` (T) command expects the 24-hour time to have been entered as
 four digits HHMM (leading zeros may be omitted) and sets the time
-accordingly. The seconds are implicitly set to zero. Until the time 
+accordingly. The seconds are implicitly set to zero. Until the time
 is set, the uptime stored in EEPROM is not updated.
 
 ### Stack Manipulation Commands
@@ -501,16 +501,16 @@ The `-..-` (X) command exchanges the top two entries of the stack.
 */
 
 /** \page 3 Didah Personal Digital Assistant
-![PDA Exterior](../../pics/pda_exterior.jpg)
-![PDA Interior](../../pics/pda_interior.jpg)
-![PDA Components](../../pics/pda_components.jpg)
+![PDA Exterior](pics/pda_exterior.jpg)
+![PDA Interior](pics/pda_interior.jpg)
+![PDA Components](pics/pda_components.jpg)
  */
 
 /** \page 4 Didah Voltage Monitor Appliance
-![Voltage Monitor in action](../../pics/voltage_monitor_action.jpg)
-![Voltage Monitor ports](../../pics/voltage_monitor_ports.jpg)
-![Voltage Monitor interior](../../pics/voltage_monitor_interior.jpg)
-![Voltage Monitor bottom](../../pics/voltage_monitor_bottom.jpg)
+![Voltage Monitor in action](pics/voltage_monitor_action.jpg)
+![Voltage Monitor ports](pics/voltage_monitor_ports.jpg)
+![Voltage Monitor interior](pics/voltage_monitor_interior.jpg)
+![Voltage Monitor bottom](pics/voltage_monitor_bottom.jpg)
  */
 
 /** \page 5 Software Development
@@ -532,8 +532,8 @@ cases. For example, garden applications could take advantage of the
 ADC battery monitoring and could communicate by flashing lights in
 Morse code.
 
-The required hardware is a Teensy3, $19 at the time of writing. 
-http://pjrc.com/store/teensy3.html 
+The required hardware is a Teensy3, $19 at the time of writing.
+http://pjrc.com/store/teensy3.html
 
 For the Morse Code voltage monitor, a voltage regulator and voltage
 divider are also needed. The USB power input to the Teensy3 has been
@@ -559,7 +559,7 @@ The voltage monitor was assembled from the following components:
 http://www.pjrc.com/store/teensy3.html
 - 1 stereo minijack
 - 2 small rivets
-- 1 voltage regulator LP2950CZ-3.3 TO-92 
+- 1 voltage regulator LP2950CZ-3.3 TO-92
 http://www.onsemi.com/pub_link/Collateral/LP2950-D.PDF
 - 2 tantalum capacitors 10uF 6V
 - 1 1 MOhm 5% resistor

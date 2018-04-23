@@ -232,7 +232,7 @@ Low-voltage threshold: 4000 mV</br>
 <li>Commands that require freeform text initiate a text copying mode terminated by the <span class="prosign">AR</span> prosign or by a timeout.</li>
 </ul>
 <h3>The Menu Command</h3>
-<p>The Menu Command (<code>--</code>) transmits an abbreviated list of commands: </p><div class="fragment"><div class="line">A  LOW V IN MV,</div><div class="line">B  HIGH V IN MV,</div><div class="line">C  CLEAR, </div><div class="line">D  DIT MS, </div><div class="line">F  MSG FMT, </div><div class="line">G  ALARM LOW FMT, </div><div class="line">H  ALARM HIGH FMT,</div><div class="line">I  RPT SECS, </div><div class="line">J  RPT ALARM SECS, </div><div class="line">L  LIST,</div><div class="line">M  MENU,</div><div class="line">O  LOAD,</div><div class="line">P  TONE HZ, </div><div class="line">S  SAVE,</div><div class="line">T  TIME, </div><div class="line">U  UPTIME. </div></div><!-- fragment --><h3>Setting the Low-voltage Alarm Threshold</h3>
+<p>The Menu Command (<code>--</code>) transmits an abbreviated list of commands: </p><div class="fragment"><div class="line">A  LOW V IN MV,</div><div class="line">B  HIGH V IN MV,</div><div class="line">C  CLEAR,</div><div class="line">D  DIT MS,</div><div class="line">F  MSG FMT,</div><div class="line">G  ALARM LOW FMT,</div><div class="line">H  ALARM HIGH FMT,</div><div class="line">I  RPT SECS,</div><div class="line">J  RPT ALARM SECS,</div><div class="line">L  LIST,</div><div class="line">M  MENU,</div><div class="line">O  LOAD,</div><div class="line">P  TONE HZ,</div><div class="line">S  SAVE,</div><div class="line">T  TIME,</div><div class="line">U  UPTIME.</div></div><!-- fragment --><h3>Setting the Low-voltage Alarm Threshold</h3>
 <p>The <code>.-</code> (A) command expects a number ranging from 2700 to 16000 to have been entered and sets the low-voltage alarm threshold accordingly.</p>
 <p>For example, to set the low-voltage alarm threshold to 5V,</p>
 <p>User: <code>...../-----/-----/-----/.-</code> <br />
@@ -274,7 +274,7 @@ System: OVER<br />
 <p>The <code>.---</code> (J) command expects a number of seconds ranging from 20 to 86400 to have been entered and sets the alarm announcement interval accordingly. The interval is coordinated with the time of day. The default alarm interval is 30 seconds.</p>
 <h3>The Log Command</h3>
 <p>The <code>.-..</code> (L) command transmits a log of the current settings. For example,</p>
-<div class="fragment"><div class="line">SETTINGS.</div><div class="line">MSG RPT SKED IS 600 SECONDS.</div><div class="line">MSG FORMAT IS  BAT ?V MV ? ?V MV . </div><div class="line">ALARM VOLTAGE IS 4000  MV. </div><div class="line">ALARM MSG RPT SKED IS 30 SECONDS. </div><div class="line">ALARM MSG FORMAT IS  BAT ?V MV ? ?V MV </div></div><!-- fragment --><h3>Loading Persistent Settings</h3>
+<div class="fragment"><div class="line">SETTINGS.</div><div class="line">MSG RPT SKED IS 600 SECONDS.</div><div class="line">MSG FORMAT IS  BAT ?V MV ? ?V MV .</div><div class="line">ALARM VOLTAGE IS 4000  MV.</div><div class="line">ALARM MSG RPT SKED IS 30 SECONDS.</div><div class="line">ALARM MSG FORMAT IS  BAT ?V MV ? ?V MV </div></div><!-- fragment --><h3>Loading Persistent Settings</h3>
 <p>The <code>---</code> (O) command loads settings from EEPROM. Saved settings are not automatically restored at power on.</p>
 <h3>Setting the Output Frequency (Side Tone)</h3>
 <p>The <code>.--.</code> (P) command sets the output frequency or side tone. The frequency range is 55 to 1760 Hz. The default frequency is 750.</p>
@@ -289,7 +289,7 @@ System: OVER<br />
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 23 2018 13:42:19 for Didah Morse Code PDA/Appliance by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 23 2018 13:50:41 for Didah Morse Code PDA/Appliance by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>
