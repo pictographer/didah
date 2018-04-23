@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['software_20development',['Software Development',['../5.html',1,'']]],
   ['s',['s',['../stack_8cpp.html#abefdfbf9131b5ea5926f9ecbecb6b1e6',1,'s(size_t i):&#160;stack.cpp'],['../stack_8h.html#abefdfbf9131b5ea5926f9ecbecb6b1e6',1,'s(size_t i):&#160;stack.cpp']]],
   ['samplevoltage',['sampleVoltage',['../teensy3__morse__bsp_8cpp.html#a64b1cba37dfee0c21f770334404eb3da',1,'sampleVoltage():&#160;teensy3_morse_bsp.cpp'],['../teensy3__morse__bsp_8h.html#a64b1cba37dfee0c21f770334404eb3da',1,'sampleVoltage():&#160;teensy3_morse_bsp.cpp']]],
   ['saveactions',['saveActions',['../actions_8cpp.html#aa1ebbe304654c025f3f02ea434718884',1,'saveActions():&#160;actions.cpp'],['../actions_8h.html#aa1ebbe304654c025f3f02ea434718884',1,'saveActions():&#160;actions.cpp']]],
@@ -24,6 +25,7 @@ var searchData=
   ['settings_2ecpp',['settings.cpp',['../settings_8cpp.html',1,'']]],
   ['settings_2eh',['settings.h',['../settings_8h.html',1,'']]],
   ['settxhz',['setTxHz',['../settings_8cpp.html#af33969eee39a5fffb3ceb43a77772dc9',1,'setTxHz(uint32_t Hz):&#160;settings.cpp'],['../settings_8h.html#af33969eee39a5fffb3ceb43a77772dc9',1,'setTxHz(uint32_t Hz):&#160;settings.cpp']]],
+  ['setup',['setup',['../didah_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'didah.ino']]],
   ['setvolume',['setVolume',['../actions_8cpp.html#a142b42f94ccf46a7a9706fe9b63b4501',1,'setVolume(MorseToken):&#160;actions.cpp'],['../actions_8h.html#a142b42f94ccf46a7a9706fe9b63b4501',1,'setVolume(MorseToken):&#160;actions.cpp']]],
   ['shufflingcash',['shufflingCash',['../sound_8cpp.html#aacbb0b497e350fa72c032bd39322328d',1,'shufflingCash(uint32_t duration):&#160;sound.cpp'],['../sound_8h.html#aacbb0b497e350fa72c032bd39322328d',1,'shufflingCash(uint32_t duration):&#160;sound.cpp']]],
   ['sim_5fmemmap',['SIM_MemMap',['../structSIM__MemMap.html',1,'']]],

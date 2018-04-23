@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['instructions',['Instructions',['../2.html',1,'']]],
   ['identifyprocessor',['identifyProcessor',['../teensy3__morse__bsp_8cpp.html#ae35f80836869eec0a82e85571e8aa2fd',1,'identifyProcessor():&#160;teensy3_morse_bsp.cpp'],['../teensy3__morse__bsp_8h.html#ae35f80836869eec0a82e85571e8aa2fd',1,'identifyProcessor():&#160;teensy3_morse_bsp.cpp']]],
   ['initactions',['initActions',['../actions_8cpp.html#a3add754bdd339f64be1dff4546be65f5',1,'initActions():&#160;actions.cpp'],['../actions_8h.html#a3add754bdd339f64be1dff4546be65f5',1,'initActions():&#160;actions.cpp']]],
   ['initports',['initPorts',['../teensy3__morse__bsp_8cpp.html#a15bba6162d5a787569acccbf85402f71',1,'initPorts():&#160;teensy3_morse_bsp.cpp'],['../teensy3__morse__bsp_8h.html#a15bba6162d5a787569acccbf85402f71',1,'initPorts():&#160;teensy3_morse_bsp.cpp']]],

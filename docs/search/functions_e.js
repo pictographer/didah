@@ -14,6 +14,7 @@ var searchData=
   ['sethighvoltagethreshold',['setHighVoltageThreshold',['../settings_8cpp.html#a3b400380ca80d3134cc0ed60040a56de',1,'setHighVoltageThreshold(int32_t v):&#160;settings.cpp'],['../settings_8h.html#a3b400380ca80d3134cc0ed60040a56de',1,'setHighVoltageThreshold(int32_t v):&#160;settings.cpp']]],
   ['setlowvoltagethreshold',['setLowVoltageThreshold',['../settings_8cpp.html#a17a6da0c26e4ba90eead6a336997f59c',1,'setLowVoltageThreshold(int32_t v):&#160;settings.cpp'],['../settings_8h.html#a17a6da0c26e4ba90eead6a336997f59c',1,'setLowVoltageThreshold(int32_t v):&#160;settings.cpp']]],
   ['settxhz',['setTxHz',['../settings_8cpp.html#af33969eee39a5fffb3ceb43a77772dc9',1,'setTxHz(uint32_t Hz):&#160;settings.cpp'],['../settings_8h.html#af33969eee39a5fffb3ceb43a77772dc9',1,'setTxHz(uint32_t Hz):&#160;settings.cpp']]],
+  ['setup',['setup',['../didah_8ino.html#a4fc01d736fe50cf5b977f755b675f11d',1,'didah.ino']]],
   ['setvolume',['setVolume',['../actions_8cpp.html#a142b42f94ccf46a7a9706fe9b63b4501',1,'setVolume(MorseToken):&#160;actions.cpp'],['../actions_8h.html#a142b42f94ccf46a7a9706fe9b63b4501',1,'setVolume(MorseToken):&#160;actions.cpp']]],
   ['shufflingcash',['shufflingCash',['../sound_8cpp.html#aacbb0b497e350fa72c032bd39322328d',1,'shufflingCash(uint32_t duration):&#160;sound.cpp'],['../sound_8h.html#aacbb0b497e350fa72c032bd39322328d',1,'shufflingCash(uint32_t duration):&#160;sound.cpp']]],
   ['size',['size',['../classStack.html#afc30a7ee287e14f08802c2d43613f2b4',1,'Stack']]],

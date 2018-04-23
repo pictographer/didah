@@ -1,5 +1,6 @@
 <map id="EEPROMAnything.h" name="EEPROMAnything.h">
 <area shape="rect" id="node2" href="$actions_8cpp.html" title="Implementation of application&#45;specific actions. " alt="" coords="5,80,95,107"/>
-<area shape="rect" id="node3" href="$pda_8cpp.html" title="Implementation of Personal Digital Assistant functions. " alt="" coords="119,80,187,107"/>
-<area shape="rect" id="node4" href="$settings_8cpp.html" title="Implementation of user settings. " alt="" coords="211,80,305,107"/>
+<area shape="rect" id="node3" href="$didah_8ino.html" title="Top&#45;level entry points for the Morse code PDA/Application. " alt="" coords="119,80,194,107"/>
+<area shape="rect" id="node4" href="$pda_8cpp.html" title="Implementation of Personal Digital Assistant functions. " alt="" coords="219,80,287,107"/>
+<area shape="rect" id="node5" href="$settings_8cpp.html" title="Implementation of user settings. " alt="" coords="311,80,405,107"/>
 </map>

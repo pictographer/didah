@@ -1,15 +1,16 @@
 <map id="prosign.h" name="prosign.h">
-<area shape="rect" id="node2" href="$morse__token_8h.html" title="Defines the MorseToken class and various helpers. " alt="" coords="389,80,497,107"/>
+<area shape="rect" id="node2" href="$morse__token_8h.html" title="Defines the MorseToken class and various helpers. " alt="" coords="392,80,500,107"/>
 <area shape="rect" id="node5" href="$actions_8cpp.html" title="Implementation of application&#45;specific actions. " alt="" coords="5,304,95,331"/>
-<area shape="rect" id="node6" href="$libmorse_8cpp.html" title="Implementation of Morse code operations. " alt="" coords="751,304,847,331"/>
-<area shape="rect" id="node9" href="$pda_8cpp.html" title="Implementation of Personal Digital Assistant functions. " alt="" coords="659,304,727,331"/>
-<area shape="rect" id="node3" href="$libmorse_8h.html" title="Morse code operations. " alt="" coords="613,155,695,181"/>
-<area shape="rect" id="node4" href="$actions_8h.html" title="Application&#45;specific actions. " alt="" coords="406,229,481,256"/>
-<area shape="rect" id="node8" href="$morse__token_8cpp.html" title="Implementation of Morse code operations. " alt="" coords="119,304,242,331"/>
-<area shape="rect" id="node12" href="$teensy3__morse__bsp_8cpp.html" title="Implementation of Teensy 3.0 board support package. " alt="" coords="576,379,740,405"/>
-<area shape="rect" id="node13" href="$pda_8h.html" title="Personal Digital Assistant functions. " alt="" coords="573,229,628,256"/>
-<area shape="rect" id="node14" href="$sound_8cpp.html" title="Implementation of PWM sound effects. " alt="" coords="653,229,735,256"/>
-<area shape="rect" id="node7" href="$morse__digit_8cpp.html" title="Implementation of decimal digit to Morse code conversion. " alt="" coords="519,304,634,331"/>
-<area shape="rect" id="node10" href="$stack_8cpp.html" title="Implementation of Stack&#45;related convenience functions. " alt="" coords="267,304,345,331"/>
-<area shape="rect" id="node11" href="$voltage__monitor_8h.html" title="Trivial co&#45;routine to gather and filter ADC samples. " alt="" coords="370,304,495,331"/>
+<area shape="rect" id="node6" href="$didah_8ino.html" title="Top&#45;level entry points for the Morse code PDA/Application. " alt="" coords="290,304,365,331"/>
+<area shape="rect" id="node7" href="$libmorse_8cpp.html" title="Implementation of Morse code operations. " alt="" coords="119,304,215,331"/>
+<area shape="rect" id="node10" href="$pda_8cpp.html" title="Implementation of Personal Digital Assistant functions. " alt="" coords="928,304,996,331"/>
+<area shape="rect" id="node3" href="$libmorse_8h.html" title="Morse code operations. " alt="" coords="358,155,441,181"/>
+<area shape="rect" id="node4" href="$actions_8h.html" title="Application&#45;specific actions. " alt="" coords="459,229,534,256"/>
+<area shape="rect" id="node9" href="$morse__token_8cpp.html" title="Implementation of Morse code operations. " alt="" coords="781,304,903,331"/>
+<area shape="rect" id="node13" href="$teensy3__morse__bsp_8cpp.html" title="Implementation of Teensy 3.0 board support package. " alt="" coords="391,379,555,405"/>
+<area shape="rect" id="node14" href="$pda_8h.html" title="Personal Digital Assistant functions. " alt="" coords="804,229,859,256"/>
+<area shape="rect" id="node15" href="$sound_8cpp.html" title="Implementation of PWM sound effects. " alt="" coords="353,229,435,256"/>
+<area shape="rect" id="node8" href="$morse__digit_8cpp.html" title="Implementation of decimal digit to Morse code conversion. " alt="" coords="493,304,607,331"/>
+<area shape="rect" id="node11" href="$stack_8cpp.html" title="Implementation of Stack&#45;related convenience functions. " alt="" coords="389,304,468,331"/>
+<area shape="rect" id="node12" href="$voltage__monitor_8h.html" title="Trivial co&#45;routine to gather and filter ADC samples. " alt="" coords="631,304,757,331"/>
 </map>

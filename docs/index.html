@@ -39,6 +39,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="modules.html"><span>Modules</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -78,10 +81,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Didah Morse Code PDA/Appliance Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p>Didah - A Morse code PDA/Appliance for the Teensy 3.0 ARM Cortex-M4 development board <br />
+ Copyright © 2013 The Pictographer's Shop. <br />
+<br />
+The hardware supplies two touch sensor buttons, an audio output, and a USB serial port. For the voltage monitor appliance, there are three sources of audio output:</p><ul>
+<li>an internal speaker,</li>
+<li>an earphone jack, and</li>
+<li>a terminal block transmit output (TX). The terminal block also has a transmit enable (TE) open collector output (push to talk).</li>
+</ul>
+<p>The voltage monitor has a green LED and a red LED.</p>
+<p>The touch sensor buttons function as an Iambic keyer with one button for dit, and the other for dah. The serial port provides a command line interface for viewing and modifying settings.</p>
+<p>Setting can also be updated using a Morse code interface. Symbols are pushed on a stack. When the contents of the stack match a command, the command is executed. Like an HP calculator, a typical command sequence has arguments entered, followed by a command.</p>
+<div class="image">
+<img src="../../schematic/didah_schematic.png"  alt="Didah Voltage Monitor schematic"/>
+</div>
+ </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Apr 23 2018 13:19:50 for Didah Morse Code PDA/Appliance by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 23 2018 13:42:19 for Didah Morse Code PDA/Appliance by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>
